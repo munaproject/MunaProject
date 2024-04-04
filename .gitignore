@@ -61,3 +61,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Archivo .bundle de firebase... descomprimir despues
+/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_8_1.bundle
