@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "256945563350",
+    "project_id": "muna-6e88d",
+    "storage_bucket": "muna-6e88d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256945563350:android:117fecaa0f7e9205e70b77",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.Muna"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZC7r37-knNr25FBQHXH3k-q42eAhsSG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
