@@ -45,13 +45,13 @@ public class Dialogos : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            activar == true;
+            activar = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        activar == false;
+        activar = false;
         dialogoCanvas.SetActive(false);
     }
 }
