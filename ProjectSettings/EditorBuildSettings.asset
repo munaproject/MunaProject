@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CasaScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/LoginScene.unity
+    guid: b2bfcc391c89f014880c25d0e10146cf
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: c25694462f7b9b4468468be73ad0723e
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 2c6bf8d46900c6a4f87990057ac09a47
+  - enabled: 1
+    path: Assets/Scenes/PruebaPhoton.unity
+    guid: 649c5d13afc552749b92fde8b253be3f
   m_configObjects: {}
