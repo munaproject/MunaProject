@@ -23,7 +23,7 @@ public class Dialogos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Interact") && activar)
+        if(Input.GetButtonDown("Jump") && activar)
         {
             if(aux >= personaje.Length)
             {
