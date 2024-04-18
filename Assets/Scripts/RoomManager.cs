@@ -15,7 +15,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void crearRoom() {
         //Creamos una 'room'
         esMaster=true;
-        PhotonNetwork.CreateRoom(crearField.text);
+        RoomOptions options = new RoomOptions { MaxPlayers = 2 };
+        PhotonNetwork.CreateRoom(crearField.text, options);
     }
 
     public void unirseRoom() {
