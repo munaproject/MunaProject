@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0e647eca3b7414f8cefce32851e49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: {fileID: 53328860779223754, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
+  jugadorMaster: {fileID: 53328860779223754, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
+  jugador: {fileID: 2718953098306020838, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
   valueX: 0
   valueY: 0
 --- !u!4 &1029796373
