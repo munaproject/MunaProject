@@ -44,3 +44,6 @@ TagManager:
   - name: Nivel
     uniqueID: 958117717
     locked: 0
+  - name: Jugador
+    uniqueID: 2841507631
+    locked: 0

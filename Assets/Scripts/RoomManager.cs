@@ -29,6 +29,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         PlayerPrefs.SetInt("esMaster", true ? 1 : 0);
-        PhotonNetwork.LoadLevel("PruebaPhoton");
+        PhotonNetwork.LoadLevel("CasaScene");
     }
 }

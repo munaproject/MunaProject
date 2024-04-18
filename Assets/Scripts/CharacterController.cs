@@ -16,7 +16,7 @@ public class CharacterController : MonoBehaviour
     Vector2 move;
 
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         rig.freezeRotation = true; //evita que lille gire, se agradece
@@ -24,6 +24,19 @@ public class CharacterController : MonoBehaviour
         spr = GetComponentInChildren<SpriteRenderer>();
 
         view = GetComponent<PhotonView>();
+
+        if (view.IsMine)
+        {
+            int playerLayer = LayerMask.NameToLayer("Player");
+            if (playerLayer != -1) // Verifica si la capa se encontró correctamente
+            {
+                Physics2D.IgnoreLayerCollision(playerLayer, playerLayer);
+            }
+            else
+            {
+                Debug.LogError("La capa 'Player' no se encontró");
+            }
+        }
     }
 
     // Update is called once per frame
