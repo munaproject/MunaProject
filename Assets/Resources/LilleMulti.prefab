@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: 3688968173223222522}
   - component: {fileID: -4492179165815354976}
   - component: {fileID: 8484530280742773376}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LilleMulti
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

@@ -24,19 +24,6 @@ public class CharacterController : MonoBehaviour
         spr = GetComponentInChildren<SpriteRenderer>();
 
         view = GetComponent<PhotonView>();
-
-        if (view.IsMine)
-        {
-            int playerLayer = LayerMask.NameToLayer("Player");
-            if (playerLayer != -1) // Verifica si la capa se encontró correctamente
-            {
-                Physics2D.IgnoreLayerCollision(playerLayer, playerLayer);
-            }
-            else
-            {
-                Debug.LogError("La capa 'Player' no se encontró");
-            }
-        }
     }
 
     // Update is called once per frame
@@ -69,7 +56,10 @@ public class CharacterController : MonoBehaviour
             }
                 rig.MovePosition(transform.position + (Vector3)move * Time.deltaTime * velocidad);  //Sirve para dejar al personaje mirando en la posicion que queda al parar de andar
                                                                                                 //Time.deltaTime sirve para normalizar la velocidad independientemente de los frames
+
             
-        }
+        }   
     }
+
+
 }
