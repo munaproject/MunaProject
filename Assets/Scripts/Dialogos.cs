@@ -17,8 +17,13 @@ public class Dialogos : MonoBehaviour
     [SerializeField] [TextArea] private string[] dialogo;
     [SerializeField] private Sprite[] retrato;
 
+    //SFX
+    public AudioSource audioSource; // Componente AudioSource para reproducir el sonido una vez
+    public AudioClip sonidoEntrada; // Clip de sonido que quieres reproducir
+
     private bool activar;
     private int aux;    //para comprobar por donde va el dialogo
+    private bool sonidoReproducido = false; // Variable para verificar si el sonido ya se ha reproducido
 
     // Update is called once per frame
     void Update()
@@ -29,6 +34,7 @@ public class Dialogos : MonoBehaviour
             {
                 dialogoCanvas.SetActive(false);
                 aux=0;  //Solo añadir esta linea si quiero que la conversacion se repita
+                sonidoReproducido = false;
             }
             else
             {
@@ -37,6 +43,12 @@ public class Dialogos : MonoBehaviour
                 dialogoTexto.text = dialogo[aux];
                 retratoImagen.sprite = retrato[aux];
                 aux++;
+                if (!sonidoReproducido && audioSource != null && sonidoEntrada != null)
+                {
+                    // Reproducir el sonido de entrada si el AudioSource y el AudioClip están configurados
+                    audioSource.PlayOneShot(sonidoEntrada);
+                    sonidoReproducido = true;
+                }
             }    
         }
     }
@@ -53,5 +65,6 @@ public class Dialogos : MonoBehaviour
     {
         activar = false;
         dialogoCanvas.SetActive(false);
+        sonidoReproducido = false;
     }
 }

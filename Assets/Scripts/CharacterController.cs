@@ -61,5 +61,15 @@ public class CharacterController : MonoBehaviour
         }   
     }
 
-
+    public void cambiarVelocidad(bool parar)
+    {
+        if(parar)
+        {
+            velocidad=0;
+        }
+        else
+        {
+            velocidad=5;
+        }
+    }
 }
