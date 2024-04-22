@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Cinemachine;
 
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField] public float velocidad = 5;
-
+    [SerializeField] public float velocidad;
+    [SerializeField] private CinemachineVirtualCamera camera;
     private Rigidbody2D rig;
     private Animator anim;
     private SpriteRenderer spr;
@@ -22,6 +23,7 @@ public class CharacterController : MonoBehaviour
         rig.freezeRotation = true; //evita que lille gire, se agradece
         anim = GetComponentInChildren<Animator>();
         spr = GetComponentInChildren<SpriteRenderer>();
+        velocidad=5;
 
         view = GetComponent<PhotonView>();
     }
@@ -57,7 +59,11 @@ public class CharacterController : MonoBehaviour
                 rig.MovePosition(transform.position + (Vector3)move * Time.deltaTime * velocidad);  //Sirve para dejar al personaje mirando en la posicion que queda al parar de andar
                                                                                                 //Time.deltaTime sirve para normalizar la velocidad independientemente de los frames
 
-            
+            camera.Priority = 1;
+        }
+        else
+        {
+            camera.Priority = 0;
         }   
     }
 
