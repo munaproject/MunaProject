@@ -321,7 +321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 5
   camera: {fileID: 1395077813380001853}
-  listener: {fileID: 8845635673283706565}
 --- !u!114 &7834177702347224106
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1302513441456553980}
   - component: {fileID: 5424323494651065938}
   - component: {fileID: 3191147826209122784}
-  - component: {fileID: 3263824973390431640}
   - component: {fileID: 8407483943563836909}
   m_Layer: 0
   m_Name: Lille
@@ -136,19 +135,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3263824973390431640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925738790006286436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13c1947099fee84aa87bddea6cf4a1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 5
 --- !u!70 &8407483943563836909
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -181,6 +167,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0567348, y: -0.21875}
-  m_Size: {x: 1.2281585, y: 2.1875}
+  m_Offset: {x: -0.0298706, y: -0.90110475}
+  m_Size: {x: 0.05687207, y: 0.52190983}
   m_Direction: 0
