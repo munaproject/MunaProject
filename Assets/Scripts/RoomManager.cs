@@ -4,14 +4,29 @@ using UnityEngine;
 using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.UI;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
 
     public TMP_InputField crearField;
     public TMP_InputField unirseField;
+    public GameObject objJugar;
+    private Button btnJugar;
     private bool esMaster;
 
+
+    void Start() {
+        btnJugar = objJugar.GetComponent<Button>();
+    }
+
+    void Update() {
+        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+            btnJugar.interactable =true;
+        } else {
+            btnJugar.interactable = false;
+        }
+    }
     
     public void crearRoom() {
         //Creamos una 'room'
@@ -26,9 +41,19 @@ public class RoomManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRoom(unirseField.text);
     }
 
+    public void jugar() {
+        //Empezamos el juego
+        esMaster=false;
+        PhotonNetwork.LoadLevel("MadreCinematica");
+    }
+
     public override void OnJoinedRoom()
     {
-        PlayerPrefs.SetInt("esMaster", true ? 1 : 0);
-        PhotonNetwork.LoadLevel("MadreCinematica");
+        PlayerPrefs.SetInt("esMaster", true ? 1 : 0); 
+        if (PhotonNetwork.IsMasterClient) {
+            objJugar.SetActive(true);
+        } else {
+            objJugar.SetActive(false);
+        }
     }
 }

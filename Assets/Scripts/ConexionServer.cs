@@ -10,7 +10,9 @@ public class ConexionServer : MonoBehaviourPunCallbacks
 {
     void Start()
     {
-        //Nos conectamos a la configuracino base de photon
+        //Sincronizamos las escenas entre jugadores
+        PhotonNetwork.AutomaticallySyncScene = true;
+        //Nos conectamos a la configuracion base de photon
         PhotonNetwork.ConnectUsingSettings();
         //Con eso ya tenenmos la conexion lista
     }
@@ -28,7 +30,7 @@ public class ConexionServer : MonoBehaviourPunCallbacks
 
     public void btnConectar() 
     {
-        //establecemos un max de 4 jugadores
+        //establecemos un max de 2 jugadores
         RoomOptions opciones = new RoomOptions() { MaxPlayers = 2 };
 
         PhotonNetwork.JoinOrCreateRoom("room1", opciones, TypedLobby.Default);
