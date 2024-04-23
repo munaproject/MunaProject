@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Playables;
 using System.Collections.Generic;
+using Photon.Pun;
 
 public class DirectorController : MonoBehaviour
 {
@@ -11,10 +12,12 @@ public class DirectorController : MonoBehaviour
 
     public float[] tiemposDeDetencion; // Array que indica en qué segundos parará la cinematica
     private int aux = 0; // Índice para recorrer el array
+    PhotonView view;
 
     void Start()
     {
         director.stopped += OnTimelineFinished;
+        view = GetComponent<PhotonView>();
     }
 
     void Update()
@@ -24,11 +27,18 @@ public class DirectorController : MonoBehaviour
             director.playableGraph.GetRootPlayable(0).SetSpeed(0f); // Pausa la cinematica
 
         }
-        if (Input.GetButtonDown("Jump"))
+        if (PhotonNetwork.IsMasterClient && Input.GetButtonDown("Jump"))
         {
-            director.playableGraph.GetRootPlayable(0).SetSpeed(1f); // Reanuda la cinematica
-            aux++;
+            siguienteDialogo();
+            //hacemos que el otro jugador pase el dialogo
+            view.RPC("siguienteDialogo", RpcTarget.Others);
         }
+    }
+
+    [PunRPC]
+    void siguienteDialogo() {
+        director.playableGraph.GetRootPlayable(0).SetSpeed(1f); // Reanuda la cinematica
+        aux++;
     }
 
     void OnTimelineFinished(PlayableDirector director)

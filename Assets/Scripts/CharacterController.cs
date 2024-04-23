@@ -4,13 +4,14 @@ using UnityEngine;
 using Photon.Pun;
 using Cinemachine;
 
-public class CharacterController : MonoBehaviour
+public class CharacterController : MonoBehaviourPun
 {
     [SerializeField] public float velocidad;
     [SerializeField] private CinemachineVirtualCamera camera;
     private Rigidbody2D rig;
     private Animator anim;
     private SpriteRenderer spr;
+    bool compiListo;
 
     PhotonView view; //variable para que cada jugador controle solo a su personaje
 
@@ -26,6 +27,8 @@ public class CharacterController : MonoBehaviour
         velocidad=5;
 
         view = GetComponent<PhotonView>();
+
+        EnviarListo();
     }
 
     // Update is called once per frame
@@ -77,5 +80,29 @@ public class CharacterController : MonoBehaviour
         {
             velocidad=5;
         }
+    }
+
+    void EnviarListo()
+    {
+        if (photonView != null)
+        {
+            photonView.RPC("RecibirListo", RpcTarget.Others, true);
+        }
+    }
+
+    [PunRPC]
+    void RecibirListo(bool estoy)
+    {
+        Debug.Log("Compi esta en: "+estoy);
+        compiListo = true;
+        
+    }
+
+    public bool estaListo() {
+        return compiListo;
+    }
+
+    public void setListo(bool estado) {
+        this.compiListo = false;
     }
 }
