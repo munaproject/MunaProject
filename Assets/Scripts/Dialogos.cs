@@ -66,5 +66,6 @@ public class Dialogos : MonoBehaviour
         activar = false;
         dialogoCanvas.SetActive(false);
         sonidoReproducido = false;
+        aux=0;
     }
 }

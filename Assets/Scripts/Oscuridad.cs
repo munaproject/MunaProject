@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Photon.Pun;
 
-public class Oscuridad : MonoBehaviour
+public class Oscuridad : MonoBehaviourPunCallbacks
 {
     //Referencias UI
     [SerializeField] private GameObject dialogoCanvas;
@@ -24,53 +25,93 @@ public class Oscuridad : MonoBehaviour
     //Oscuridad
     public GameObject oscuro;
     public int trigger; //cuando se activará el evento
-    private int tiempoEmpleado; 
-    public int tiempoMax;
+    private float tiempoEmpleado; 
+    public float tiempoMax;
+    private bool activarEvento;
+    private GameObject player;
 
     private bool activar;
     private int aux;    //para comprobar por donde va el dialogo
     private bool sonidoReproducido = false; // Variable para verificar si el sonido ya se ha reproducido
 
+    PhotonView view;
+
+    void Start()
+    {
+        view = GetComponent<PhotonView>();
+        player = GameObject.FindWithTag("Player");
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Jump") && activar)
+        if (Input.GetButtonDown("Jump") && activar)
         {
-            if(aux==trigger)
+            if (PhotonNetwork.IsMasterClient) 
+            {
+                siguienteDialogo();
+                //hacemos que el otro jugador pase el dialogo
+                view.RPC("siguienteDialogo", RpcTarget.Others);
+            } else {
+                view.RPC("cambiarEscena", RpcTarget.Others);
+            }
+            
+        }
+
+        if(activarEvento)
+        {
+            tiempoEmpleado += Time.deltaTime; // Aumentar el tiempo empleado
+            player.GetComponent<CharacterController>().cambiarVelocidad(3); 
+
+            // Cambiar la opacidad basado en el tiempo transcurrido
+            if (tiempoEmpleado == 20)
+            {
+                oscuro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.6f);
+                Debug.Log("30");
+                player.GetComponent<CharacterController>().cambiarVelocidad(2); 
+            }
+            else if (tiempoEmpleado == 40)
+            {
+                oscuro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.75f);
+                Debug.Log("60");
+                player.GetComponent<CharacterController>().cambiarVelocidad(1); 
+            }
+            else if (tiempoEmpleado >= 60)
+            {
+                oscuro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.95f);
+                Debug.Log("90");
+                player.GetComponent<CharacterController>().cambiarVelocidad(0); 
+            }
+
+            
+
+            if (tiempoEmpleado >= tiempoMax)
+            {
+                Debug.Log("Ya");
+                if (PhotonNetwork.IsMasterClient) 
+                {
+                    GameObject player = GameObject.FindWithTag("Player");
+                    if (player != null)
+                    {
+                        player.GetComponent<CharacterController>().cambiarVelocidad(0); 
+                    }
+                }
+            }
+        }
+    }
+
+    [PunRPC]
+    void siguienteDialogo() {
+        if(aux==trigger)
             {
                 oscuro.SetActive(true);
             }
             if(aux >= personaje.Length)
             {
                 dialogoCanvas.SetActive(false);
-                aux=0;  //Solo añadir esta linea si quiero que la conversacion se repita
                 sonidoReproducido = false;
 
-                tiempoEmpleado += (int) Time.deltaTime; // Aumentar el tiempo empleado
-
-                // Cambiar la opacidad basado en el tiempo transcurrido
-                if (tiempoEmpleado >= 30 && tiempoEmpleado < 60)
-                {
-                    oscuro.GetComponent<Image>().color = new Color(0, 0, 0, 0.5f);
-                    Debug.Log("30");
-                }
-                else if (tiempoEmpleado >= 60 && tiempoEmpleado < 90)
-                {
-                    oscuro.GetComponent<Image>().color = new Color(0, 0, 0, 0.75f);
-                    Debug.Log("60");
-                }
-                else if (tiempoEmpleado >= 90)
-                {
-                    oscuro.GetComponent<Image>().color = new Color(0, 0, 0, 1f);
-                    Debug.Log("90");
-                }
-
-                
-
-                if (tiempoEmpleado >= tiempoMax)
-                {
-                    Debug.Log("Ya");
-                }
+                activarEvento=true;
             }
             else
             {
@@ -86,8 +127,8 @@ public class Oscuridad : MonoBehaviour
                     sonidoReproducido = true;
                 }
             }    
-        }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

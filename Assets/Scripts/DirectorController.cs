@@ -22,16 +22,19 @@ public class DirectorController : MonoBehaviour
 
     void Update()
     {
-        if (aux < tiemposDeDetencion.Length && director.time >= tiemposDeDetencion[aux])
+        if(director != null && director.playableGraph.IsValid())
         {
-            director.playableGraph.GetRootPlayable(0).SetSpeed(0f); // Pausa la cinematica
+            if (aux < tiemposDeDetencion.Length && director.time >= tiemposDeDetencion[aux])
+            {
+                director.playableGraph.GetRootPlayable(0).SetSpeed(0f); // Pausa la cinematica
 
-        }
-        if (PhotonNetwork.IsMasterClient && Input.GetButtonDown("Jump"))
-        {
-            siguienteDialogo();
-            //hacemos que el otro jugador pase el dialogo
-            view.RPC("siguienteDialogo", RpcTarget.Others);
+            }
+            if (PhotonNetwork.IsMasterClient && Input.GetButtonDown("Jump"))
+            {
+                siguienteDialogo();
+                //hacemos que el otro jugador pase el dialogo
+                view.RPC("siguienteDialogo", RpcTarget.Others);
+            }
         }
     }
 

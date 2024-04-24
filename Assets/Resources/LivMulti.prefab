@@ -402,9 +402,6 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: isWalking
-  - Type: 4
-    SynchronizeType: 1
-    Name: isFalling
   - Type: 9
     SynchronizeType: 1
     Name: Next

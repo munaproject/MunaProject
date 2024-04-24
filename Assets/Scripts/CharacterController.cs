@@ -68,18 +68,16 @@ public class CharacterController : MonoBehaviourPun
         {
             camera.Priority = 0;
         }   
+
+        if(velocidad==0)
+        {
+            anim.SetBool("hasLost", true);
+        }
     }
 
-    public void cambiarVelocidad(bool parar)
+    public void cambiarVelocidad(int num)
     {
-        if(parar)
-        {
-            velocidad=0;
-        }
-        else
-        {
-            velocidad=5;
-        }
+        velocidad = num;
     }
 
     void EnviarListo()

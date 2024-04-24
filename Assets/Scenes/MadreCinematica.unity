@@ -298,10 +298,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogoCanvas: {fileID: 0}
-  personajeTexto: {fileID: 0}
-  dialogoTexto: {fileID: 0}
-  retratoImagen: {fileID: 0}
+  dialogoCanvas: {fileID: 1082143030}
+  personajeTexto: {fileID: 1082143035}
+  dialogoTexto: {fileID: 1082143034}
+  retratoImagen: {fileID: 1438272045}
   personaje:
   - Lille
   - Lille
@@ -721,6 +721,7 @@ GameObject:
   - component: {fileID: 148160288}
   - component: {fileID: 148160287}
   - component: {fileID: 148160293}
+  - component: {fileID: 148160294}
   m_Layer: 0
   m_Name: Puertas
   m_TagString: Untagged
@@ -755,10 +756,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogoCanvas: {fileID: 0}
-  personajeTexto: {fileID: 0}
-  dialogoTexto: {fileID: 0}
-  retratoImagen: {fileID: 0}
+  dialogoCanvas: {fileID: 1082143030}
+  personajeTexto: {fileID: 1082143035}
+  dialogoTexto: {fileID: 1082143034}
+  retratoImagen: {fileID: 1438272045}
   personaje:
   - Lille
   - Liv
@@ -1157,6 +1158,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &148160294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148160285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &151302577
 GameObject:
   m_ObjectHideFlags: 0
@@ -33406,6 +33429,17 @@ MonoBehaviour:
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &1438272045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1699832949098753658, guid: 8658c33037deab5418c8dc4fd8333f9c, type: 3}
+  m_PrefabInstance: {fileID: 1082143029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082143032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1705807105
 GameObject:
   m_ObjectHideFlags: 0

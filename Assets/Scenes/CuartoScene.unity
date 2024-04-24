@@ -11579,6 +11579,7 @@ GameObject:
   - component: {fileID: 218945435}
   - component: {fileID: 218945436}
   - component: {fileID: 218945437}
+  - component: {fileID: 218945438}
   m_Layer: 0
   m_Name: SueloDeco
   m_TagString: Untagged
@@ -12070,7 +12071,29 @@ MonoBehaviour:
   sonidoEntrada: {fileID: 0}
   oscuro: {fileID: 1864710336}
   trigger: 2
-  tiempoMax: 90
+  tiempoMax: 60
+--- !u!114 &218945438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218945431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1057032364
 GameObject:
   m_ObjectHideFlags: 0
@@ -13020,7 +13043,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -16792,7 +16815,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -18786,7 +18809,7 @@ GameObject:
   - component: {fileID: 1864710338}
   - component: {fileID: 1864710337}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Oscuridad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
