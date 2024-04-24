@@ -28,7 +28,7 @@ public class Oscuridad : MonoBehaviourPunCallbacks
     private float tiempoEmpleado; 
     public float tiempoMax;
     private bool activarEvento;
-    private GameObject player;
+    public GameObject player;
 
     private bool activar;
     private int aux;    //para comprobar por donde va el dialogo
@@ -39,7 +39,6 @@ public class Oscuridad : MonoBehaviourPunCallbacks
     void Start()
     {
         view = GetComponent<PhotonView>();
-        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -50,10 +49,9 @@ public class Oscuridad : MonoBehaviourPunCallbacks
             if (PhotonNetwork.IsMasterClient) 
             {
                 siguienteDialogo();
-                //hacemos que el otro jugador pase el dialogo
                 view.RPC("siguienteDialogo", RpcTarget.Others);
             } else {
-                view.RPC("cambiarEscena", RpcTarget.Others);
+                view.RPC("siguienteDialogo", RpcTarget.Others);
             }
             
         }
@@ -62,15 +60,16 @@ public class Oscuridad : MonoBehaviourPunCallbacks
         {
             tiempoEmpleado += Time.deltaTime; // Aumentar el tiempo empleado
             player.GetComponent<CharacterController>().cambiarVelocidad(3); 
+            Debug.Log("prueba");
 
             // Cambiar la opacidad basado en el tiempo transcurrido
-            if (tiempoEmpleado == 20)
+            if (tiempoEmpleado >= 20 && tiempoEmpleado < 40)
             {
                 oscuro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.6f);
                 Debug.Log("30");
                 player.GetComponent<CharacterController>().cambiarVelocidad(2); 
             }
-            else if (tiempoEmpleado == 40)
+            else if (tiempoEmpleado >= 40 && tiempoEmpleado < 60)
             {
                 oscuro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.75f);
                 Debug.Log("60");

@@ -17,6 +17,8 @@ public class CharacterController : MonoBehaviourPun
 
     Vector2 move;
 
+    private bool velocidadManual;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -25,6 +27,7 @@ public class CharacterController : MonoBehaviourPun
         anim = GetComponentInChildren<Animator>();
         spr = GetComponentInChildren<SpriteRenderer>();
         velocidad=5;
+        velocidadManual=false;
 
         view = GetComponent<PhotonView>();
 
@@ -52,13 +55,17 @@ public class CharacterController : MonoBehaviourPun
                 anim.SetBool("isWalking", false);
             }
 
-            if (Input.GetKey(KeyCode.LeftShift)) //Correr
+            if(!velocidadManual)
             {
-                velocidad=10;
+                 if (Input.GetKey(KeyCode.LeftShift)) //Correr
+                {
+                    velocidad=10;
+                }
+                else{
+                    velocidad=5;
+                }
             }
-            else{
-                velocidad=5;
-            }
+           
                 rig.MovePosition(transform.position + (Vector3)move * Time.deltaTime * velocidad);  //Sirve para dejar al personaje mirando en la posicion que queda al parar de andar
                                                                                                 //Time.deltaTime sirve para normalizar la velocidad independientemente de los frames
 
@@ -78,6 +85,8 @@ public class CharacterController : MonoBehaviourPun
     public void cambiarVelocidad(int num)
     {
         velocidad = num;
+        velocidadManual=true;
+        Debug.Log("uwu");
     }
 
     void EnviarListo()
