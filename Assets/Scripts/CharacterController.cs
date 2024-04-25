@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Cinemachine;
 
-public class CharacterController : MonoBehaviourPun
+public class CharacterController : MonoBehaviourPunCallbacks
 {
     [SerializeField] public float velocidad;
     [SerializeField] private CinemachineVirtualCamera camera;
@@ -85,7 +85,15 @@ public class CharacterController : MonoBehaviourPun
     public void cambiarVelocidad(int num)
     {
         velocidad = num;
-        velocidadManual=true;
+        if(num==5)
+        {
+            velocidadManual=false;
+        }
+        else
+        {
+            velocidadManual=true;
+        }
+        
         Debug.Log("Se cambió la velocidad a: "+velocidad);
     }
 
@@ -94,6 +102,26 @@ public class CharacterController : MonoBehaviourPun
         if (PhotonNetwork.IsMasterClient) {
             anim.SetBool("hasLost", true);
         }
+        else
+        {
+            view.RPC("SyncAnimation", RpcTarget.All, true);
+        }
+    }
+
+    [PunRPC]
+    void cambiarEscena() {
+        PhotonNetwork.LoadLevel("MeetingScene");
+    }
+
+    [PunRPC]
+    void SyncAnimation(bool isFalling)
+    {
+        anim.SetBool("isFalling", isFalling);
+    }
+
+    public void ActivarTriggerNext()
+    {
+        anim.SetTrigger("Next");
     }
 
     void EnviarListo()

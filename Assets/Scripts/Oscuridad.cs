@@ -85,6 +85,7 @@ public class Oscuridad : MonoBehaviourPunCallbacks
                 master.GetComponent<CharacterController>().cambiarVelocidad(0); 
                 player.GetComponent<CharacterController>().cambiarVelocidad(0); 
                 master.GetComponent<CharacterController>().Perder(); 
+                player.GetComponent<CharacterController>().Perder(); 
             }
         }
     }
@@ -101,8 +102,6 @@ public class Oscuridad : MonoBehaviourPunCallbacks
                 sonidoReproducido = false;
 
                 activarEvento=true;
-                player = GameObject.FindWithTag("Player");
-                master = GameObject.FindWithTag("Player");
             }
             else
             {
@@ -128,6 +127,8 @@ public class Oscuridad : MonoBehaviourPunCallbacks
         if(collision.gameObject.tag == "Player")
         {
             activar = true;
+            player = GameObject.FindWithTag("Player");
+            master = GameObject.FindWithTag("Player");
         }
     }
 }

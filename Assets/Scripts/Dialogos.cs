@@ -33,8 +33,8 @@ public class Dialogos : MonoBehaviour
         {
             if(aux >= personaje.Length)
             {
-                player.GetComponent<CharacterController>().cambiarVelocidad(5);
                 dialogoCanvas.SetActive(false);
+                player.GetComponent<CharacterController>().cambiarVelocidad(5);
                 aux=0;  //Solo añadir esta linea si quiero que la conversacion se repita
                 sonidoReproducido = false;
             }
@@ -63,5 +63,10 @@ public class Dialogos : MonoBehaviour
             activar = true;
             player = collision.gameObject;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        activar = false;
     }
 }
