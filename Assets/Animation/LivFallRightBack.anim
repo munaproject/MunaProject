@@ -22,11 +22,11 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 667390094, guid: 2811d618a972454479dc0ba8e03c0476, type: 3}
-    - time: 0.11666667
+    - time: 0.23333333
       value: {fileID: -248657829, guid: 2811d618a972454479dc0ba8e03c0476, type: 3}
-    - time: 0.21666667
+    - time: 0.43333334
       value: {fileID: 1459069127, guid: 2811d618a972454479dc0ba8e03c0476, type: 3}
-    - time: 0.33333334
+    - time: 0.6666667
       value: {fileID: 472186278, guid: 2811d618a972454479dc0ba8e03c0476, type: 3}
     attribute: m_Sprite
     path: 
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.35000002
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -78,4 +78,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.6666667
+    functionName: ActivarTriggerNext
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
