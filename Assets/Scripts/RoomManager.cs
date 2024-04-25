@@ -5,6 +5,7 @@ using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
@@ -12,8 +13,15 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public TMP_InputField crearField;
     public TMP_InputField unirseField;
     public GameObject objJugar;
+    public GameObject objTexto;
     private Button btnJugar;
     private bool esMaster;
+
+    [Header("Ventanas")]
+    public GameObject panelElegir;
+    public GameObject panelCrear;
+    public GameObject panelUnirse;
+    public GameObject panelEspera;
 
 
     void Start() {
@@ -27,21 +35,71 @@ public class RoomManager : MonoBehaviourPunCallbacks
             btnJugar.interactable = false;
         }
     }
+
+    public void verVentanaCrear() {
+        panelElegir.SetActive(false);
+        panelCrear.SetActive(true);
+    }
+
+    public void verVentanaUnirse() {
+        panelElegir.SetActive(false);
+        panelUnirse.SetActive(true);
+    }
+
+    public void verVentanaEspera() {
+        panelCrear.SetActive(false);
+        panelUnirse.SetActive(false);
+        panelEspera.SetActive(true);
+    }
+
+    public void volverPanelUnirse() {
+        panelEspera.SetActive(false);
+        panelUnirse.SetActive(true);
+    }
+
+    public void volverPanelCrear() {
+        panelEspera.SetActive(false);
+        panelCrear.SetActive(true);
+    }
+
+    public void salirEspera() {
+        PhotonNetwork.LeaveRoom();
+        if (PhotonNetwork.IsMasterClient) {
+            volverPanelCrear();
+        } else {
+            volverPanelUnirse();
+        }
+    }
+
+    public void volverPanelElegir() {
+        panelCrear.SetActive(false);
+        panelUnirse.SetActive(false);
+        panelElegir.SetActive(true);
+    }
+
+    public void volverMenu() {
+        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.LeaveLobby();
+        SceneManager.LoadScene("Menu");
+    }
     
     public void crearRoom() {
         //Creamos una 'room'
         esMaster=true;
         RoomOptions options = new RoomOptions { MaxPlayers = 2 };
         PhotonNetwork.CreateRoom(crearField.text, options);
+        crearField.text = "";
     }
 
     public void unirseRoom() {
         //Nos unimos a una 'room'
         esMaster=false;
         PhotonNetwork.JoinRoom(unirseField.text);
+        unirseField.text = "";
     }
 
     public void jugar() {
+        Debug.Log("clic jugar");
         //Empezamos el juego
         esMaster=false;
         PhotonNetwork.LoadLevel("MadreCinematica");
@@ -49,11 +107,15 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+        Debug.Log("se unio a la room");
+        verVentanaEspera();
         PlayerPrefs.SetInt("esMaster", true ? 1 : 0); 
         if (PhotonNetwork.IsMasterClient) {
             objJugar.SetActive(true);
+            objTexto.SetActive(false);
         } else {
             objJugar.SetActive(false);
+            objTexto.SetActive(true);
         }
     }
 }

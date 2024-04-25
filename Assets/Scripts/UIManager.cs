@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,5 +32,10 @@ public class UIManager : MonoBehaviour
     {
         loginUI.SetActive(false);
         registroUI.SetActive(true);
+    }
+
+    public static implicit operator UIManager(RoomManager v)
+    {
+        throw new NotImplementedException();
     }
 }
