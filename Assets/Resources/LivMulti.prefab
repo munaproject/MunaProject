@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13c1947099fee84aa87bddea6cf4a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 5
+  velocidad: 0
   camera: {fileID: 1395077813380001853}
 --- !u!114 &7834177702347224106
 MonoBehaviour:

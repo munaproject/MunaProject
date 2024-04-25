@@ -28,6 +28,7 @@ public class Oscuridad : MonoBehaviourPunCallbacks
     private float tiempoEmpleado; 
     public float tiempoMax;
     private bool activarEvento;
+    public GameObject master;
     public GameObject player;
 
     private bool activar;
@@ -59,42 +60,31 @@ public class Oscuridad : MonoBehaviourPunCallbacks
         if(activarEvento)
         {
             tiempoEmpleado += Time.deltaTime; // Aumentar el tiempo empleado
+            master.GetComponent<CharacterController>().cambiarVelocidad(3); 
             player.GetComponent<CharacterController>().cambiarVelocidad(3); 
-            Debug.Log("prueba");
+
+            float primerTiempo = tiempoMax * 0.33f; // 33% del tiempo máximo
+            float segundoTiempo = tiempoMax * 0.66f; // 66% del tiempo máximo
 
             // Cambiar la opacidad basado en el tiempo transcurrido
-            if (tiempoEmpleado >= 20 && tiempoEmpleado < 40)
+            if (tiempoEmpleado >= primerTiempo && tiempoEmpleado < segundoTiempo)
             {
                 oscuro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.6f);
-                Debug.Log("30");
+                master.GetComponent<CharacterController>().cambiarVelocidad(2); 
                 player.GetComponent<CharacterController>().cambiarVelocidad(2); 
             }
-            else if (tiempoEmpleado >= 40 && tiempoEmpleado < 60)
+            else if (tiempoEmpleado >= segundoTiempo && tiempoEmpleado < tiempoMax)
             {
                 oscuro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.75f);
-                Debug.Log("60");
+                master.GetComponent<CharacterController>().cambiarVelocidad(1); 
                 player.GetComponent<CharacterController>().cambiarVelocidad(1); 
             }
-            else if (tiempoEmpleado >= 60)
+            else if (tiempoEmpleado >= tiempoMax)
             {
                 oscuro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.95f);
-                Debug.Log("90");
+                master.GetComponent<CharacterController>().cambiarVelocidad(0); 
                 player.GetComponent<CharacterController>().cambiarVelocidad(0); 
-            }
-
-            
-
-            if (tiempoEmpleado >= tiempoMax)
-            {
-                Debug.Log("Ya");
-                if (PhotonNetwork.IsMasterClient) 
-                {
-                    GameObject player = GameObject.FindWithTag("Player");
-                    if (player != null)
-                    {
-                        player.GetComponent<CharacterController>().cambiarVelocidad(0); 
-                    }
-                }
+                master.GetComponent<CharacterController>().Perder(); 
             }
         }
     }
@@ -114,6 +104,8 @@ public class Oscuridad : MonoBehaviourPunCallbacks
             }
             else
             {
+                master.GetComponent<CharacterController>().cambiarVelocidad(0); 
+                player.GetComponent<CharacterController>().cambiarVelocidad(0); 
                 dialogoCanvas.SetActive(true);
                 personajeTexto.text = personaje[aux];
                 dialogoTexto.text = dialogo[aux];
@@ -135,12 +127,5 @@ public class Oscuridad : MonoBehaviourPunCallbacks
         {
             activar = true;
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        activar = false;
-        dialogoCanvas.SetActive(false);
-        sonidoReproducido = false;
     }
 }

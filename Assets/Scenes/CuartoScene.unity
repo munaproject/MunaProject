@@ -11577,7 +11577,6 @@ GameObject:
   - component: {fileID: 218945434}
   - component: {fileID: 218945433}
   - component: {fileID: 218945435}
-  - component: {fileID: 218945436}
   - component: {fileID: 218945437}
   - component: {fileID: 218945438}
   m_Layer: 0
@@ -11965,7 +11964,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.9727187, y: -8.60104}
+  m_Offset: {x: -2.4220593, y: -7.256724}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11976,18 +11975,18 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7949371, y: 1.9689021}
+  m_Size: {x: 4.6936183, y: 4.6575346}
   m_EdgeRadius: 0
---- !u!114 &218945436
+--- !u!114 &218945437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218945431}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
+  m_Script: {fileID: 11500000, guid: d819c8b2398a05343afbeb5b4e097c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogoCanvas: {fileID: 1404703726}
@@ -12013,16 +12012,15 @@ MonoBehaviour:
   - "Aqu\xED est\xE1 mam\xE1..."
   - "\xBFY qui\xE9n m\xE1s?"
   - "No hay nadie m\xE1s. Solo mam\xE1 y yo.\r\n"
-  - "\xBFSeguro? Creo que falta alguien importante en tu vida.\r"
+  - "\xBFSeguro? Creo que falta alguien importante en tu vida."
   - "\xBFQui\xE9n?"
-  - "\xBFQu\xE9 tal si a\xF1ades a tu blandito compa\xF1ero de aventuras en el dibujo?\r"
-  - "S\xED, t\xFA tambi\xE9n eres parte de mi familia.\r"
-  - "\xA1Exactamente! Ahora vamos, s\xE1came a relucir en ese dibujo.\r\r"
+  - "\xBFQu\xE9 tal si a\xF1ades a tu blandito compa\xF1ero de aventuras en el dibujo?"
+  - "S\xED, t\xFA tambi\xE9n eres parte de mi familia."
+  - "\xA1Exactamente! Ahora vamos, s\xE1came a relucir en ese dibujo."
   - "Termin\xE9. \xBFQu\xE9 opinas?"
   - "\xA1Es incre\xEDble! Has capturado perfectamente mi esencia."
-  - "\xA1Es incre\xEDble! Has capturado perfectamente mi esencia."
-  - "\xA1Oh no, se fue la luz! No me gusta la oscuridad...\r"
-  - "Tranquilo, Lille. Busquemos t\xFA linterna, \xBFrecuerdas d\xF3nde la dejaste?\r\r"
+  - "\xA1Oh no, se fue la luz! No me gusta la oscuridad..."
+  - "Tranquilo, Lille. Busquemos t\xFA linterna, \xBFrecuerdas d\xF3nde la dejaste?"
   retrato:
   - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
   - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
@@ -12035,44 +12033,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
   - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
   - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
+  - {fileID: 21300000, guid: 0c1b7c006a077014a94de61cc28ab5f6, type: 3}
   - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  audioSource: {fileID: 0}
-  sonidoEntrada: {fileID: 0}
---- !u!114 &218945437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218945431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d819c8b2398a05343afbeb5b4e097c56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogoCanvas: {fileID: 1404703726}
-  personajeTexto: {fileID: 1404703729}
-  dialogoTexto: {fileID: 1404703728}
-  retratoImagen: {fileID: 1404703727}
-  personaje:
-  - L
-  - L
-  - L
-  dialogo:
-  - SAD
-  - SA
-  - DS
-  retrato:
-  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
-  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
-  - {fileID: -1659559242, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
   audioSource: {fileID: 0}
   sonidoEntrada: {fileID: 0}
   oscuro: {fileID: 1864710336}
-  trigger: 2
+  trigger: 11
   tiempoMax: 60
-  player: {fileID: 53328860779223754, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
+  master: {fileID: 53328860779223754, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
+  player: {fileID: 2718953098306020838, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
 --- !u!114 &218945438
 MonoBehaviour:
   m_ObjectHideFlags: 0

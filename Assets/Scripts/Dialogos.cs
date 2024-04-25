@@ -24,6 +24,7 @@ public class Dialogos : MonoBehaviour
     private bool activar;
     private int aux;    //para comprobar por donde va el dialogo
     private bool sonidoReproducido = false; // Variable para verificar si el sonido ya se ha reproducido
+    private GameObject player;
 
     // Update is called once per frame
     void Update()
@@ -32,12 +33,14 @@ public class Dialogos : MonoBehaviour
         {
             if(aux >= personaje.Length)
             {
+                player.GetComponent<CharacterController>().cambiarVelocidad(5);
                 dialogoCanvas.SetActive(false);
                 aux=0;  //Solo añadir esta linea si quiero que la conversacion se repita
                 sonidoReproducido = false;
             }
             else
             {
+                player.GetComponent<CharacterController>().cambiarVelocidad(0);
                 dialogoCanvas.SetActive(true);
                 personajeTexto.text = personaje[aux];
                 dialogoTexto.text = dialogo[aux];
@@ -58,14 +61,7 @@ public class Dialogos : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             activar = true;
+            player = collision.gameObject;
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        activar = false;
-        dialogoCanvas.SetActive(false);
-        sonidoReproducido = false;
-        aux=0;
     }
 }
