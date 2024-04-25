@@ -91,7 +91,9 @@ public class CharacterController : MonoBehaviourPun
 
     public void Perder()
     {
-        anim.SetBool("hasLost", true);
+        if (PhotonNetwork.IsMasterClient) {
+            anim.SetBool("hasLost", true);
+        }
     }
 
     void EnviarListo()

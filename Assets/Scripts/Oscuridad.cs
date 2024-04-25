@@ -101,6 +101,8 @@ public class Oscuridad : MonoBehaviourPunCallbacks
                 sonidoReproducido = false;
 
                 activarEvento=true;
+                player = GameObject.FindWithTag("Player");
+                master = GameObject.FindWithTag("Player");
             }
             else
             {
