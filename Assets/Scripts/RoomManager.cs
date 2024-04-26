@@ -78,9 +78,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
 
     public void volverMenu() {
-        PhotonNetwork.LeaveRoom();
-        PhotonNetwork.LeaveLobby();
-        SceneManager.LoadScene("Menu");
+        //PhotonNetwork.LeaveRoom();
+        //PhotonNetwork.LeaveLobby();
+        PhotonNetwork.Disconnect();
     }
     
     public void crearRoom() {
@@ -117,5 +117,22 @@ public class RoomManager : MonoBehaviourPunCallbacks
             objJugar.SetActive(false);
             objTexto.SetActive(true);
         }
+    }
+
+    public override void OnDisconnected(DisconnectCause cause) {
+        Debug.Log("Motivo de desconexion: " + cause);
+
+        switch (cause)
+        {
+            case DisconnectCause.DisconnectByClientLogic:
+                Debug.Log("desconectado por cliente");
+                break;
+
+            default:
+                Debug.Log("Desoncexion por un error (ver causas)...");
+                break;
+        }
+
+        SceneManager.LoadScene("Menu");
     }
 }
