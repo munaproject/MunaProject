@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3386126407951417739}
   - component: {fileID: 7086302756727443873}
   - component: {fileID: 4044508842946308619}
+  - component: {fileID: 8622550130631925688}
   - component: {fileID: 8422519042864618005}
   - component: {fileID: 3688968173223222522}
   - component: {fileID: -4492179165815354976}
@@ -154,6 +155,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 0
   camera: {fileID: 8438959711829240558}
+--- !u!114 &8622550130631925688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53328860779223754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b44d101ab0e5240984d34c9b18367c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8422519042864618005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +257,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: hasLost
+  - Type: 4
+    SynchronizeType: 0
+    Name: usingLantern
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
