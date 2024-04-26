@@ -104,8 +104,21 @@ public class CharacterController : MonoBehaviourPunCallbacks
         }
         else
         {
-            view.RPC("SyncAnimation", RpcTarget.All, true);
+            view.RPC("SyncAnimation", RpcTarget.Others, true);
         }
+        if(PhotonNetwork.IsMasterClient)
+        {
+            Invoke("cambiarEscena", 4f);
+        }
+        else
+        {
+            Invoke("auxiliarCambio", 4f);
+        }
+    }
+
+    void auxiliarCambio()
+    {
+       view.RPC("cambiarEscena", RpcTarget.Others); 
     }
 
     [PunRPC]

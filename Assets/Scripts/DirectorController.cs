@@ -59,6 +59,5 @@ public class DirectorController : MonoBehaviour
         }
 
         canvas.SetActive(false);
-        Destroy(director);
     }
 }
