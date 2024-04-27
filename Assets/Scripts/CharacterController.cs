@@ -18,6 +18,7 @@ public class CharacterController : MonoBehaviourPunCallbacks
     Vector2 move;
 
     private bool velocidadManual;
+    bool usandoLinterna;
 
     // Start is called before the first frame update
     private void Start()
@@ -28,6 +29,7 @@ public class CharacterController : MonoBehaviourPunCallbacks
         spr = GetComponentInChildren<SpriteRenderer>();
         velocidad=5;
         velocidadManual=false;
+        usandoLinterna=false;
 
         view = GetComponent<PhotonView>();
 
@@ -40,6 +42,7 @@ public class CharacterController : MonoBehaviourPunCallbacks
         //el personaje solo se mueve si pertenece al jugador 
         if (view.IsMine) {
             Movimiento();
+            Linterna();
 
             camera.Priority = 1;
         }
@@ -82,6 +85,23 @@ public class CharacterController : MonoBehaviourPunCallbacks
                                                                                             //Time.deltaTime sirve para normalizar la velocidad independientemente de los frames
     }
 
+    void Linterna()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && PhotonNetwork.IsMasterClient)
+        {
+            usandoLinterna = !usandoLinterna;
+            anim.SetBool("usingLantern", usandoLinterna);
+            view.RPC("ActualizarLinternaEnTodosLosClientes", RpcTarget.All, usandoLinterna);
+    }
+}
+
+    [PunRPC]
+    void ActualizarLinternaEnTodosLosClientes(bool nuevoEstadoLinterna)
+    {
+        usandoLinterna = nuevoEstadoLinterna;
+        anim.SetBool("usingLantern", usandoLinterna);
+    }
+
     public void cambiarVelocidad(int num)
     {
         velocidad = num;
@@ -104,26 +124,8 @@ public class CharacterController : MonoBehaviourPunCallbacks
         }
         else
         {
-            view.RPC("SyncAnimation", RpcTarget.Others, true);
+            view.RPC("SyncAnimation", RpcTarget.All, true);
         }
-        if(PhotonNetwork.IsMasterClient)
-        {
-            Invoke("cambiarEscena", 4f);
-        }
-        else
-        {
-            Invoke("auxiliarCambio", 4f);
-        }
-    }
-
-    void auxiliarCambio()
-    {
-       view.RPC("cambiarEscena", RpcTarget.Others); 
-    }
-
-    [PunRPC]
-    void cambiarEscena() {
-        PhotonNetwork.LoadLevel("MeetingScene");
     }
 
     [PunRPC]

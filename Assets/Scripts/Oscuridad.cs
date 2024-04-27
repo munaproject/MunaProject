@@ -30,6 +30,7 @@ public class Oscuridad : MonoBehaviourPunCallbacks
     private bool activarEvento;
     public GameObject master;
     public GameObject player;
+    public GameObject scene;
 
     private bool activar;
     private int aux;    //para comprobar por donde va el dialogo
@@ -86,6 +87,7 @@ public class Oscuridad : MonoBehaviourPunCallbacks
                 player.GetComponent<CharacterController>().cambiarVelocidad(0); 
                 master.GetComponent<CharacterController>().Perder(); 
                 player.GetComponent<CharacterController>().Perder(); 
+                Invoke("cambiarEscena", 4f);
             }
         }
     }
@@ -121,6 +123,9 @@ public class Oscuridad : MonoBehaviourPunCallbacks
             }    
     }
 
+    void cambiarEscena() {
+        scene.SetActive(true);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
