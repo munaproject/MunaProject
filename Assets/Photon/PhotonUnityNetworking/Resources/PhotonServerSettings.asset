@@ -44,6 +44,7 @@ MonoBehaviour:
   - cambiarEscena
   - SyncAnimation
   - RequestSceneChange
+  - ActualizarLinternaEnTodosLosClientes
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

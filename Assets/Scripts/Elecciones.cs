@@ -4,28 +4,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Dialogos : MonoBehaviour
+public class Elecciones : MonoBehaviour
 {
     //Referencias UI
     [SerializeField] private GameObject dialogoCanvas;
     [SerializeField] private TMP_Text personajeTexto;
     [SerializeField] private TMP_Text dialogoTexto;
+    [SerializeField] private TMP_Text primeraOpcTexto;
+    [SerializeField] private TMP_Text SegundaOpcTexto;
     [SerializeField] private Image retratoImagen;
 
     //Contenido del dialogo
     [SerializeField] private string[] personaje;
     [SerializeField] [TextArea] private string[] dialogo;
+    [SerializeField] private string[] primera;
+    [SerializeField] private string[] segunda;
     [SerializeField] private Sprite[] retrato;
 
     //SFX
     public AudioSource audioSource; // Componente AudioSource para reproducir el sonido una vez
     public AudioClip sonidoEntrada; // Clip de sonido que quieres reproducir
 
-    //Siguientes dialogos
-    public GameObject next;
-
     private bool activar;
-    public bool repetir;
     private int aux;    //para comprobar por donde va el dialogo
     private bool sonidoReproducido = false; // Variable para verificar si el sonido ya se ha reproducido
     private GameObject player;
@@ -40,14 +40,6 @@ public class Dialogos : MonoBehaviour
                 dialogoCanvas.SetActive(false);
                 player.GetComponent<CharacterController>().cambiarVelocidad(5);
                 sonidoReproducido = false;
-                if(repetir)
-                {
-                    aux=0;  //Solo añadir esta linea si quiero que la conversacion se repita
-                }
-                if(next!=null)
-                {
-                    next.SetActive(true);
-                }
             }
             else
             {
@@ -56,7 +48,6 @@ public class Dialogos : MonoBehaviour
                 personajeTexto.text = personaje[aux];
                 dialogoTexto.text = dialogo[aux];
                 retratoImagen.sprite = retrato[aux];
-                aux++;
                 if (!sonidoReproducido && audioSource != null && sonidoEntrada != null)
                 {
                     // Reproducir el sonido de entrada si el AudioSource y el AudioClip están configurados
