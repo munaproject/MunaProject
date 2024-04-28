@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Cinemachine;
+using UnityEngine.Rendering.Universal;
 
 public class CharacterController : MonoBehaviourPunCallbacks
 {
@@ -19,6 +20,8 @@ public class CharacterController : MonoBehaviourPunCallbacks
 
     private bool velocidadManual;
     bool usandoLinterna;
+    bool cuerpoLuzActivada;
+    Light2D luzJugador;
 
     // Start is called before the first frame update
     private void Start()
@@ -30,8 +33,11 @@ public class CharacterController : MonoBehaviourPunCallbacks
         velocidad=5;
         velocidadManual=false;
         usandoLinterna=false;
+        cuerpoLuzActivada=false;
 
         view = GetComponent<PhotonView>();
+        luzJugador = GetComponentInChildren<Light2D>();//obtenemos la luz del jugador
+        luzJugador.enabled = false;
 
         EnviarListo();
     }
@@ -87,12 +93,20 @@ public class CharacterController : MonoBehaviourPunCallbacks
 
     void Linterna()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && PhotonNetwork.IsMasterClient)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            usandoLinterna = !usandoLinterna;
-            anim.SetBool("usingLantern", usandoLinterna);
-            view.RPC("ActualizarLinternaEnTodosLosClientes", RpcTarget.All, usandoLinterna);
-    }
+            //Lille enciende la linterna
+            if (PhotonNetwork.IsMasterClient) {
+                usandoLinterna = !usandoLinterna;
+                anim.SetBool("usingLantern", usandoLinterna);
+                view.RPC("ActualizarLinternaEnTodosLosClientes", RpcTarget.All, usandoLinterna);
+
+            } else { //Liv activa su luz
+                cuerpoLuzActivada = !cuerpoLuzActivada;
+                view.RPC("ActualizarLuzCuerpoEnTodosLosClientes", RpcTarget.All, cuerpoLuzActivada);
+
+            }
+        }
 }
 
     [PunRPC]
@@ -100,6 +114,12 @@ public class CharacterController : MonoBehaviourPunCallbacks
     {
         usandoLinterna = nuevoEstadoLinterna;
         anim.SetBool("usingLantern", usandoLinterna);
+        luzJugador.enabled = usandoLinterna;
+    }
+
+    [PunRPC]
+    void ActualizarLuzCuerpoEnTodosLosClientes(bool nuevoEstadoLuzCuerpo) {
+        luzJugador.enabled = nuevoEstadoLuzCuerpo;
     }
 
     public void cambiarVelocidad(int num)
