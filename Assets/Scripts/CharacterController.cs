@@ -23,6 +23,12 @@ public class CharacterController : MonoBehaviourPunCallbacks
     bool cuerpoLuzActivada;
     Light2D luzJugador;
 
+    float anguloJugador;
+    Quaternion rotacionLinterna;
+    int anguloLinterna;
+    Vector3 posicionLinterna;
+    Vector2 offset; //para que la luz se situe segun el jugador y no el mapa
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -38,6 +44,7 @@ public class CharacterController : MonoBehaviourPunCallbacks
         view = GetComponent<PhotonView>();
         luzJugador = GetComponentInChildren<Light2D>();//obtenemos la luz del jugador
         luzJugador.enabled = false;
+        offset = Vector2.zero;
 
         EnviarListo();
     }
@@ -70,6 +77,12 @@ public class CharacterController : MonoBehaviourPunCallbacks
             anim.SetFloat("Movimiento X", move.x);
             anim.SetFloat("Movimiento Y", move.y);
             anim.SetBool("isWalking", true);
+
+            if (PhotonNetwork.IsMasterClient) {
+                anguloJugador = Mathf.Atan2(move.y, move.x) * Mathf.Rad2Deg;
+                rotacionLinterna = Quaternion.Euler(0f, 0f, anguloJugador-90);
+                view.RPC("ColocarPosicionLinterna", RpcTarget.All, rotacionLinterna);
+            }
         }
         else
         {
@@ -89,6 +102,42 @@ public class CharacterController : MonoBehaviourPunCallbacks
         
             rig.MovePosition(transform.position + (Vector3)move.normalized * Time.deltaTime * velocidad);  //Sirve para dejar al personaje mirando en la posicion que queda al parar de andar
                                                                                             //Time.deltaTime sirve para normalizar la velocidad independientemente de los frames
+    }
+
+    [PunRPC]
+    void ColocarPosicionLinterna(Quaternion newRotacionLinterna) {
+        luzJugador.transform.rotation = newRotacionLinterna;
+        anguloLinterna = (int)luzJugador.transform.rotation.eulerAngles.z;
+        
+        //segun el angulo, la luz cambia el lugar de donde se emite
+        posicionLinterna = luzJugador.transform.position;
+        switch (anguloLinterna)
+        {
+            case 0: // arriba
+                offset = new Vector2(-0.5f, -0.72f);
+                break;
+            case 45:
+                offset = new Vector2(-0.25f, -0.78f);
+                break;
+            case 90: // izquierda
+                offset = new Vector2(-0.43f, -0.82f);
+                break;
+            case 135:
+                offset = new Vector2(-0.25f, -0.78f);
+                break;
+            case 180: // abajo
+                offset = new Vector2(0.31f, -0.78f);
+                break;
+            case 225:
+                offset = new Vector2(0.7f, -0.78f);
+                break;
+            case 270: // derecha
+                offset = new Vector2(0.85f, -0.82f);
+                break;
+        }
+        posicionLinterna = (Vector2)transform.position + offset;
+        luzJugador.transform.position = posicionLinterna;
+
     }
 
     void Linterna()
