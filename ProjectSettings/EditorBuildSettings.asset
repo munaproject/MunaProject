@@ -27,8 +27,8 @@ EditorBuildSettings:
     path: Assets/Scenes/CuartoScene.unity
     guid: d773ff011fbdfc941868f8066ed58943
   - enabled: 1
-    path: Assets/Scenes/adasdvfbgnfmg.unity
-    guid: e5e588ede32ec6f438eb8de7d4ce6894
+    path: Assets/Scenes/EntradaPerderEscena.unity
+    guid: 4a029827fa2a1f84cbedf89c779fee2f
   - enabled: 1
     path: Assets/Scenes/MeetingScene.unity
     guid: c7ab49a78ae2ee34b8f29dbab2326ccf
