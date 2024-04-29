@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
 using TMPro;
 using Photon.Pun;
 
@@ -70,19 +71,19 @@ public class Oscuridad : MonoBehaviourPunCallbacks
             // Cambiar la opacidad basado en el tiempo transcurrido
             if (tiempoEmpleado >= primerTiempo && tiempoEmpleado < segundoTiempo)
             {
-                oscuro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.6f);
+                oscuro.GetComponentInChildren<Light2D>().intensity = 0.2f;
                 master.GetComponent<CharacterController>().cambiarVelocidad(2); 
                 player.GetComponent<CharacterController>().cambiarVelocidad(2); 
             }
             else if (tiempoEmpleado >= segundoTiempo && tiempoEmpleado < tiempoMax)
             {
-                oscuro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.75f);
+                oscuro.GetComponentInChildren<Light2D>().intensity = 0.1f;
                 master.GetComponent<CharacterController>().cambiarVelocidad(1); 
                 player.GetComponent<CharacterController>().cambiarVelocidad(1); 
             }
             else if (tiempoEmpleado >= tiempoMax)
             {
-                oscuro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.95f);
+                oscuro.GetComponentInChildren<Light2D>().intensity = 0.05f;
                 master.GetComponent<CharacterController>().cambiarVelocidad(0); 
                 player.GetComponent<CharacterController>().cambiarVelocidad(0); 
                 master.GetComponent<CharacterController>().Perder(); 
