@@ -23,6 +23,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject panelUnirse;
     public GameObject panelEspera;
 
+    [Header("Sig Escena")]
+    public string escena;
 
     void Start() {
         btnJugar = objJugar.GetComponent<Button>();
@@ -102,7 +104,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         Debug.Log("clic jugar");
         //Empezamos el juego
         esMaster=false;
-        PhotonNetwork.LoadLevel("MadreCinematica");
+        PhotonNetwork.LoadLevel(escena);
     }
 
     public override void OnJoinedRoom()
