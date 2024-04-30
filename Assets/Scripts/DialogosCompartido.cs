@@ -39,11 +39,13 @@ public class DialogosCompartido : MonoBehaviour
     private bool sonidoReproducido = false; // Variable para verificar si el sonido ya se ha reproducido
 
     PhotonView view;
+    private bool autodestruir;
     
 
     void Start()
     {
         view = GetComponent<PhotonView>();
+        autodestruir = false;
     }
 
     void Update()
@@ -62,54 +64,52 @@ public class DialogosCompartido : MonoBehaviour
                 }
             break;
             case opcion.colisionando://al tocar, se activa automaticamente
-                if (activar)
+                //despues de ejecutarse una vez, se reasigna la variable para que entre en el switch de 'interactuando'
+                if (activar & aux==0) //se comprueba el aux para que se ejecute solo en el primer dialogo
                 {
-                    if (PhotonNetwork.IsMasterClient) 
-                    {
-                        siguienteDialogo();
-                        view.RPC("siguienteDialogo", RpcTarget.Others);
-                    } else {
-                        view.RPC("siguienteDialogo", RpcTarget.Others);
-                    }
+                    view.RPC("mostrarCanvasDialogo", RpcTarget.All);
+                    autodestruir = true;
+                    modoDeActivacion = opcion.interactuando;
                 }
-                Debug.Log(modoDeActivacion);
-                modoDeActivacion = opcion.interactuando;
-                Debug.Log(modoDeActivacion);
             break;
         }
 
-        
-
     }
-
 
     [PunRPC]
     void siguienteDialogo() {
-        Debug.Log("ejecuta dialogo");
         if(aux >= personaje.Length)
         {
             dialogoCanvas.SetActive(false);
             sonidoReproducido = false;
             master.GetComponent<CharacterController>().cambiarVelocidad(5);
             player.GetComponent<CharacterController>().cambiarVelocidad(5);
-            Destroy(gameObject); //cuando el dialogo termina se autodestruye
+            if (autodestruir) Destroy(gameObject); //cuando el dialogo termina se autodestruye
         }
         else
         {
-            master.GetComponent<CharacterController>().cambiarVelocidad(0); 
-            player.GetComponent<CharacterController>().cambiarVelocidad(0); 
-            dialogoCanvas.SetActive(true);
-            personajeTexto.text = personaje[aux];
-            dialogoTexto.text = dialogo[aux];
-            retratoImagen.sprite = retrato[aux];
-            aux++;
-            if (!sonidoReproducido && audioSource != null && sonidoEntrada != null)
-            {
-                // Reproducir el sonido de entrada si el AudioSource y el AudioClip están configurados
-                audioSource.PlayOneShot(sonidoEntrada);
-                sonidoReproducido = true;
-            }
+
+            mostrarCanvasDialogo();
         }    
+    }
+
+    [PunRPC]
+    void mostrarCanvasDialogo() {
+        
+        dialogoCanvas.SetActive(true);
+        personajeTexto.text = personaje[aux];
+        dialogoTexto.text = dialogo[aux];
+        retratoImagen.sprite = retrato[aux];
+        aux++;
+
+        if (!sonidoReproducido && audioSource != null && sonidoEntrada != null)
+        {
+            // Reproducir el sonido de entrada si el AudioSource y el AudioClip están configurados
+            audioSource.PlayOneShot(sonidoEntrada);
+            sonidoReproducido = true;
+        }
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -119,12 +119,17 @@ public class DialogosCompartido : MonoBehaviour
             activar = true;
             player = GameObject.FindWithTag("Player");
             master = GameObject.FindWithTag("Player");
+            //detenemos a los jugadores si el modo de activacion es colisionando
+            if (modoDeActivacion == opcion.colisionando) {
+                master.GetComponent<CharacterController>().cambiarVelocidad(0); 
+                player.GetComponent<CharacterController>().cambiarVelocidad(0); 
+            }
+            
         }
-        Debug.Log("El jugador colisiona con el dialog");
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        activar = false;
+        if (modoDeActivacion == opcion.interactuando) activar = false;
     }
 }
