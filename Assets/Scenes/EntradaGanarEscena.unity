@@ -432,6 +432,7 @@ MonoBehaviour:
   objetosDesactivar:
   - {fileID: 691350543}
   - {fileID: 420238976}
+  - {fileID: 324313722}
   canvas: {fileID: 186139348}
   director: {fileID: 324313725}
   tiemposDeDetencion:
@@ -499,21 +500,21 @@ PlayableDirector:
   - key: {fileID: 3281151631654943859, guid: 7b018ad486fdc8b4f8af94a4ee59ad5c, type: 2}
     value: {fileID: 186139349}
   - key: {fileID: -1618339124524402143, guid: b6c935803ad2b3e45bb7ebf0afcc853c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 691350542}
   - key: {fileID: 5977147538683783568, guid: b6c935803ad2b3e45bb7ebf0afcc853c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 420238975}
   - key: {fileID: 5343238196969057972, guid: b6c935803ad2b3e45bb7ebf0afcc853c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 802572697}
   - key: {fileID: 834324903741703077, guid: b6c935803ad2b3e45bb7ebf0afcc853c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 186139348}
   - key: {fileID: -4714092073227893166, guid: b6c935803ad2b3e45bb7ebf0afcc853c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 186139352}
   - key: {fileID: 3320590468292620242, guid: b6c935803ad2b3e45bb7ebf0afcc853c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 186139351}
   - key: {fileID: -8764454527883389383, guid: b6c935803ad2b3e45bb7ebf0afcc853c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 186139350}
   - key: {fileID: 3281151631654943859, guid: b6c935803ad2b3e45bb7ebf0afcc853c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 186139349}
   m_ExposedReferences:
     m_References:
     - daa1d238b243ef54aa4c125050a251fa: {fileID: 0}

@@ -432,6 +432,7 @@ MonoBehaviour:
   objetosDesactivar:
   - {fileID: 691350543}
   - {fileID: 420238976}
+  - {fileID: 802572697}
   canvas: {fileID: 186139348}
   director: {fileID: 324313725}
   tiemposDeDetencion:
