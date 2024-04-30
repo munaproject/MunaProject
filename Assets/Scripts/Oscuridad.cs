@@ -32,6 +32,9 @@ public class Oscuridad : MonoBehaviourPunCallbacks
     public GameObject master;
     public GameObject player;
     public GameObject scene;
+    private bool tieneLuz;
+    public float intensidad;
+    public GameObject next;
 
     private bool activar;
     private int aux;    //para comprobar por donde va el dialogo
@@ -42,6 +45,7 @@ public class Oscuridad : MonoBehaviourPunCallbacks
     void Start()
     {
         view = GetComponent<PhotonView>();
+        tieneLuz=false;
     }
 
     // Update is called once per frame
@@ -56,39 +60,33 @@ public class Oscuridad : MonoBehaviourPunCallbacks
             } else {
                 view.RPC("siguienteDialogo", RpcTarget.Others);
             }
-            
         }
 
-        if(activarEvento)
+        if(master.GetComponent<CharacterController>().getLuz() || player.GetComponent<CharacterController>().getLuz())
         {
-            tiempoEmpleado += Time.deltaTime; // Aumentar el tiempo empleado
-            master.GetComponent<CharacterController>().cambiarVelocidad(3); 
-            player.GetComponent<CharacterController>().cambiarVelocidad(3); 
+            tieneLuz=true;
+        }
 
-            float primerTiempo = tiempoMax * 0.33f; // 33% del tiempo máximo
-            float segundoTiempo = tiempoMax * 0.66f; // 66% del tiempo máximo
+        if(activarEvento && !tieneLuz)
+        {
+            if (PhotonNetwork.IsMasterClient) 
+            {
+                evento();
+                view.RPC("evento", RpcTarget.Others);
+            } else {
+                view.RPC("evento", RpcTarget.Others);
+            }
+        }
 
-            // Cambiar la opacidad basado en el tiempo transcurrido
-            if (tiempoEmpleado >= primerTiempo && tiempoEmpleado < segundoTiempo)
+        if(tieneLuz)
+        {
+            activarEvento=false;
+            oscuro.GetComponentInChildren<Light2D>().intensity = intensidad;
+            master.GetComponent<CharacterController>().cambiarVelocidad(5); 
+            player.GetComponent<CharacterController>().cambiarVelocidad(5); 
+            if(next!=null)
             {
-                oscuro.GetComponentInChildren<Light2D>().intensity = 0.2f;
-                master.GetComponent<CharacterController>().cambiarVelocidad(2); 
-                player.GetComponent<CharacterController>().cambiarVelocidad(2); 
-            }
-            else if (tiempoEmpleado >= segundoTiempo && tiempoEmpleado < tiempoMax)
-            {
-                oscuro.GetComponentInChildren<Light2D>().intensity = 0.1f;
-                master.GetComponent<CharacterController>().cambiarVelocidad(1); 
-                player.GetComponent<CharacterController>().cambiarVelocidad(1); 
-            }
-            else if (tiempoEmpleado >= tiempoMax)
-            {
-                oscuro.GetComponentInChildren<Light2D>().intensity = 0.05f;
-                master.GetComponent<CharacterController>().cambiarVelocidad(0); 
-                player.GetComponent<CharacterController>().cambiarVelocidad(0); 
-                master.GetComponent<CharacterController>().Perder(); 
-                player.GetComponent<CharacterController>().Perder(); 
-                Invoke("cambiarEscena", 4f);
+                next.SetActive(true);
             }
         }
     }
@@ -98,6 +96,7 @@ public class Oscuridad : MonoBehaviourPunCallbacks
         if(aux==trigger)
             {
                 oscuro.SetActive(true);
+                oscuro.GetComponentInChildren<Light2D>().intensity = 0.3f;
             }
             if(aux >= personaje.Length)
             {
@@ -126,6 +125,40 @@ public class Oscuridad : MonoBehaviourPunCallbacks
 
     void cambiarEscena() {
         scene.SetActive(true);
+    }
+
+    [PunRPC]
+    void evento()
+    {
+        tiempoEmpleado += Time.deltaTime; // Aumentar el tiempo empleado
+        master.GetComponent<CharacterController>().cambiarVelocidad(3); 
+        player.GetComponent<CharacterController>().cambiarVelocidad(3); 
+
+        float primerTiempo = tiempoMax * 0.33f; // 33% del tiempo máximo
+        float segundoTiempo = tiempoMax * 0.66f; // 66% del tiempo máximo
+
+        // Cambiar la opacidad basado en el tiempo transcurrido
+        if (tiempoEmpleado >= primerTiempo && tiempoEmpleado < segundoTiempo)
+        {
+            oscuro.GetComponentInChildren<Light2D>().intensity = 0.2f;
+            master.GetComponent<CharacterController>().cambiarVelocidad(2); 
+            player.GetComponent<CharacterController>().cambiarVelocidad(2); 
+        }
+        else if (tiempoEmpleado >= segundoTiempo && tiempoEmpleado < tiempoMax)
+        {
+            oscuro.GetComponentInChildren<Light2D>().intensity = 0.1f;
+            master.GetComponent<CharacterController>().cambiarVelocidad(1); 
+            player.GetComponent<CharacterController>().cambiarVelocidad(1); 
+        }
+        else if (tiempoEmpleado >= tiempoMax)
+        {
+            oscuro.GetComponentInChildren<Light2D>().intensity = 0.05f;
+            master.GetComponent<CharacterController>().cambiarVelocidad(0); 
+            player.GetComponent<CharacterController>().cambiarVelocidad(0); 
+            master.GetComponent<CharacterController>().Perder(); 
+            player.GetComponent<CharacterController>().Perder(); 
+            Invoke("cambiarEscena", 4f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

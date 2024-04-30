@@ -23,6 +23,7 @@ public class CharacterController : MonoBehaviourPunCallbacks
     bool cuerpoLuzActivada;
     Light2D luzJugador;
     bool tieneLuz;
+    bool puedeLuz;
 
     float anguloJugador;
     Quaternion rotacionLinterna;
@@ -47,6 +48,7 @@ public class CharacterController : MonoBehaviourPunCallbacks
         luzJugador.enabled = false;
         offset = Vector2.zero;
         tieneLuz = false;
+        puedeLuz = false;
 
         EnviarListo();
     }
@@ -57,10 +59,11 @@ public class CharacterController : MonoBehaviourPunCallbacks
         //el personaje solo se mueve si pertenece al jugador 
         if (view.IsMine) {
             Movimiento();
-            if(tieneLuz)
+            if(puedeLuz)
             {
                 Linterna();
             }
+            anim.SetBool("canUse", puedeLuz);
 
             camera.Priority = 1;
         }
@@ -152,6 +155,7 @@ public class CharacterController : MonoBehaviourPunCallbacks
             //Lille enciende la linterna
             if (PhotonNetwork.IsMasterClient) {
                 usandoLinterna = !usandoLinterna;
+                tieneLuz=usandoLinterna;
                 anim.SetBool("usingLantern", usandoLinterna);
                 view.RPC("ActualizarLinternaEnTodosLosClientes", RpcTarget.All, usandoLinterna);
 
@@ -204,7 +208,12 @@ public class CharacterController : MonoBehaviourPunCallbacks
 
     public void setLuz()
     {
-        tieneLuz=true;
+        puedeLuz=true;
+    }
+
+    public bool getLuz()
+    {
+        return tieneLuz;
     }
 
     [PunRPC]
