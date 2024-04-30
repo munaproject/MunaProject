@@ -9968,7 +9968,8 @@ GameObject:
   - component: {fileID: 1025176857}
   - component: {fileID: 1025176856}
   - component: {fileID: 1025176860}
-  - component: {fileID: 1025176859}
+  - component: {fileID: 1025176861}
+  - component: {fileID: 1025176862}
   m_Layer: 0
   m_Name: Dialogo2
   m_TagString: Untagged
@@ -10148,32 +10149,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1025176859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025176854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogoCanvas: {fileID: 2042781444}
-  personajeTexto: {fileID: 2042781448}
-  dialogoTexto: {fileID: 2042781447}
-  retratoImagen: {fileID: 432899358}
-  personaje:
-  - Liv
-  dialogo:
-  - "\xBFC\xF3mo de grande es este sitio?"
-  retrato:
-  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  audioSource: {fileID: 0}
-  sonidoEntrada: {fileID: 0}
-  next: {fileID: 0}
-  repetir: 0
 --- !u!61 &1025176860
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10219,6 +10194,55 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5829468, y: 0.9308907}
   m_EdgeRadius: 0
+--- !u!114 &1025176861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025176854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8adf7cacd11223a40bbebdb29c0b95cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modoDeActivacion: 1
+  master: {fileID: 53328860779223754, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
+  player: {fileID: 2718953098306020838, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
+  dialogoCanvas: {fileID: 2042781444}
+  personajeTexto: {fileID: 2042781448}
+  dialogoTexto: {fileID: 2042781447}
+  retratoImagen: {fileID: 432899358}
+  personaje:
+  - Liv
+  dialogo:
+  - "\xBFC\xF3mo de grande es este sitio?\r"
+  retrato:
+  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
+  audioSource: {fileID: 0}
+  sonidoEntrada: {fileID: 0}
+--- !u!114 &1025176862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025176854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1035123185
 GameObject:
   m_ObjectHideFlags: 0
@@ -10302,7 +10326,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035123185}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -56246,7 +56270,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988399893}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -56600,7 +56624,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113221595}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
