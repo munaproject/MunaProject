@@ -69,18 +69,11 @@ public class Oscuridad : MonoBehaviourPunCallbacks
 
         if(activarEvento && !tieneLuz)
         {
-            if (PhotonNetwork.IsMasterClient) 
-            {
-                evento();
-                view.RPC("evento", RpcTarget.Others);
-            } else {
-                view.RPC("evento", RpcTarget.Others);
-            }
+            evento();
         }
 
         if(tieneLuz)
         {
-            activarEvento=false;
             oscuro.GetComponentInChildren<Light2D>().intensity = intensidad;
             master.GetComponent<CharacterController>().cambiarVelocidad(5); 
             player.GetComponent<CharacterController>().cambiarVelocidad(5); 
@@ -127,7 +120,6 @@ public class Oscuridad : MonoBehaviourPunCallbacks
         scene.SetActive(true);
     }
 
-    [PunRPC]
     void evento()
     {
         tiempoEmpleado += Time.deltaTime; // Aumentar el tiempo empleado
