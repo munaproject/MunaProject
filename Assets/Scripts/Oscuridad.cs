@@ -162,4 +162,9 @@ public class Oscuridad : MonoBehaviourPunCallbacks
             master = GameObject.FindWithTag("Player");
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        activar = false;
+    }
 }

@@ -6,6 +6,14 @@ using TMPro;
 
 public class Dialogos : MonoBehaviour
 {
+    public opcion modoDeActivacion;
+    public enum opcion
+    {
+        interactuando,
+        colisionando
+        
+    }
+
     //Referencias UI
     [SerializeField] private GameObject dialogoCanvas;
     [SerializeField] private TMP_Text personajeTexto;
@@ -33,37 +41,79 @@ public class Dialogos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Jump") && activar)
+        switch (modoDeActivacion) 
         {
-            if(aux >= personaje.Length)
-            {
-                dialogoCanvas.SetActive(false);
-                player.GetComponent<CharacterController>().cambiarVelocidad(5);
-                sonidoReproducido = false;
-                if(repetir)
+            case opcion.interactuando: //al interactuar con espacio
+                if(Input.GetButtonDown("Jump") && activar)
                 {
-                    aux=0;  //Solo añadir esta linea si quiero que la conversacion se repita
+                    if(aux >= personaje.Length)
+                    {
+                        dialogoCanvas.SetActive(false);
+                        player.GetComponent<CharacterController>().cambiarVelocidad(5);
+                        sonidoReproducido = false;
+                        if(repetir)
+                        {
+                            aux=0;  //Solo añadir esta linea si quiero que la conversacion se repita
+                        }
+                        if(next!=null)
+                        {
+                            next.SetActive(true);
+                        }
+                    }
+                    else
+                    {
+                        player.GetComponent<CharacterController>().cambiarVelocidad(0);
+                        dialogoCanvas.SetActive(true);
+                        personajeTexto.text = personaje[aux];
+                        dialogoTexto.text = dialogo[aux];
+                        retratoImagen.sprite = retrato[aux];
+                        aux++;
+                        if (!sonidoReproducido && audioSource != null && sonidoEntrada != null)
+                        {
+                            // Reproducir el sonido de entrada si el AudioSource y el AudioClip están configurados
+                            audioSource.PlayOneShot(sonidoEntrada);
+                            sonidoReproducido = true;
+                        }
+                    }    
                 }
-                if(next!=null)
+            break;
+            case opcion.colisionando://al tocar, se activa automaticamente
+                if(activar)
                 {
-                    next.SetActive(true);
+                    if(aux >= personaje.Length)
+                    {
+                        dialogoCanvas.SetActive(false);
+                        player.GetComponent<CharacterController>().cambiarVelocidad(5);
+                        sonidoReproducido = false;
+                        if(repetir)
+                        {
+                            aux=0;  //Solo añadir esta linea si quiero que la conversacion se repita
+                        }
+                        if(next!=null)
+                        {
+                            next.SetActive(true);
+                        }
+                    }
+                    else
+                    {
+                        player.GetComponent<CharacterController>().cambiarVelocidad(0);
+                        dialogoCanvas.SetActive(true);
+                        personajeTexto.text = personaje[aux];
+                        dialogoTexto.text = dialogo[aux];
+                        retratoImagen.sprite = retrato[aux];
+                        if(Input.GetButtonDown("Jump"))
+                        {
+                            aux++;
+                        }
+                        if (!sonidoReproducido && audioSource != null && sonidoEntrada != null)
+                        {
+                            // Reproducir el sonido de entrada si el AudioSource y el AudioClip están configurados
+                            audioSource.PlayOneShot(sonidoEntrada);
+                            sonidoReproducido = true;
+                        }
+                    }    
                 }
-            }
-            else
-            {
-                player.GetComponent<CharacterController>().cambiarVelocidad(0);
-                dialogoCanvas.SetActive(true);
-                personajeTexto.text = personaje[aux];
-                dialogoTexto.text = dialogo[aux];
-                retratoImagen.sprite = retrato[aux];
-                aux++;
-                if (!sonidoReproducido && audioSource != null && sonidoEntrada != null)
-                {
-                    // Reproducir el sonido de entrada si el AudioSource y el AudioClip están configurados
-                    audioSource.PlayOneShot(sonidoEntrada);
-                    sonidoReproducido = true;
-                }
-            }    
+            break;
         }
     }
 
@@ -73,11 +123,14 @@ public class Dialogos : MonoBehaviour
         {
             activar = true;
             player = collision.gameObject;
+            if (modoDeActivacion == opcion.colisionando) {
+                player.GetComponent<CharacterController>().cambiarVelocidad(0); 
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        activar = false;
+        if (modoDeActivacion == opcion.interactuando) activar = false;
     }
 }
