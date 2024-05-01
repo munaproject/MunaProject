@@ -6,6 +6,7 @@ using Firebase.Auth;
 using TMPro;
 using System.Threading.Tasks;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 
 public class AuthManager : MonoBehaviour
@@ -34,8 +35,6 @@ public class AuthManager : MonoBehaviour
 
     private void Awake()
     {
-        //StartCoroutine(CheckAndFixDependenciesCoroutine());
-
 
         //Verifica que todas las dependencias necesarias para Firebase estan en el sistema
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
@@ -48,30 +47,11 @@ public class AuthManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Could not resolve all Firebase dependencies: " + dependencyStatus);
+                Debug.LogError("no se resolvieron todas las dependencias: " + dependencyStatus);
             }
         });
 
 
-    }
-
-    private IEnumerator CheckAndFixDependenciesCoroutine()
-    {
-        var checkDependenciesTask = Firebase.FirebaseApp.CheckAndFixDependenciesAsync();
-        yield return new WaitUntil(() => checkDependenciesTask.IsCompleted);
-
-        var dependencyStatus = checkDependenciesTask.Result;
-        if (dependencyStatus == Firebase.DependencyStatus.Available)
-        {
-            Debug.Log($"Firebase: {dependencyStatus} :)");
-            onFirebaseInitialized.Invoke();
-            InitializeFirebase();
-        }
-        else
-        {
-            Debug.LogError(System.String.Format("Could not resolve all Firebase dependencies: {0}", dependencyStatus));
-            // Firebase Unity SDK is not safe to use here.
-        }
     }
 
     private void InitializeFirebase()
@@ -89,9 +69,8 @@ public class AuthManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Firebase auth is not initialized.");
+            Debug.LogError("Firebase auth no inicializado");
         }
-        //StartCoroutine(Login(emailLoginField.text, passwordLoginField.text));
     }
 
     public void btnRegistro()
@@ -108,7 +87,7 @@ public class AuthManager : MonoBehaviour
         if (LoginTask.Exception != null)
         {
             //si hay algun error
-            Debug.LogWarning(message: $"Failed to register task with {LoginTask.Exception}");
+            Debug.LogWarning(message: $"error al registrar {LoginTask.Exception}");
             FirebaseException firebaseEx = LoginTask.Exception.GetBaseException() as FirebaseException;
             AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
 
@@ -119,13 +98,13 @@ public class AuthManager : MonoBehaviour
                     message = "Falta Email";
                     break;
                 case AuthError.MissingPassword:
-                    message = "Falta Contrase�a";
+                    message = "Falta Contraseña";
                     break;
                 case AuthError.WrongPassword:
-                    message = "Contrase�a Incorrecta";
+                    message = "Contraseña Incorrecta";
                     break;
                 case AuthError.InvalidEmail:
-                    message = "Email Inv�lido";
+                    message = "Email Inválido";
                     break;
                 case AuthError.UserNotFound:
                     message = "El usuario no existe";
@@ -137,14 +116,16 @@ public class AuthManager : MonoBehaviour
         }
         else
         {
-            //User is now logged in
-            //Now get the result
+            //login exitoso
+            //imprmimos traza
             User = LoginTask.Result.User;
-            Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
+            Debug.LogFormat("user logado con exito: {0} ({1})", User.DisplayName, User.Email);
 
             //warningLoginText.text = ""; //limpiamos los errores previos
             //confirmLoginText.text = "Logged In";
-            Debug.Log("exito en el inicio se sesion");
+            Debug.Log("exito en el inicio de sesion");
+            SceneManager.LoadScene("Menu");
+
         }
     }
 
@@ -152,8 +133,8 @@ public class AuthManager : MonoBehaviour
     {
         if (passwordRegisterField.text != passwordRegisterVerifyField.text)
         {
-            //warningRegisterText.text = "Password Does Not Match!";
-            Debug.Log("Las contrase�as no coinciden");
+            //warningRegisterText.text = "la contra no coincide";
+            Debug.Log("Las contraseñas no coinciden");
         }
         else
         {
@@ -164,7 +145,7 @@ public class AuthManager : MonoBehaviour
             if (RegisterTask.Exception != null)
             {
                 //si hay algun error
-                Debug.LogWarning(message: $"Failed to register task with {RegisterTask.Exception}");
+                Debug.LogWarning(message: $"error al registrar tarea {RegisterTask.Exception}");
                 FirebaseException firebaseEx = RegisterTask.Exception.GetBaseException() as FirebaseException;
                 AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
 
@@ -175,10 +156,10 @@ public class AuthManager : MonoBehaviour
                         message = "Falta Email";
                         break;
                     case AuthError.MissingPassword:
-                        message = "Falta contrase�a";
+                        message = "Falta contraseña";
                         break;
                     case AuthError.WeakPassword:
-                        message = "Contrase�a d�bil";
+                        message = "Contraseña débil";
                         break;
                     case AuthError.EmailAlreadyInUse:
                         message = "Email ya registrado";
@@ -200,7 +181,7 @@ public class AuthManager : MonoBehaviour
 
                     if (ProfileTask.Exception != null)
                     {
-                        Debug.LogWarning(message: $"Failed to register task with {ProfileTask.Exception}");
+                        Debug.LogWarning(message: $"error al registrar tarea {ProfileTask.Exception}");
                         FirebaseException firebaseEx = ProfileTask.Exception.GetBaseException() as FirebaseException;
                         AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
                         //warningRegisterText.text = "Username Set Failed!";
@@ -212,6 +193,8 @@ public class AuthManager : MonoBehaviour
                         //UIManager.instance.LoginScreen();
                         //warningRegisterText.text = "";
                         Debug.Log("exito en el registro");
+                        //si el usuario se ha registrado con exito, cargamos la escena del menu directamente
+                        SceneManager.LoadScene("Menu");
                     }
                 }
             }
