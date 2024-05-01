@@ -629,7 +629,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.01
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000055b71b392ff75da9
@@ -10547,6 +10547,98 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &1114930443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1114930446}
+  - component: {fileID: 1114930445}
+  - component: {fileID: 1114930444}
+  m_Layer: 0
+  m_Name: Linterna
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1114930444
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114930443}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.4088874, y: -3.625476}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 23.625145, y: 8.250952}
+  m_EdgeRadius: 0
+--- !u!114 &1114930445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114930443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bbe579015f704943837f6f0ccd06657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  master: {fileID: 53328860779223754, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
+  player: {fileID: 2718953098306020838, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
+--- !u!4 &1114930446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114930443}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.3368243, y: 1.5580215, z: 0.0010941015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1242014795
 GameObject:
   m_ObjectHideFlags: 0
@@ -10602,6 +10694,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetosActivar:
   - {fileID: 1883746795}
+  - {fileID: 2018599969}
+  - {fileID: 1114930443}
   objetosDesactivar:
   - {fileID: 2074389306}
   - {fileID: 315370730}
@@ -10613,6 +10707,7 @@ MonoBehaviour:
   - 4.25
   - 5.41
   - 7.38
+  - 8.4333
 --- !u!320 &1242014798
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -10684,6 +10779,8 @@ PlayableDirector:
     value: {fileID: 2074389305}
   - key: {fileID: -3539815977091771201, guid: 3020b9d0e7d845445a0fb05e04d21453, type: 2}
     value: {fileID: 315370729}
+  - key: {fileID: -6831291633144355687, guid: 3020b9d0e7d845445a0fb05e04d21453, type: 2}
+    value: {fileID: 2018599969}
   m_ExposedReferences:
     m_References:
     - daa1d238b243ef54aa4c125050a251fa: {fileID: 0}
@@ -56381,7 +56478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2018599970
 Transform:
   m_ObjectHideFlags: 0
@@ -59956,3 +60053,4 @@ SceneRoots:
   - {fileID: 2042781443}
   - {fileID: 1988399896}
   - {fileID: 1035123189}
+  - {fileID: 1114930446}
