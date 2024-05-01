@@ -12,7 +12,7 @@ public class ControlMenu : MonoBehaviour
 
     public void OnBotonCreditos()
     {
-        SceneManager.LoadScene("Creditos");
+        SceneManager.LoadScene("CreditosScene");
     }
 
     public void OnBotonSalir()
@@ -27,6 +27,6 @@ public class ControlMenu : MonoBehaviour
 
     public void OnBotonInstrucciones()
     {
-        SceneManager.LoadScene("Instrucciones");
+        SceneManager.LoadScene("InstruccionesScene");
     }
 }
