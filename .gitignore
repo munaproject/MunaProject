@@ -63,3 +63,5 @@ crashlytics-build.properties
 
 # Archivo .bundle de firebase... descomprimir despues
 /Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_8_1.bundle
+/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_9_0.bundle
+/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_9_0.so
