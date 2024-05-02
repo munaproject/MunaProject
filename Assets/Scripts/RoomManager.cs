@@ -26,8 +26,18 @@ public class RoomManager : MonoBehaviourPunCallbacks
     [Header("Sig Escena")]
     public string escena;
 
+    //
+    private BbddManager bbdd;
+    //guardamos el id de la ultima room creada
+    //si se le da clic a jugar, se almacenara en la bbdd
+    private string idPartida;
+
     void Start() {
         btnJugar = objJugar.GetComponent<Button>();
+
+        //como el objeto no se destruye entre escenas, 
+        //hay que buscarlo por tipo
+        bbdd = FindObjectOfType<BbddManager>();
     }
 
     void Update() {
@@ -90,6 +100,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         esMaster=true;
         RoomOptions options = new RoomOptions { MaxPlayers = 2 };
         PhotonNetwork.CreateRoom(crearField.text, options);
+        idPartida = crearField.text; //almacenamos el valor en local
         crearField.text = "";
     }
 
@@ -104,6 +115,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
         Debug.Log("clic jugar");
         //Empezamos el juego
         esMaster=false;
+
+        //antes de cambiar la escena, guardamos la partida en la bbdd
+        if (bbdd != null) bbdd.guardarPartidaEnBBDD(idPartida);
+        else Debug.Log("bbdd instancia es null");
         PhotonNetwork.LoadLevel(escena);
     }
 
