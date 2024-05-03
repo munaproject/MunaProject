@@ -7,7 +7,6 @@ public class PartidaUIManager : MonoBehaviour
 {
     RoomManager roomManage;
     BbddManager bbddManage;
-    public GameObject scrollViewContent;
     public GameObject btnCargarPartida;
     public GameObject btnEliminarPartida;
     public TextMeshProUGUI txtCodigo;
@@ -19,7 +18,7 @@ public class PartidaUIManager : MonoBehaviour
         bbddManage = FindObjectOfType<BbddManager>();
         scrollPartidas = FindObjectOfType<LoadAllPartidas>();
 
-        txtCodigo = GetComponentInChildren<TextMeshProUGUI>();
+        //txtCodigo = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void cargarPartida() {

@@ -9,7 +9,7 @@ public class LoadAllPartidas : MonoBehaviour
     public GameObject prefabPartida;//el objecto que se va a cargar
 
     private BbddManager bbdd;
-    List<string> partidas;
+    List<(string ,string)> partidas;
     void Start()
     {
         bbdd = FindObjectOfType<BbddManager>();
@@ -20,15 +20,16 @@ public class LoadAllPartidas : MonoBehaviour
 
     async void loadPartidasAsync() {
         partidas = await bbdd.cargarTodasPartidas();
-        foreach (string code in partidas) {
+        foreach ((string partidaId ,string nombrePartida) data in partidas) {
             GameObject p = (GameObject)Instantiate(prefabPartida);
-            TextMeshProUGUI txtCodigo = p.GetComponentInChildren<TextMeshProUGUI>();
+            TextMeshProUGUI[] textMeshPros = p.GetComponentsInChildren<TextMeshProUGUI>();
             //ponemos el codigo
-            txtCodigo.text = code;
+            textMeshPros[0].text = data.nombrePartida;
+            textMeshPros[1].text = data.partidaId;
 
             p.transform.localScale = transform.root.localScale;//no quitar
             p.transform.SetParent(scrollViewContent.transform);
-            Debug.Log("instanciado: "+code);
+            Debug.Log("instanciado: " + data.partidaId);
         }
     }
 

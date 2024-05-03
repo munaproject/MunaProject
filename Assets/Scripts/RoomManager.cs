@@ -6,6 +6,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
@@ -14,6 +15,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public TMP_InputField unirseField;
     public GameObject objJugar;
     public GameObject objTexto;
+    public GameObject objTextoCode;
     private Button btnJugar;
     private bool esMaster;
 
@@ -32,6 +34,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //guardamos el id de la ultima room creada
     //si se le da clic a jugar, se almacenara en la bbdd
     private string idPartida;
+    private string nombrePartida;
 
     void Start() {
         btnJugar = objJugar.GetComponent<Button>();
@@ -84,7 +87,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void salirEspera() {
         PhotonNetwork.LeaveRoom();
         if (PhotonNetwork.IsMasterClient) {
-            volverPanelCrear();
+            volverPanelElegir();
         } else {
             volverPanelUnirse();
         }
@@ -105,15 +108,21 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public void cargarPartida(string idRoom) {
         RoomOptions options = new RoomOptions { MaxPlayers = 2 };
+        idPartida = idRoom;
         PhotonNetwork.CreateRoom(idRoom, options);
     }
     
-    public void crearRoom() {
+    public async void crearRoom() {
         //Creamos una 'room'
         esMaster=true;
         RoomOptions options = new RoomOptions { MaxPlayers = 2 };
-        PhotonNetwork.CreateRoom(crearField.text, options);
-        idPartida = crearField.text; //almacenamos el valor en local
+        string code = await bbdd.GenerarCode();
+        idPartida = code; //almacenamos el valor en local
+        nombrePartida = crearField.text;
+        Debug.Log(code);
+        Debug.Log(nombrePartida);
+        PhotonNetwork.CreateRoom(code, options);
+        
         crearField.text = "";
     }
 
@@ -130,7 +139,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         esMaster=false;
 
         //antes de cambiar la escena, guardamos la partida en la bbdd
-        if (bbdd != null) bbdd.guardarPartidaEnBBDD(idPartida);
+        if (bbdd != null) bbdd.guardarPartidaEnBBDD(idPartida, nombrePartida);
         else Debug.Log("bbdd instancia es null");
         PhotonNetwork.LoadLevel(escena);
     }
@@ -143,9 +152,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient) {
             objJugar.SetActive(true);
             objTexto.SetActive(false);
+            objTextoCode.SetActive(true);
+            objTextoCode.GetComponent<TextMeshProUGUI>().text = "Código:\n" + idPartida;
         } else {
             objJugar.SetActive(false);
             objTexto.SetActive(true);
+            objTextoCode.SetActive(false);
         }
     }
 

@@ -217,8 +217,6 @@ public class BbddManager : MonoBehaviour
     //metodos bbdd-----------------
     //guardamos las partidas
     private IEnumerator guardarPartidaId(string idPartida) {
-        Debug.Log(idPartida);
-        Debug.Log(User.UserId);
         //var DBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").SetValueAsync(idPartida);
 
         //para que un usuario pueda tener varias partidas---
@@ -227,7 +225,7 @@ public class BbddManager : MonoBehaviour
         //añadimos un nuevo nodo
         //var newPartida = dataPartidasRef.Push().SetValueAsync(idPartida);
         partidaJugandose = idPartida;//al crearse, lo guardamos
-        var newPartida = dataPartidasRef.Child(idPartida).SetValueAsync("null"); //nodo vacio
+        var newPartida = dataPartidasRef.Child(idPartida).SetValueAsync(""); //nodo vacio
  
         yield return new WaitUntil(predicate: () => newPartida.IsCompleted);
 
@@ -238,31 +236,45 @@ public class BbddManager : MonoBehaviour
         }
     }
 
+    private IEnumerator guardarNombrePartida (string idPartida, string nombre) {
+        var DBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).Child("nombre").SetValueAsync(nombre);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
-    public void guardarPartidaEnBBDD(string idPartida) {
+        if (DBTask.Exception != null) {
+            Debug.LogWarning("error al guardar el nombre");
+        } else {
+            Debug.Log("guardado con exito");
+        }
+    }
+
+
+    public void guardarPartidaEnBBDD(string idPartida, string nombre) {
         StartCoroutine(guardarPartidaId(idPartida));
+        StartCoroutine(guardarNombrePartida(idPartida, nombre));
     }
 
     public void guardarDatos() {
         //aqui pondremos los valores que vamos a guardar
     }
 
-    public async Task<List<string>> cargarTodasPartidas() {
+    public async Task<List<(string,string)>> cargarTodasPartidas() {
         // referencias de las partidas al usuario actual
-        var partidasRef = BBDDref.Child("users").Child(User.UserId).Child("partidas");
         //hacemos una snapshot
-        DataSnapshot snapshot = await partidasRef.GetValueAsync();
+        DataSnapshot partidasSnapshot = await BBDDref.Child("users").Child(User.UserId).Child("partidas").GetValueAsync();
 
-        List<string> partidasIds = new List<string>();
+        List<(string, string)> partidasIds = new List<(string, string)>();
         string partidaId;
+        string nombrePartida;
+
         // comprobamos que tiene partidas
-        if (snapshot.Exists)
+        if (partidasSnapshot.Exists)
         {
-            foreach (DataSnapshot childSnapshot in snapshot.Children)
+            foreach (DataSnapshot partidaSnapshot in partidasSnapshot.Children)
             {
-                partidaId = childSnapshot.Key; //esto da el id (nombre del nodo)
-                partidasIds.Add(partidaId);//la ponemos en una lista
-                Debug.Log("Partida ID: " + partidaId);
+                partidaId = partidaSnapshot.Key; //esto da el id (nombre del nodo)
+                nombrePartida = partidaSnapshot.Child("nombre").Value.ToString();
+                partidasIds.Add((partidaId, nombrePartida));//la ponemos en una lista
+                Debug.Log("Partida ID con el snaptshot: " + partidaId);
             }
         }
         else
@@ -283,6 +295,43 @@ public class BbddManager : MonoBehaviour
         } catch(FirebaseException e) {
             Debug.Log("error al borrar el nodo");
         }
+    }
+
+    //contaremos las partidas creadas para generar un id unico
+    public async Task<string> GenerarCode()
+    {
+        // tomamos una referencia de todos los usuarios
+        DataSnapshot usersSnapshot = await BBDDref.Child("users").GetValueAsync();
+        DataSnapshot partidasSnapshot;
+        int totalPartidas = 0;
+        int new_code = 4096; //convertiremos el numero a hexadecimal al retornarlo
+
+        if (!usersSnapshot.Exists)
+        {
+            Debug.Log("no hay usuarios.");
+            return new_code.ToString("X");
+        }
+
+        // por cada usuario, contamos las partidas
+        foreach (DataSnapshot userSnapshot in usersSnapshot.Children)
+        {
+            // obtenemos sus partidas
+            partidasSnapshot = userSnapshot.Child("partidas");
+
+            if (!partidasSnapshot.Exists) //0 partidas
+            {
+                Debug.Log($"no hay partidas guardadas para este usuario: {userSnapshot.Key}");
+                continue;
+            }
+
+            // contamos
+            totalPartidas += (int)partidasSnapshot.ChildrenCount;
+        }
+
+        Debug.Log("nro partidas:" + totalPartidas);
+        new_code += totalPartidas;
+        Debug.Log("cod con hexadecimal: " + new_code.ToString("X"));
+        return new_code.ToString("X");
     }
 
 }
