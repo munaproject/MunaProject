@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Firebase.Database;
+using System;
 
 
 public class BbddManager : MonoBehaviour
@@ -36,6 +37,9 @@ public class BbddManager : MonoBehaviour
 
     //control de la bbdd
     public DatabaseReference BBDDref;
+
+    //guardamos el nombre de la partida que se esta jugando
+    private string partidaJugandose;
 
     private void Awake()
     {
@@ -215,11 +219,19 @@ public class BbddManager : MonoBehaviour
     private IEnumerator guardarPartidaId(string idPartida) {
         Debug.Log(idPartida);
         Debug.Log(User.UserId);
-        var DBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").SetValueAsync(idPartida);
+        //var DBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").SetValueAsync(idPartida);
 
-        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        //para que un usuario pueda tener varias partidas---
+        //hacemos referencia al nodo de las partidas de x user
+        var dataPartidasRef = BBDDref.Child("users").Child(User.UserId).Child("partidas"); 
+        //añadimos un nuevo nodo
+        //var newPartida = dataPartidasRef.Push().SetValueAsync(idPartida);
+        partidaJugandose = idPartida;//al crearse, lo guardamos
+        var newPartida = dataPartidasRef.Child(idPartida).SetValueAsync("null"); //nodo vacio
+ 
+        yield return new WaitUntil(predicate: () => newPartida.IsCompleted);
 
-        if (DBTask.Exception != null) {
+        if (newPartida.Exception != null) {
             Debug.LogWarning("error al guardar");
         } else {
             Debug.Log("guardado con exito");
@@ -228,12 +240,49 @@ public class BbddManager : MonoBehaviour
 
 
     public void guardarPartidaEnBBDD(string idPartida) {
-        if (BBDDref != null) StartCoroutine(guardarPartidaId(idPartida));
-        else Debug.Log("la referencia es nula...");
+        StartCoroutine(guardarPartidaId(idPartida));
     }
 
     public void guardarDatos() {
         //aqui pondremos los valores que vamos a guardar
+    }
+
+    public async Task<List<string>> cargarTodasPartidas() {
+        // referencias de las partidas al usuario actual
+        var partidasRef = BBDDref.Child("users").Child(User.UserId).Child("partidas");
+        //hacemos una snapshot
+        DataSnapshot snapshot = await partidasRef.GetValueAsync();
+
+        List<string> partidasIds = new List<string>();
+        string partidaId;
+        // comprobamos que tiene partidas
+        if (snapshot.Exists)
+        {
+            foreach (DataSnapshot childSnapshot in snapshot.Children)
+            {
+                partidaId = childSnapshot.Key; //esto da el id (nombre del nodo)
+                partidasIds.Add(partidaId);//la ponemos en una lista
+                Debug.Log("Partida ID: " + partidaId);
+            }
+        }
+        else
+        {
+            Debug.Log("No partidas found for the current user.");
+        }
+
+        return partidasIds;//devolvemos la lista
+    }
+
+    public async void eliminarPartida(string idPartida) {
+        //hacemos una referencia al nodo
+        var partidaRef = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida);
+        //y borramos
+        try {
+            await partidaRef.RemoveValueAsync();
+            Debug.Log("nodo borrado con exito");
+        } catch(FirebaseException e) {
+            Debug.Log("error al borrar el nodo");
+        }
     }
 
 }

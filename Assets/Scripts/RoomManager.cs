@@ -22,6 +22,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject panelCrear;
     public GameObject panelUnirse;
     public GameObject panelEspera;
+    public GameObject panelCargarPartida;
 
     [Header("Sig Escena")]
     public string escena;
@@ -61,7 +62,13 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void verVentanaEspera() {
         panelCrear.SetActive(false);
         panelUnirse.SetActive(false);
+        panelCargarPartida.SetActive(false);
         panelEspera.SetActive(true);
+    }
+
+    public void verVentanaContinuar() {
+        panelElegir.SetActive(false);
+        panelCargarPartida.SetActive(true);
     }
 
     public void volverPanelUnirse() {
@@ -86,6 +93,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void volverPanelElegir() {
         panelCrear.SetActive(false);
         panelUnirse.SetActive(false);
+        panelCargarPartida.SetActive(false);
         panelElegir.SetActive(true);
     }
 
@@ -93,6 +101,11 @@ public class RoomManager : MonoBehaviourPunCallbacks
         //PhotonNetwork.LeaveRoom();
         //PhotonNetwork.LeaveLobby();
         PhotonNetwork.Disconnect();
+    }
+
+    public void cargarPartida(string idRoom) {
+        RoomOptions options = new RoomOptions { MaxPlayers = 2 };
+        PhotonNetwork.CreateRoom(idRoom, options);
     }
     
     public void crearRoom() {
