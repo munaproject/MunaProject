@@ -36,12 +36,15 @@ public class RoomManager : MonoBehaviourPunCallbacks
     private string idPartida;
     private string nombrePartida;
 
+    private bool esNuevaPartida;
+
     void Start() {
         btnJugar = objJugar.GetComponent<Button>();
 
         //como el objeto no se destruye entre escenas, 
         //hay que buscarlo por tipo
         bbdd = FindObjectOfType<BbddManager>();
+        esNuevaPartida = false;
     }
 
     void Update() {
@@ -72,6 +75,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void verVentanaContinuar() {
         panelElegir.SetActive(false);
         panelCargarPartida.SetActive(true);
+        esNuevaPartida = false;
     }
 
     public void volverPanelUnirse() {
@@ -82,6 +86,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void volverPanelCrear() {
         panelEspera.SetActive(false);
         panelCrear.SetActive(true);
+        esNuevaPartida = true;
     }
 
     public void salirEspera() {
@@ -139,8 +144,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
         esMaster=false;
 
         //antes de cambiar la escena, guardamos la partida en la bbdd
-        if (bbdd != null) bbdd.guardarPartidaEnBBDD(idPartida, nombrePartida);
-        else Debug.Log("bbdd instancia es null");
+        //solo si la partida no existia antes
+        if (esNuevaPartida) bbdd.guardarPartidaEnBBDD(idPartida, nombrePartida);
         PhotonNetwork.LoadLevel(escena);
     }
 
