@@ -58,6 +58,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void verVentanaCrear() {
         panelElegir.SetActive(false);
         panelCrear.SetActive(true);
+        esNuevaPartida = true;
     }
 
     public void verVentanaUnirse() {
@@ -86,7 +87,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void volverPanelCrear() {
         panelEspera.SetActive(false);
         panelCrear.SetActive(true);
-        esNuevaPartida = true;
     }
 
     public void salirEspera() {

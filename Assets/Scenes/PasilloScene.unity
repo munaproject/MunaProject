@@ -7560,6 +7560,14 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9122680216128828446, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122680216128828446, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9127,7 +9135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &438085385
 Transform:
   m_ObjectHideFlags: 0
@@ -10068,7 +10076,6 @@ GameObject:
   - component: {fileID: 1025176855}
   - component: {fileID: 1025176858}
   - component: {fileID: 1025176857}
-  - component: {fileID: 1025176856}
   - component: {fileID: 1025176860}
   - component: {fileID: 1025176861}
   - component: {fileID: 1025176862}
@@ -10078,7 +10085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1025176855
 Transform:
   m_ObjectHideFlags: 0
@@ -10094,42 +10101,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1463905090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!19719996 &1025176856
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025176854}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
 --- !u!483693784 &1025176857
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -10317,9 +10288,12 @@ MonoBehaviour:
   retratoImagen: {fileID: 432899358}
   personaje:
   - Liv
+  - Liv
   dialogo:
   - "\xBFC\xF3mo de grande es este sitio?\r"
+  - "Este pasillo parece interminable.\r"
   retrato:
+  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
   - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
   audioSource: {fileID: 0}
   sonidoEntrada: {fileID: 0}
@@ -10774,6 +10748,8 @@ MonoBehaviour:
   - {fileID: 1883746795}
   - {fileID: 2018599969}
   - {fileID: 1114930443}
+  - {fileID: 438085384}
+  - {fileID: 1025176854}
   objetosDesactivar:
   - {fileID: 2074389306}
   - {fileID: 315370730}
@@ -10903,7 +10879,7 @@ Transform:
   m_GameObject: {fileID: 1291886892}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.007091324, w: 0.99997485}
-  m_LocalPosition: {x: -5.12, y: 0.64, z: 0}
+  m_LocalPosition: {x: -4.9, y: 0.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56965,6 +56941,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 53328860779223754, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
+      propertyPath: m_Name
+      value: LilleMulti
+      objectReference: {fileID: 0}
     - target: {fileID: 4407902796658893433, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -57004,10 +56984,6 @@ PrefabInstance:
     - target: {fileID: 4407902796658893433, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 53328860779223754, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
-      propertyPath: m_Name
-      value: LilleMulti
       objectReference: {fileID: 0}
     - target: {fileID: 6247508292308858357, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
       propertyPath: m_LocalPosition.x

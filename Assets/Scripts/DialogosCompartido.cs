@@ -18,6 +18,8 @@ public class DialogosCompartido : MonoBehaviour
     public GameObject master;
     public GameObject player;
 
+    private CharacterController[] personajes;
+
     //Referencias UI
     [SerializeField] private GameObject dialogoCanvas;
     [SerializeField] private TMP_Text personajeTexto;
@@ -46,6 +48,8 @@ public class DialogosCompartido : MonoBehaviour
     {
         view = GetComponent<PhotonView>();
         autodestruir = false;
+
+        personajes = FindObjectsOfType<CharacterController>();
     }
 
     void Update()
@@ -82,8 +86,10 @@ public class DialogosCompartido : MonoBehaviour
         {
             dialogoCanvas.SetActive(false);
             sonidoReproducido = false;
-            master.GetComponent<CharacterController>().cambiarVelocidad(5);
-            player.GetComponent<CharacterController>().cambiarVelocidad(5);
+            //master.GetComponent<CharacterController>().cambiarVelocidad(5);
+            //player.GetComponent<CharacterController>().cambiarVelocidad(5);
+            personajes[0].cambiarVelocidad(5);
+            personajes[1].cambiarVelocidad(5);
             if (autodestruir) Destroy(gameObject); //cuando el dialogo termina se autodestruye
         }
         else
@@ -121,8 +127,10 @@ public class DialogosCompartido : MonoBehaviour
             master = GameObject.FindWithTag("Player");
             //detenemos a los jugadores si el modo de activacion es colisionando
             if (modoDeActivacion == opcion.colisionando) {
-                master.GetComponent<CharacterController>().cambiarVelocidad(0); 
-                player.GetComponent<CharacterController>().cambiarVelocidad(0); 
+                //master.GetComponent<CharacterController>().cambiarVelocidad(0); 
+                //player.GetComponent<CharacterController>().cambiarVelocidad(0);
+                personajes[0].cambiarVelocidad(0);
+                personajes[1].cambiarVelocidad(0); 
             }
             
         }
