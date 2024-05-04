@@ -102,6 +102,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         panelCrear.SetActive(false);
         panelUnirse.SetActive(false);
         panelCargarPartida.SetActive(false);
+        panelEspera.SetActive(false);
         panelElegir.SetActive(true);
     }
 
