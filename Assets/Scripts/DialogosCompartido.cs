@@ -15,8 +15,8 @@ public class DialogosCompartido : MonoBehaviour
         
     }
 
-    public GameObject master;
-    public GameObject player;
+    //public GameObject master;
+    //public GameObject player;
 
     private CharacterController[] personajes;
 
@@ -123,8 +123,8 @@ public class DialogosCompartido : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             activar = true;
-            player = GameObject.FindWithTag("Player");
-            master = GameObject.FindWithTag("Player");
+            //player = GameObject.FindWithTag("Player");
+            //master = GameObject.FindWithTag("Player");
             //detenemos a los jugadores si el modo de activacion es colisionando
             if (modoDeActivacion == opcion.colisionando) {
                 //master.GetComponent<CharacterController>().cambiarVelocidad(0); 
