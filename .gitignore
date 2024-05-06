@@ -62,6 +62,6 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Archivo .bundle de firebase... descomprimir despues
-/Assets/Firebase/
-/Assets/ExternalDependencyManager/
-/Assets/Editor Default Resources/
+/[Aa]ssets/Firebase/
+/[Aa]ssets/ExternalDependencyManager/
+/[Aa]ssets/Editor Default Resources/
