@@ -49,6 +49,8 @@ MonoBehaviour:
   - ColocarPosicionLinterna
   - evento
   - mostrarCanvasDialogo
+  - mostrarCanvas
+  - siguienteObj
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
