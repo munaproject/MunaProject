@@ -331,7 +331,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1453459665
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -342,7 +342,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &7127257394989717255
 Animator:
   serializedVersion: 5
@@ -527,9 +527,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0025202632, y: -0.46980262}
-  m_Size: {x: 0.3632115, y: 0.3973279}
-  m_Direction: 0
+  m_Offset: {x: -0.0014909948, y: 0.1308515}
+  m_Size: {x: 0.56361157, y: 0.18401878}
+  m_Direction: 1
 --- !u!82 &5197164234832746405
 AudioSource:
   m_ObjectHideFlags: 0

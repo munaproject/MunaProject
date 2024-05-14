@@ -1,0 +1,778 @@
+fileFormatVersion: 2
+guid: 758eb2a96b7829943b837f25b0aff8ba
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: emptybookshelves1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -12}
+        - {x: -32, y: -20}
+        - {x: 32, y: -20}
+        - {x: 32, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28474f092a1a7ee438eff1a7900b61e7
+      internalID: 1391696150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 152
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -12}
+        - {x: -32, y: -20}
+        - {x: 32, y: -20}
+        - {x: 32, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73e401bdd80fa840a083c86aa581fad
+      internalID: -434907143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_45
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 152
+        width: 64
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d25289545cda14f9deaea3581ad506
+      internalID: 160716510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 104
+        width: 16
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -12}
+        - {x: -8, y: -20}
+        - {x: 8, y: -20}
+        - {x: 8, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9094af57519fe045987c9efc5f80aeb
+      internalID: -895680972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_83
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 104
+        width: 34
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -17, y: -12}
+        - {x: -17, y: -20}
+        - {x: 17, y: -20}
+        - {x: 17, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e8de64633816e438c2b9957e05545a
+      internalID: 1944403376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_88
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 104
+        width: 16
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -12}
+        - {x: -8, y: -20}
+        - {x: 8, y: -20}
+        - {x: 8, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d26e6e89e1514864a8ece40d4846d40f
+      internalID: 1911679337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_91
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 104
+        width: 36
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -18, y: -12}
+        - {x: -18, y: -20}
+        - {x: 18, y: -20}
+        - {x: 18, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f82dc9d288e66241a295c6247a3f8f2
+      internalID: -271068240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_152
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -12}
+        - {x: -32, y: -20}
+        - {x: 32, y: -20}
+        - {x: 32, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d97986b9c3d10e4590738776e71d08b
+      internalID: 438894547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_231
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 56
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -12}
+        - {x: -32, y: -20}
+        - {x: 32, y: -20}
+        - {x: 32, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdccc7f1a31bbad448d9549eee48f6e6
+      internalID: -1292655300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_232
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 16
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -12}
+        - {x: -8, y: -20}
+        - {x: 8, y: -20}
+        - {x: 8, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc7065947d3e5e4cac2ea9391db7c9c
+      internalID: 1029365091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_243
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 8
+        width: 36
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -18, y: -12}
+        - {x: -18, y: -20}
+        - {x: 18, y: -20}
+        - {x: 18, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be269cbfcd09294493c7ac3a92a51af
+      internalID: 1315479819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_294
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 8
+        width: 36
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -18, y: -12}
+        - {x: -18, y: -20}
+        - {x: 18, y: -20}
+        - {x: 18, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5ee0b30c47bcc4aa460691a31686eb
+      internalID: -1824645398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emptybookshelves1_297
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 8
+        width: 16
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -12}
+        - {x: -8, y: -20}
+        - {x: 8, y: -20}
+        - {x: 8, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2336736088d4c4da435219bc14f4a5
+      internalID: 1665793593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      emptybookshelves1_0: 1391696150
+      emptybookshelves1_1: 120911805
+      emptybookshelves1_10: 2041263545
+      emptybookshelves1_100: 2107667017
+      emptybookshelves1_101: 1882208774
+      emptybookshelves1_102: 126604357
+      emptybookshelves1_103: 1967879184
+      emptybookshelves1_104: 195111825
+      emptybookshelves1_105: 377376033
+      emptybookshelves1_106: -394371459
+      emptybookshelves1_107: -1580007494
+      emptybookshelves1_108: 1450817296
+      emptybookshelves1_109: 314513658
+      emptybookshelves1_11: 1980963925
+      emptybookshelves1_110: 1492333080
+      emptybookshelves1_111: -1152154198
+      emptybookshelves1_112: 330185930
+      emptybookshelves1_113: -739497046
+      emptybookshelves1_114: 1137564423
+      emptybookshelves1_115: 462541841
+      emptybookshelves1_116: 1803509824
+      emptybookshelves1_117: -1846279049
+      emptybookshelves1_118: 1255072090
+      emptybookshelves1_119: 1491571178
+      emptybookshelves1_12: 1603773652
+      emptybookshelves1_120: 1233887562
+      emptybookshelves1_121: 1915438848
+      emptybookshelves1_122: 753548914
+      emptybookshelves1_123: 1347863724
+      emptybookshelves1_124: 2049367792
+      emptybookshelves1_125: -27128295
+      emptybookshelves1_126: -1011235717
+      emptybookshelves1_127: 1794590433
+      emptybookshelves1_128: 1488676209
+      emptybookshelves1_129: -1990381561
+      emptybookshelves1_13: 1596703407
+      emptybookshelves1_130: 1798379030
+      emptybookshelves1_131: -2593971
+      emptybookshelves1_132: 732570045
+      emptybookshelves1_133: -842492467
+      emptybookshelves1_134: 408318155
+      emptybookshelves1_135: 1936847269
+      emptybookshelves1_136: -2131966083
+      emptybookshelves1_137: -1402768051
+      emptybookshelves1_138: 741959499
+      emptybookshelves1_139: -321244733
+      emptybookshelves1_14: -696468621
+      emptybookshelves1_140: -2050937823
+      emptybookshelves1_141: 678746712
+      emptybookshelves1_142: 1720357250
+      emptybookshelves1_143: -764714704
+      emptybookshelves1_144: -1186544688
+      emptybookshelves1_145: 1714292778
+      emptybookshelves1_146: 505811301
+      emptybookshelves1_147: -664122533
+      emptybookshelves1_148: 301631379
+      emptybookshelves1_149: 543399668
+      emptybookshelves1_15: -434907143
+      emptybookshelves1_150: -1776314147
+      emptybookshelves1_151: -1257415031
+      emptybookshelves1_152: 438894547
+      emptybookshelves1_153: -1031818243
+      emptybookshelves1_154: -732299006
+      emptybookshelves1_155: -1937885581
+      emptybookshelves1_156: -1878633331
+      emptybookshelves1_157: 1572604476
+      emptybookshelves1_158: 946173304
+      emptybookshelves1_159: -584154993
+      emptybookshelves1_16: -1525381829
+      emptybookshelves1_160: 44693351
+      emptybookshelves1_161: 604339829
+      emptybookshelves1_162: 951221501
+      emptybookshelves1_163: 1188530006
+      emptybookshelves1_164: -663126882
+      emptybookshelves1_165: 1662144727
+      emptybookshelves1_166: -2011421803
+      emptybookshelves1_167: 1330217774
+      emptybookshelves1_168: 629720046
+      emptybookshelves1_169: -231766168
+      emptybookshelves1_17: 1558129742
+      emptybookshelves1_170: -646840
+      emptybookshelves1_171: -161610437
+      emptybookshelves1_172: 1720476528
+      emptybookshelves1_173: 853575070
+      emptybookshelves1_174: 935908561
+      emptybookshelves1_175: -576836469
+      emptybookshelves1_176: 2129511038
+      emptybookshelves1_177: -611262497
+      emptybookshelves1_178: -588032606
+      emptybookshelves1_179: -468641281
+      emptybookshelves1_18: -1151246223
+      emptybookshelves1_180: -1844571451
+      emptybookshelves1_181: -1813051652
+      emptybookshelves1_182: 1270154306
+      emptybookshelves1_183: -1153076155
+      emptybookshelves1_184: 1637176842
+      emptybookshelves1_185: 477857985
+      emptybookshelves1_186: 1251897559
+      emptybookshelves1_187: 1369086563
+      emptybookshelves1_188: -2051359726
+      emptybookshelves1_189: -1470277606
+      emptybookshelves1_19: 1452352999
+      emptybookshelves1_190: -1883291757
+      emptybookshelves1_191: 1681226862
+      emptybookshelves1_192: 1088403845
+      emptybookshelves1_193: 1295344308
+      emptybookshelves1_194: -625098500
+      emptybookshelves1_195: 301737721
+      emptybookshelves1_196: -1781862889
+      emptybookshelves1_197: 1201662785
+      emptybookshelves1_198: -94473388
+      emptybookshelves1_199: -210858135
+      emptybookshelves1_2: -194882741
+      emptybookshelves1_20: -406008316
+      emptybookshelves1_200: -1997382901
+      emptybookshelves1_201: 649825444
+      emptybookshelves1_202: 579914130
+      emptybookshelves1_203: 512522155
+      emptybookshelves1_204: 1098094101
+      emptybookshelves1_205: -248122332
+      emptybookshelves1_206: 2131147777
+      emptybookshelves1_207: 1047245774
+      emptybookshelves1_208: -1038380134
+      emptybookshelves1_209: 1618263927
+      emptybookshelves1_21: -73334998
+      emptybookshelves1_210: -1531259424
+      emptybookshelves1_211: 1447409738
+      emptybookshelves1_212: -405368134
+      emptybookshelves1_213: 2103863707
+      emptybookshelves1_214: 803374454
+      emptybookshelves1_215: -1895804768
+      emptybookshelves1_216: 425521794
+      emptybookshelves1_217: 1114904932
+      emptybookshelves1_218: -1603278279
+      emptybookshelves1_219: -1520890196
+      emptybookshelves1_22: 1920649639
+      emptybookshelves1_220: -902525932
+      emptybookshelves1_221: -15674923
+      emptybookshelves1_222: -605439489
+      emptybookshelves1_223: -49934627
+      emptybookshelves1_224: -523800568
+      emptybookshelves1_225: -228715004
+      emptybookshelves1_226: -1109621270
+      emptybookshelves1_227: -1767934093
+      emptybookshelves1_228: 1072639715
+      emptybookshelves1_229: 1835193328
+      emptybookshelves1_23: 2097773955
+      emptybookshelves1_230: 692911508
+      emptybookshelves1_231: -1292655300
+      emptybookshelves1_232: 1029365091
+      emptybookshelves1_233: -1093245388
+      emptybookshelves1_234: -1667167432
+      emptybookshelves1_235: -1906293076
+      emptybookshelves1_236: 556157962
+      emptybookshelves1_237: -1019400729
+      emptybookshelves1_238: 382649655
+      emptybookshelves1_239: -477018647
+      emptybookshelves1_24: -1870815204
+      emptybookshelves1_240: -581296804
+      emptybookshelves1_241: -97968795
+      emptybookshelves1_242: 2062666850
+      emptybookshelves1_243: 1315479819
+      emptybookshelves1_244: 1169847065
+      emptybookshelves1_245: 2078203100
+      emptybookshelves1_246: 1828978311
+      emptybookshelves1_247: 893052285
+      emptybookshelves1_248: -174040099
+      emptybookshelves1_249: -960333994
+      emptybookshelves1_25: 1722016926
+      emptybookshelves1_250: 1089454087
+      emptybookshelves1_251: 667841771
+      emptybookshelves1_252: 1953155530
+      emptybookshelves1_253: -2132958869
+      emptybookshelves1_254: -697588927
+      emptybookshelves1_255: -335611210
+      emptybookshelves1_256: -742763418
+      emptybookshelves1_257: -416636683
+      emptybookshelves1_258: -165556285
+      emptybookshelves1_259: 604283785
+      emptybookshelves1_26: 1400485393
+      emptybookshelves1_260: 275212202
+      emptybookshelves1_261: -942194262
+      emptybookshelves1_262: -1985158172
+      emptybookshelves1_263: -1268039367
+      emptybookshelves1_264: 876769378
+      emptybookshelves1_265: 2072840166
+      emptybookshelves1_266: 1294025849
+      emptybookshelves1_267: -2146135527
+      emptybookshelves1_268: -2085089523
+      emptybookshelves1_269: 1273222914
+      emptybookshelves1_27: -1093365764
+      emptybookshelves1_270: -2040867411
+      emptybookshelves1_271: -843761310
+      emptybookshelves1_272: -1000651887
+      emptybookshelves1_273: -621375407
+      emptybookshelves1_274: -278106992
+      emptybookshelves1_275: 11977020
+      emptybookshelves1_276: -659058635
+      emptybookshelves1_277: 1998018942
+      emptybookshelves1_278: -221777036
+      emptybookshelves1_279: 533669199
+      emptybookshelves1_28: 1073964728
+      emptybookshelves1_280: -1598539191
+      emptybookshelves1_281: -1257795066
+      emptybookshelves1_282: 867240395
+      emptybookshelves1_283: 1435717804
+      emptybookshelves1_284: -2065229361
+      emptybookshelves1_285: -1155687352
+      emptybookshelves1_286: 1512046679
+      emptybookshelves1_287: 335063378
+      emptybookshelves1_288: 2146800746
+      emptybookshelves1_289: 1828654906
+      emptybookshelves1_29: 507524123
+      emptybookshelves1_290: -472693993
+      emptybookshelves1_291: 350800346
+      emptybookshelves1_292: 2029204694
+      emptybookshelves1_293: -1908366694
+      emptybookshelves1_294: -1824645398
+      emptybookshelves1_295: -1774592040
+      emptybookshelves1_296: 145761481
+      emptybookshelves1_297: 1665793593
+      emptybookshelves1_298: -1572471660
+      emptybookshelves1_299: -304642717
+      emptybookshelves1_3: -166568468
+      emptybookshelves1_30: 838121199
+      emptybookshelves1_300: 1124402389
+      emptybookshelves1_301: -1061965286
+      emptybookshelves1_302: -2136728488
+      emptybookshelves1_303: -8080777
+      emptybookshelves1_31: 2102830979
+      emptybookshelves1_32: 52411152
+      emptybookshelves1_33: 273134816
+      emptybookshelves1_34: -1402627720
+      emptybookshelves1_35: -2068661141
+      emptybookshelves1_36: 1779198834
+      emptybookshelves1_37: 103837904
+      emptybookshelves1_38: -96978496
+      emptybookshelves1_39: 2129794453
+      emptybookshelves1_4: -134193670
+      emptybookshelves1_40: -1577589983
+      emptybookshelves1_41: 2094461460
+      emptybookshelves1_42: -1840622357
+      emptybookshelves1_43: -713494622
+      emptybookshelves1_44: -1921743366
+      emptybookshelves1_45: 160716510
+      emptybookshelves1_46: 1044731424
+      emptybookshelves1_47: 1688093019
+      emptybookshelves1_48: 97255594
+      emptybookshelves1_49: 1272702907
+      emptybookshelves1_5: -804098908
+      emptybookshelves1_50: -1783656685
+      emptybookshelves1_51: -1142147357
+      emptybookshelves1_52: 1219681880
+      emptybookshelves1_53: 603402936
+      emptybookshelves1_54: 1997984478
+      emptybookshelves1_55: -285299238
+      emptybookshelves1_56: -93270243
+      emptybookshelves1_57: -72801641
+      emptybookshelves1_58: -1168429953
+      emptybookshelves1_59: -1981624463
+      emptybookshelves1_6: -62037850
+      emptybookshelves1_60: -1871075582
+      emptybookshelves1_61: 1981322683
+      emptybookshelves1_62: 2037204451
+      emptybookshelves1_63: 70936259
+      emptybookshelves1_64: 2117318588
+      emptybookshelves1_65: 1708594085
+      emptybookshelves1_66: 915829955
+      emptybookshelves1_67: -1838707397
+      emptybookshelves1_68: -301753180
+      emptybookshelves1_69: -223013324
+      emptybookshelves1_7: 1238641017
+      emptybookshelves1_70: 1124699602
+      emptybookshelves1_71: 951615206
+      emptybookshelves1_72: 630387884
+      emptybookshelves1_73: 235076483
+      emptybookshelves1_74: -661387246
+      emptybookshelves1_75: 1934833505
+      emptybookshelves1_76: 1307291494
+      emptybookshelves1_77: -1917595317
+      emptybookshelves1_78: -1936976190
+      emptybookshelves1_79: 2087786394
+      emptybookshelves1_8: -1991653400
+      emptybookshelves1_80: -792434907
+      emptybookshelves1_81: -895680972
+      emptybookshelves1_82: -790027997
+      emptybookshelves1_83: 1944403376
+      emptybookshelves1_84: -1094544357
+      emptybookshelves1_85: -1933162731
+      emptybookshelves1_86: -600419678
+      emptybookshelves1_87: -638543528
+      emptybookshelves1_88: 1911679337
+      emptybookshelves1_89: -4380715
+      emptybookshelves1_9: -912812754
+      emptybookshelves1_90: 184100328
+      emptybookshelves1_91: -271068240
+      emptybookshelves1_92: -2032310161
+      emptybookshelves1_93: 54102483
+      emptybookshelves1_94: 11442326
+      emptybookshelves1_95: -1729451066
+      emptybookshelves1_96: 169045718
+      emptybookshelves1_97: -816836274
+      emptybookshelves1_98: 984509508
+      emptybookshelves1_99: 2141735278
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

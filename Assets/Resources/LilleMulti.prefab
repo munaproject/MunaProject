@@ -96,7 +96,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &3386126407951417739
 Animator:
   serializedVersion: 5
@@ -302,9 +302,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0061042905, y: -0.9399472}
-  m_Size: {x: 0.66659534, y: 0.6851436}
-  m_Direction: 0
+  m_Offset: {x: -0.0036258597, y: 0.08732162}
+  m_Size: {x: 0.61683017, y: 0.17039557}
+  m_Direction: 1
 --- !u!82 &6468076479295297242
 AudioSource:
   m_ObjectHideFlags: 0

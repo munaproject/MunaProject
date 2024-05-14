@@ -1,0 +1,758 @@
+fileFormatVersion: 2
+guid: 06138cac14411fe418d40a92f83e2edb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: filledbookshelves_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -9}
+        - {x: -32, y: -20}
+        - {x: 32, y: -20}
+        - {x: 32, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a782941f2969f124f8596d193d1e3a9e
+      internalID: -1532370768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: filledbookshelves_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 152
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -9}
+        - {x: -32, y: -20}
+        - {x: 32, y: -20}
+        - {x: 31, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99214ee96f44fef419c7cf65699bfa21
+      internalID: 1611530456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: filledbookshelves_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 104
+        width: 16
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -9}
+        - {x: -8, y: -20}
+        - {x: 8, y: -20}
+        - {x: 8, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e825ba834b933f418893e33a47045db
+      internalID: -1547271902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: filledbookshelves_83
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 104
+        width: 36
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -18, y: -9}
+        - {x: -18, y: -20}
+        - {x: 18, y: -20}
+        - {x: 18, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a134de686ca4c48b8f5362f53cdcf5
+      internalID: -1178589161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: filledbookshelves_88
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 104
+        width: 16
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -9}
+        - {x: -8, y: -20}
+        - {x: 8, y: -20}
+        - {x: 8, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b520d56be47a440adfc3f4151e1181
+      internalID: -1019861991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: filledbookshelves_91
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 104
+        width: 36
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -18, y: -9}
+        - {x: -18, y: -20}
+        - {x: 18, y: -20}
+        - {x: 18, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85eeccf0d036c7346bf3fd84ae7436ee
+      internalID: -1984858511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: filledbookshelves_152
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -9}
+        - {x: -32, y: -20}
+        - {x: 32, y: -20}
+        - {x: 32, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45037235c273c2446ab7ba1b05b307da
+      internalID: 1438076230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: filledbookshelves_160
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 56
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -9}
+        - {x: -32, y: -20}
+        - {x: 32, y: -20}
+        - {x: 32, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8397a1f9cb0db4386e503d4dd42340
+      internalID: 414186772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: filledbookshelves_232
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 16
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -9}
+        - {x: -8, y: -20}
+        - {x: 8, y: -20}
+        - {x: 8, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b80407dd0bffdf45be162bd195aced5
+      internalID: 1757903914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: filledbookshelves_235
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 8
+        width: 36
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -18, y: -9}
+        - {x: -18, y: -20}
+        - {x: 18, y: -20}
+        - {x: 18, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ed12fdb036363408d28af92e1e450f
+      internalID: 1077507104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: filledbookshelves_240
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 8
+        width: 16
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -9}
+        - {x: -8, y: -20}
+        - {x: 8, y: -20}
+        - {x: 8, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2d63c96f4d778408f3671619be3fff
+      internalID: -1686298096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: filledbookshelves_243
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 8
+        width: 36
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -18, y: -9}
+        - {x: -18, y: -20}
+        - {x: 18, y: -20}
+        - {x: 18, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df3a72783e273a4fb015944fb47095c
+      internalID: 1543518696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      fillBooks2_0: 1908841577
+      filledbookshelves_0: -1532370768
+      filledbookshelves_1: 13721726
+      filledbookshelves_10: -1501023379
+      filledbookshelves_100: -271763145
+      filledbookshelves_101: 1351160708
+      filledbookshelves_102: 2045291899
+      filledbookshelves_103: 1676140424
+      filledbookshelves_104: 1073675129
+      filledbookshelves_105: 1598684067
+      filledbookshelves_106: -2069584919
+      filledbookshelves_107: 1624522388
+      filledbookshelves_108: -1032933812
+      filledbookshelves_109: -6995148
+      filledbookshelves_11: -2014227486
+      filledbookshelves_110: 1536776328
+      filledbookshelves_111: 1131028441
+      filledbookshelves_112: 1194504409
+      filledbookshelves_113: 1480192286
+      filledbookshelves_114: -308016492
+      filledbookshelves_115: -342417282
+      filledbookshelves_116: -1221919675
+      filledbookshelves_117: -1611670747
+      filledbookshelves_118: -1748733155
+      filledbookshelves_119: -1346896547
+      filledbookshelves_12: -1466328362
+      filledbookshelves_120: -1100284853
+      filledbookshelves_121: -486935768
+      filledbookshelves_122: 1756365391
+      filledbookshelves_123: 798422372
+      filledbookshelves_124: -1465221279
+      filledbookshelves_125: -494381408
+      filledbookshelves_126: -41898254
+      filledbookshelves_127: 1090984913
+      filledbookshelves_128: 177618251
+      filledbookshelves_129: -1447509674
+      filledbookshelves_13: -1652738645
+      filledbookshelves_130: 1448127947
+      filledbookshelves_131: -1007554212
+      filledbookshelves_132: 689449416
+      filledbookshelves_133: 1162251875
+      filledbookshelves_134: 1794813292
+      filledbookshelves_135: -949111109
+      filledbookshelves_136: -811351378
+      filledbookshelves_137: -495858000
+      filledbookshelves_138: -1701656420
+      filledbookshelves_139: 294273225
+      filledbookshelves_14: -1018326778
+      filledbookshelves_140: -664010588
+      filledbookshelves_141: 510007450
+      filledbookshelves_142: 819345727
+      filledbookshelves_143: -1660968198
+      filledbookshelves_144: 651186107
+      filledbookshelves_145: 237239259
+      filledbookshelves_146: 153137462
+      filledbookshelves_147: 710755637
+      filledbookshelves_148: -1805919023
+      filledbookshelves_149: 120465668
+      filledbookshelves_15: 1478787914
+      filledbookshelves_150: 1007642253
+      filledbookshelves_151: -1510580274
+      filledbookshelves_152: 1438076230
+      filledbookshelves_153: -408171781
+      filledbookshelves_154: 682612320
+      filledbookshelves_155: -1437845004
+      filledbookshelves_156: -498295847
+      filledbookshelves_157: -1781557386
+      filledbookshelves_158: 1598167815
+      filledbookshelves_159: 464742386
+      filledbookshelves_16: -212632483
+      filledbookshelves_160: 414186772
+      filledbookshelves_161: 129010241
+      filledbookshelves_162: 1481463121
+      filledbookshelves_163: -1892746657
+      filledbookshelves_164: -2096165291
+      filledbookshelves_165: 1342608409
+      filledbookshelves_166: 1079580524
+      filledbookshelves_167: 1549710954
+      filledbookshelves_168: 914405248
+      filledbookshelves_169: 1997983689
+      filledbookshelves_17: 1709097239
+      filledbookshelves_170: 133175394
+      filledbookshelves_171: 791258426
+      filledbookshelves_172: -796100746
+      filledbookshelves_173: 1966149776
+      filledbookshelves_174: 665054305
+      filledbookshelves_175: 368084337
+      filledbookshelves_176: -1347493524
+      filledbookshelves_177: 345519712
+      filledbookshelves_178: -2123969695
+      filledbookshelves_179: 881055067
+      filledbookshelves_18: 1386559302
+      filledbookshelves_180: -2023467166
+      filledbookshelves_181: -1078679801
+      filledbookshelves_182: -864934731
+      filledbookshelves_183: 442574551
+      filledbookshelves_184: -132693524
+      filledbookshelves_185: -1449065570
+      filledbookshelves_186: 1435267817
+      filledbookshelves_187: 801500799
+      filledbookshelves_188: 131028134
+      filledbookshelves_189: -1157872452
+      filledbookshelves_19: 1159387434
+      filledbookshelves_190: -1121453206
+      filledbookshelves_191: -730683791
+      filledbookshelves_192: -59889864
+      filledbookshelves_193: 1399199009
+      filledbookshelves_194: -1493443204
+      filledbookshelves_195: -569587720
+      filledbookshelves_196: -979037102
+      filledbookshelves_197: -2009433137
+      filledbookshelves_198: 1226754459
+      filledbookshelves_199: -1690527279
+      filledbookshelves_2: -461305491
+      filledbookshelves_20: -942455063
+      filledbookshelves_200: 1279568394
+      filledbookshelves_201: -1860168990
+      filledbookshelves_202: -1067645356
+      filledbookshelves_203: -1071121318
+      filledbookshelves_204: -1232444818
+      filledbookshelves_205: 262516744
+      filledbookshelves_206: -662304354
+      filledbookshelves_207: -899189689
+      filledbookshelves_208: -443787481
+      filledbookshelves_209: -374818054
+      filledbookshelves_21: -1568135254
+      filledbookshelves_210: 885328719
+      filledbookshelves_211: -1877244514
+      filledbookshelves_212: -1142967652
+      filledbookshelves_213: -387881391
+      filledbookshelves_214: -2083387950
+      filledbookshelves_215: -2136045796
+      filledbookshelves_216: -937368597
+      filledbookshelves_217: 1854809084
+      filledbookshelves_218: 1703435558
+      filledbookshelves_219: -1549583264
+      filledbookshelves_22: -1309242574
+      filledbookshelves_220: -240440533
+      filledbookshelves_221: 236826436
+      filledbookshelves_222: -1726312707
+      filledbookshelves_223: 712346567
+      filledbookshelves_224: 344385551
+      filledbookshelves_225: 1886419339
+      filledbookshelves_226: 1381360511
+      filledbookshelves_227: 670216609
+      filledbookshelves_228: -129888086
+      filledbookshelves_229: -1648837873
+      filledbookshelves_23: -348013903
+      filledbookshelves_230: 892155172
+      filledbookshelves_231: 1256073716
+      filledbookshelves_232: 1757903914
+      filledbookshelves_233: -800636204
+      filledbookshelves_234: 301520903
+      filledbookshelves_235: 1077507104
+      filledbookshelves_236: -857428747
+      filledbookshelves_237: -934196976
+      filledbookshelves_238: -141586756
+      filledbookshelves_239: 713395914
+      filledbookshelves_24: 159831697
+      filledbookshelves_240: -1686298096
+      filledbookshelves_241: -1513872538
+      filledbookshelves_242: -1350183970
+      filledbookshelves_243: 1543518696
+      filledbookshelves_244: 1816362186
+      filledbookshelves_245: -678862099
+      filledbookshelves_246: -423935833
+      filledbookshelves_247: 661141333
+      filledbookshelves_248: -1194616591
+      filledbookshelves_249: 819845361
+      filledbookshelves_25: 2126787725
+      filledbookshelves_250: 6015589
+      filledbookshelves_251: -2100457061
+      filledbookshelves_252: -25287684
+      filledbookshelves_253: 1459048723
+      filledbookshelves_254: 307926023
+      filledbookshelves_255: -1932869607
+      filledbookshelves_256: 2105870159
+      filledbookshelves_257: -1413506578
+      filledbookshelves_258: 814325100
+      filledbookshelves_259: -577356108
+      filledbookshelves_26: -1851429795
+      filledbookshelves_260: 453630055
+      filledbookshelves_261: 192461880
+      filledbookshelves_262: -1807630337
+      filledbookshelves_263: -1538819796
+      filledbookshelves_264: 1600489940
+      filledbookshelves_265: -1330332471
+      filledbookshelves_266: 1363619349
+      filledbookshelves_267: 480676788
+      filledbookshelves_268: 1856660655
+      filledbookshelves_269: -995683473
+      filledbookshelves_27: -442551618
+      filledbookshelves_270: -1015186968
+      filledbookshelves_271: 59895288
+      filledbookshelves_272: -177264927
+      filledbookshelves_273: -465361352
+      filledbookshelves_274: 2064898996
+      filledbookshelves_275: -1456141628
+      filledbookshelves_276: 2044928559
+      filledbookshelves_277: 1102991750
+      filledbookshelves_278: 693366788
+      filledbookshelves_279: 256380620
+      filledbookshelves_28: -284119333
+      filledbookshelves_280: -734268897
+      filledbookshelves_281: 1736756660
+      filledbookshelves_282: 1263488771
+      filledbookshelves_283: -681983581
+      filledbookshelves_284: -783408034
+      filledbookshelves_285: -1128187985
+      filledbookshelves_286: -772466843
+      filledbookshelves_287: -1210170008
+      filledbookshelves_288: -1715913370
+      filledbookshelves_289: 2018433837
+      filledbookshelves_29: -1373744781
+      filledbookshelves_290: 1597736483
+      filledbookshelves_291: -889177316
+      filledbookshelves_292: 378209822
+      filledbookshelves_293: 556491470
+      filledbookshelves_294: 967085641
+      filledbookshelves_295: -474288544
+      filledbookshelves_296: -1611971243
+      filledbookshelves_297: -1062895216
+      filledbookshelves_298: -1992323015
+      filledbookshelves_299: -682255641
+      filledbookshelves_3: -622919270
+      filledbookshelves_30: 64805135
+      filledbookshelves_300: 1731675868
+      filledbookshelves_301: -1234457872
+      filledbookshelves_302: 1524355321
+      filledbookshelves_303: -654957658
+      filledbookshelves_31: -126874871
+      filledbookshelves_32: -593559536
+      filledbookshelves_33: 652660723
+      filledbookshelves_34: -1205250228
+      filledbookshelves_35: 1568297361
+      filledbookshelves_36: -214484037
+      filledbookshelves_37: 1677101466
+      filledbookshelves_38: 1620151550
+      filledbookshelves_39: 1515917321
+      filledbookshelves_4: -2034119725
+      filledbookshelves_40: -769035057
+      filledbookshelves_41: 1748216463
+      filledbookshelves_42: 1184650815
+      filledbookshelves_43: -1800346335
+      filledbookshelves_44: -161800052
+      filledbookshelves_45: 538019703
+      filledbookshelves_46: 319606728
+      filledbookshelves_47: 52705712
+      filledbookshelves_48: -2120800791
+      filledbookshelves_49: -2135168936
+      filledbookshelves_5: 623582827
+      filledbookshelves_50: 1396118351
+      filledbookshelves_51: 1734381492
+      filledbookshelves_52: -1033699356
+      filledbookshelves_53: -1366904432
+      filledbookshelves_54: 227676144
+      filledbookshelves_55: 35674785
+      filledbookshelves_56: -98815595
+      filledbookshelves_57: -2007430927
+      filledbookshelves_58: 1151358712
+      filledbookshelves_59: 525533173
+      filledbookshelves_6: 1824767994
+      filledbookshelves_60: -495675835
+      filledbookshelves_61: 426766106
+      filledbookshelves_62: -1363658540
+      filledbookshelves_63: -1837741497
+      filledbookshelves_64: -1766724305
+      filledbookshelves_65: -1642011135
+      filledbookshelves_66: 1935308491
+      filledbookshelves_67: -1040932284
+      filledbookshelves_68: 2129087753
+      filledbookshelves_69: -785283285
+      filledbookshelves_7: -1890591589
+      filledbookshelves_70: 157858066
+      filledbookshelves_71: -614405750
+      filledbookshelves_72: 1428969243
+      filledbookshelves_73: -759232043
+      filledbookshelves_74: 2094547002
+      filledbookshelves_75: -442964404
+      filledbookshelves_76: -1316141368
+      filledbookshelves_77: 1625403456
+      filledbookshelves_78: -328495929
+      filledbookshelves_79: 266111058
+      filledbookshelves_8: 1611530456
+      filledbookshelves_80: -1547271902
+      filledbookshelves_81: 1987080221
+      filledbookshelves_82: -859198698
+      filledbookshelves_83: -1178589161
+      filledbookshelves_84: 236561365
+      filledbookshelves_85: 310895796
+      filledbookshelves_86: 1093102469
+      filledbookshelves_87: -1032110136
+      filledbookshelves_88: -1019861991
+      filledbookshelves_89: -672105089
+      filledbookshelves_9: -349051806
+      filledbookshelves_90: 1536345281
+      filledbookshelves_91: -1984858511
+      filledbookshelves_92: 195282357
+      filledbookshelves_93: -2088593812
+      filledbookshelves_94: 1011726421
+      filledbookshelves_95: -1333788241
+      filledbookshelves_96: -688140825
+      filledbookshelves_97: 646494866
+      filledbookshelves_98: -433654824
+      filledbookshelves_99: 189138188
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

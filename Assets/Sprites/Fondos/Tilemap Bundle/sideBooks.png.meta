@@ -1,0 +1,309 @@
+fileFormatVersion: 2
+guid: 88082dca48e5fa84a9396044186fee4b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sidebookshelvest_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -19}
+        - {x: -8, y: -28}
+        - {x: 8, y: -28}
+        - {x: 8, y: -19}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdea8118b3070a49a48b1612ea41dbc
+      internalID: 1910456780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sidebookshelvest_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -19}
+        - {x: -8, y: -28}
+        - {x: 8, y: -28}
+        - {x: 8, y: -19}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e73026e6ada32b46bc90e46b169d525
+      internalID: 997749310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sidebookshelvest_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -19}
+        - {x: -8, y: -28}
+        - {x: 8, y: -28}
+        - {x: 8, y: -19}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff85e312f81e4c4a9e9cf5286848aaa
+      internalID: 2016211440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sidebookshelvest_30
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -19}
+        - {x: -8, y: -28}
+        - {x: 8, y: -28}
+        - {x: 8, y: -19}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1041b3923c8f6e4ca77fe1b324c0fe8
+      internalID: 230713153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sidebookshelvest_0: -175201785
+      sidebookshelvest_1: 1910456780
+      sidebookshelvest_10: 353610965
+      sidebookshelvest_11: 1129348639
+      sidebookshelvest_12: 693996576
+      sidebookshelvest_13: 343815671
+      sidebookshelvest_14: 1208165759
+      sidebookshelvest_15: 503256949
+      sidebookshelvest_16: -70271564
+      sidebookshelvest_17: -1703962741
+      sidebookshelvest_18: 1225341041
+      sidebookshelvest_19: -2043874067
+      sidebookshelvest_2: 997749310
+      sidebookshelvest_20: 1287321991
+      sidebookshelvest_21: 1862130311
+      sidebookshelvest_22: 439394675
+      sidebookshelvest_23: -858371782
+      sidebookshelvest_24: -617221964
+      sidebookshelvest_25: -1086430774
+      sidebookshelvest_26: 410428204
+      sidebookshelvest_27: -1353423092
+      sidebookshelvest_28: 2016211440
+      sidebookshelvest_29: -684830469
+      sidebookshelvest_3: -501687619
+      sidebookshelvest_30: 230713153
+      sidebookshelvest_31: -684780996
+      sidebookshelvest_32: -478824801
+      sidebookshelvest_33: -25938127
+      sidebookshelvest_34: 591724160
+      sidebookshelvest_35: 652930338
+      sidebookshelvest_36: -439680931
+      sidebookshelvest_37: -221442518
+      sidebookshelvest_38: 908827829
+      sidebookshelvest_39: 449405842
+      sidebookshelvest_4: -264112381
+      sidebookshelvest_40: 679343178
+      sidebookshelvest_41: -2031006885
+      sidebookshelvest_42: 1614417132
+      sidebookshelvest_43: 269744363
+      sidebookshelvest_44: 1584664689
+      sidebookshelvest_45: 1947009371
+      sidebookshelvest_46: 1318521935
+      sidebookshelvest_47: -382545673
+      sidebookshelvest_48: -556873050
+      sidebookshelvest_49: -540524043
+      sidebookshelvest_5: 177790281
+      sidebookshelvest_50: -998090925
+      sidebookshelvest_51: 461073371
+      sidebookshelvest_52: 1242377100
+      sidebookshelvest_53: -1763348741
+      sidebookshelvest_54: -2085491891
+      sidebookshelvest_55: 555760141
+      sidebookshelvest_6: -714393522
+      sidebookshelvest_7: 1751272624
+      sidebookshelvest_8: -1820119271
+      sidebookshelvest_9: 365737557
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
