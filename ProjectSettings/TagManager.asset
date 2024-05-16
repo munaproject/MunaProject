@@ -47,3 +47,6 @@ TagManager:
   - name: Jugador
     uniqueID: 2841507631
     locked: 0
+  - name: Escondite
+    uniqueID: 622231915
+    locked: 0

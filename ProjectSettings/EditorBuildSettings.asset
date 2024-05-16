@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/EntradaGanarEscena.unity
     guid: f5f6d989fb9bb104580e5fcd817d38cd
   - enabled: 1
+    path: Assets/Scenes/AntesEstatua.unity
+    guid: 3c9bbf00f74f40f4b8afbabcd47aa0a9
+  - enabled: 1
     path: Assets/Scenes/PasilloScene.unity
     guid: a72ec609250a4424e9677828684af935
   - enabled: 1
