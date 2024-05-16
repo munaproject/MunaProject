@@ -24,6 +24,8 @@ public class CharacterController : MonoBehaviourPunCallbacks
     Light2D luzJugador;
     bool tieneLuz;
     bool puedeLuz;
+    bool nroBaterias;
+    float tiempoLinterna=15;//15 segundos
 
     float anguloJugador;
     Quaternion rotacionLinterna;
@@ -122,25 +124,25 @@ public class CharacterController : MonoBehaviourPunCallbacks
         switch (anguloLinterna)
         {
             case 0: // arriba
-                offset = new Vector2(-0.5f, -0.72f);
+                offset = new Vector2(-0.5f, 0.5f);
                 break;
             case 45:
-                offset = new Vector2(-0.25f, -0.78f);
+                offset = new Vector2(-0.25f, 0.44f);
                 break;
             case 90: // izquierda
-                offset = new Vector2(-0.43f, -0.82f);
+                offset = new Vector2(-0.43f, 0.4f);
                 break;
             case 135:
-                offset = new Vector2(-0.25f, -0.78f);
+                offset = new Vector2(-0.25f, 0.44f);
                 break;
             case 180: // abajo
-                offset = new Vector2(0.31f, -0.78f);
+                offset = new Vector2(0.31f, 0.44f);
                 break;
             case 225:
-                offset = new Vector2(0.7f, -0.78f);
+                offset = new Vector2(0.7f, 0.44f);
                 break;
             case 270: // derecha
-                offset = new Vector2(0.85f, -0.82f);
+                offset = new Vector2(0.85f, 0.4f);
                 break;
         }
         posicionLinterna = (Vector2)transform.position + offset;
@@ -158,6 +160,9 @@ public class CharacterController : MonoBehaviourPunCallbacks
                 tieneLuz=usandoLinterna;
                 anim.SetBool("usingLantern", usandoLinterna);
                 view.RPC("ActualizarLinternaEnTodosLosClientes", RpcTarget.All, usandoLinterna);
+
+                //mientras se esta usando, se restaran los segundos conforme pasen en la vida real
+
 
             } else { //Liv activa su luz
                 cuerpoLuzActivada = !cuerpoLuzActivada;
