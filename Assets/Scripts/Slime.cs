@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Abeja : MonoBehaviour
+public class Slime : MonoBehaviourPun, IPunObservable
 {
     public float velocidad;     // Velocidad de movimiento
     private List<GameObject> jugadores; // Lista de jugadores
@@ -13,10 +14,13 @@ public class Abeja : MonoBehaviour
     private bool moviendoAFin;      // Para saber si vamos en dirección a la posición final o ya estamos de vuelta
     private int aux;
     private bool escondido;
+    private Vector3 networkPosition;
+    PhotonView view;
 
     // Start is called before the first frame update
     void Start()
     {
+        view = GetComponent<PhotonView>();
         jugadores = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player")); // Buscar todos los jugadores por etiqueta
         camarasJugadores = new Camera[jugadores.Count]; // Inicializar el arreglo de cámaras
 
@@ -34,7 +38,12 @@ public class Abeja : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Comprobamos si algún jugador está escondido
+        if (!view.IsMine)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, networkPosition, Time.deltaTime * velocidad);
+            return;
+        }
+
         escondido = false;
         foreach (var jugador in jugadores)
         {
@@ -45,35 +54,17 @@ public class Abeja : MonoBehaviour
             }
         }
 
-        if (escondido)
+        if (escondido || !EstaEnPantalla())
         {
-            // Si algún jugador está escondido, seguir un camino predefinido
             seguirCaminoPredefinido();
         }
         else
         {
-            // Si ningún jugador está escondido, seguir al jugador
             seguirJugador();
         }
     }
 
-    private void seguirJugador()
-    {
-        // Si el enemigo está en la pantalla de alguna cámara, mover la abeja hacia el jugador
-        if (EstaEnPantalla())
-        {
-            if (aux == 0)
-            {
-                velocidad = velocidad + 5;
-                aux++;
-            }
-
-            // Mover hacia el jugador más cercano o alguna otra lógica de selección
-            GameObject jugadorObjetivo = jugadores[0]; // Simplemente tomando el primer jugador como ejemplo
-            MoverEnemigo(jugadorObjetivo.transform.position);
-        }
-    }
-
+    [PunRPC]
     private void seguirCaminoPredefinido()
     {
         if (aux == 1)
@@ -85,8 +76,41 @@ public class Abeja : MonoBehaviour
         Vector3 posicionDestino = (moviendoAFin) ? posicionFin : posicionInicio;
         transform.position = Vector3.MoveTowards(transform.position, posicionDestino, velocidad * Time.deltaTime);
 
-        if (transform.position == posicionDestino) moviendoAFin = false;
-        if (transform.position == posicionInicio) moviendoAFin = true;
+        if (Vector3.Distance(transform.position, posicionDestino) < 0.01f)
+        {
+            moviendoAFin = !moviendoAFin;
+        }
+    }
+
+    [PunRPC]
+    private void seguirJugador()
+    {
+        if (EstaEnPantalla())
+        {
+            if (aux == 0)
+            {
+                velocidad = velocidad + 5;
+                aux++;
+            }
+
+            GameObject jugadorObjetivo = null;
+            float distanciaMinima = Mathf.Infinity;
+
+            foreach (var jugador in jugadores)
+            {
+                float distancia = Vector3.Distance(transform.position, jugador.transform.position);
+                if (distancia < distanciaMinima)
+                {
+                    distanciaMinima = distancia;
+                    jugadorObjetivo = jugador;
+                }
+            }
+
+            if (jugadorObjetivo != null)
+            {
+                MoverEnemigo(jugadorObjetivo.transform.position);
+            }
+        }
     }
 
     private void MoverEnemigo(Vector3 destino)
@@ -94,7 +118,6 @@ public class Abeja : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, destino, velocidad * Time.deltaTime);
     }
 
-    // Comprobamos que el enemigo está en la pantalla de alguna cámara
     private bool EstaEnPantalla()
     {
         foreach (var camara in camarasJugadores)
@@ -106,5 +129,17 @@ public class Abeja : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
+        }
+        else
+        {
+            networkPosition = (Vector3)stream.ReceiveNext();
+        }
     }
 }

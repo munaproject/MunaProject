@@ -26,6 +26,7 @@ public class CharacterController : MonoBehaviourPunCallbacks
     bool puedeLuz;
     bool nroBaterias;
     float tiempoLinterna=15;//15 segundos
+    private bool escondido;
 
     float anguloJugador;
     Quaternion rotacionLinterna;
@@ -51,6 +52,7 @@ public class CharacterController : MonoBehaviourPunCallbacks
         offset = Vector2.zero;
         tieneLuz = false;
         puedeLuz = false;
+        escondido=false;
 
         EnviarListo();
     }
@@ -183,6 +185,33 @@ public class CharacterController : MonoBehaviourPunCallbacks
     [PunRPC]
     void ActualizarLuzCuerpoEnTodosLosClientes(bool nuevoEstadoLuzCuerpo) {
         luzJugador.enabled = nuevoEstadoLuzCuerpo;
+    }
+
+    public void Esconder()
+    {
+        if (PhotonNetwork.IsMasterClient) {
+            escondido = !escondido;
+            anim.SetBool("isHiding", escondido);
+            view.RPC("ActualizarEscondite", RpcTarget.All, escondido);
+
+        }
+        else 
+        {
+            view.RPC("ActualizarEscondite", RpcTarget.All, escondido);
+
+        }
+    }
+
+    [PunRPC]
+    void ActualizarEscondite(bool estadoEscondido)
+    {
+        escondido = estadoEscondido;
+        anim.SetBool("isHiding", escondido);
+    }
+
+    public bool getEsconder()
+    {
+        return escondido;
     }
 
     public void cambiarVelocidad(int num)
