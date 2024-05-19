@@ -2931,6 +2931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modoDeActivacion: 0
   dialogoCanvas: {fileID: 1042349748}
   personajeTexto: {fileID: 1042349751}
   dialogoTexto: {fileID: 1042349750}
@@ -3098,6 +3099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modoDeActivacion: 0
   dialogoCanvas: {fileID: 1042349748}
   personajeTexto: {fileID: 1042349751}
   dialogoTexto: {fileID: 1042349750}
@@ -3300,7 +3302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Preguntar sobre el sitio
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6153,7 +6155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Jugar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6252,6 +6254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modoDeActivacion: 0
   dialogoCanvas: {fileID: 1042349748}
   personajeTexto: {fileID: 1042349751}
   dialogoTexto: {fileID: 1042349750}
@@ -12809,6 +12812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modoDeActivacion: 0
   dialogoCanvas: {fileID: 1042349748}
   personajeTexto: {fileID: 1042349751}
   dialogoTexto: {fileID: 1042349750}
@@ -14102,6 +14106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modoDeActivacion: 0
   dialogoCanvas: {fileID: 1042349748}
   personajeTexto: {fileID: 1042349751}
   dialogoTexto: {fileID: 1042349750}

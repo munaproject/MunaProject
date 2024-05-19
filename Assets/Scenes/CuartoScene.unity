@@ -11584,7 +11584,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.9334407, y: 1.9019406}
+  m_Offset: {x: 4.7555313, y: 1.9019406}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11595,7 +11595,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9650068, y: 2.5069165}
+  m_Size: {x: 2.320825, y: 2.5069165}
   m_EdgeRadius: 0
 --- !u!19719996 &489195791
 TilemapCollider2D:
@@ -20998,7 +20998,6 @@ GameObject:
   - component: {fileID: 2025759902}
   - component: {fileID: 2025759901}
   - component: {fileID: 2025759900}
-  - component: {fileID: 2025759899}
   - component: {fileID: 2025759898}
   - component: {fileID: 2025759903}
   m_Layer: 0
@@ -21040,7 +21039,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6.9194703, y: 1.5483352}
+  m_Offset: {x: 6.829218, y: 1.4480555}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -21051,44 +21050,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2081537, y: 3.2141273}
+  m_Size: {x: 2.3886585, y: 3.4146867}
   m_EdgeRadius: 0
---- !u!19719996 &2025759899
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2025759894}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
 --- !u!483693784 &2025759900
 TilemapRenderer:
   m_ObjectHideFlags: 0

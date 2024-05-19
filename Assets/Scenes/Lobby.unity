@@ -1667,7 +1667,7 @@ MonoBehaviour:
   panelUnirse: {fileID: 37315425}
   panelEspera: {fileID: 2116688260}
   panelCargarPartida: {fileID: 988974452}
-  escena: AntesEstatua
+  escena: EntradaGanarEscena
 --- !u!4 &756026171
 Transform:
   m_ObjectHideFlags: 0

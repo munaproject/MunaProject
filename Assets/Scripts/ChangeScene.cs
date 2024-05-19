@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class ChangeScene : MonoBehaviourPunCallbacks
 {
-    public string nextScene;
+    public GameObject[] objetos;
     private bool activar;
     PhotonView view;
 
@@ -17,19 +17,11 @@ public class ChangeScene : MonoBehaviourPunCallbacks
     {
         if(Input.GetButtonDown("Jump") && activar)
         {
-            //si el cliente es master, ambos jugadores cambian al mismo tiempo
-            //pero si no es master, hay que avisar al otro jugador (el master), que cambie de escena
-            if (PhotonNetwork.IsMasterClient) {
-                cambiarEscena();
-            } else {
-                view.RPC("cambiarEscena", RpcTarget.Others);
+            foreach (GameObject obj in objetos)
+            {
+                obj.SetActive(true);
             }
         }
-    }
-
-    [PunRPC]
-    void cambiarEscena() {
-        PhotonNetwork.LoadLevel(nextScene);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
