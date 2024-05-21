@@ -10,10 +10,12 @@ public class ControlElecciones : MonoBehaviour
     public void OnPrimeraOpcion()
     {
         opcUno.SetActive(true);
+        Destroy(gameObject);
     }
 
     public void OnSegundaOpcion()
     {
         opcDos.SetActive(true);
+        Destroy(gameObject);
     }
 }
