@@ -247,14 +247,38 @@ public class BbddManager : MonoBehaviour
         }
     }
 
+    private IEnumerator guardarEscena (string idPartida, string escena) {
+        var DBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).Child("escena").SetValueAsync(escena);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null) {
+            Debug.LogWarning("error al guardar la escena");
+        } else {
+            Debug.Log("guardado con exito");
+        }
+    }
+
+    private IEnumerator guardarPosicion (string idPartida, string pjPos, Vector3 pos) {
+        var DBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).Child(pjPos).SetValueAsync(pos);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null) {
+            Debug.LogWarning("error al guardar la posicion del personaje");
+        } else {
+            Debug.Log("guardado con exito");
+        }
+    }
+
 
     public void guardarPartidaEnBBDD(string idPartida, string nombre) {
         StartCoroutine(guardarPartidaId(idPartida));
         StartCoroutine(guardarNombrePartida(idPartida, nombre));
     }
 
-    public void guardarDatos() {
-        //aqui pondremos los valores que vamos a guardar
+    public void guardarDatos(string idPartida, string escena, Vector3 posLille, Vector3 posLiv) {
+        StartCoroutine(guardarEscena(idPartida, escena));
+        StartCoroutine(guardarPosicion(idPartida, "posLille", posLille));
+        StartCoroutine(guardarPosicion(idPartida, "posLiv", posLiv));
     }
 
     public async Task<List<(string,string)>> cargarTodasPartidas() {
