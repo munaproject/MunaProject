@@ -7,7 +7,7 @@ public class PartidaUIManager : MonoBehaviour
 {
     RoomManager roomManage;
     BbddManager bbddManage;
-    //public GameObject prefabPreg;
+    public GameObject prefabPreg;
     public GameObject btnCargarPartida;
     public GameObject btnEliminarPartida;
     public TextMeshProUGUI txtCodigo;
@@ -27,7 +27,7 @@ public class PartidaUIManager : MonoBehaviour
     }
 
     public void borrarPartida(string code) {
-        /*
+        
         PreguntaUI popup = Instantiate(prefabPreg).GetComponent<PreguntaUI>();
         popup.MostrarPregunta("¿Borrar partida? No se podrán recuperar los datos", () => {
             bbddManage.eliminarPartida(txtCodigo.text);
@@ -37,7 +37,6 @@ public class PartidaUIManager : MonoBehaviour
             //nada
             Destroy(popup.gameObject);
         });
-        */
         
     }
 }
