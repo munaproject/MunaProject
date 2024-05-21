@@ -38,7 +38,7 @@ public class Slime : MonoBehaviourPun, IPunObservable
     // Update is called once per frame
     void Update()
     {
-        if (!view.IsMine)
+        if (view.IsMine)
         {
             transform.position = Vector3.MoveTowards(transform.position, networkPosition, Time.deltaTime * velocidad);
             return;

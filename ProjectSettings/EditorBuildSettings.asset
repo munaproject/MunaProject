@@ -48,6 +48,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuDalila.unity
     guid: e6933c0b89449414eb3fcd23006558b6
   - enabled: 1
+    path: Assets/Scenes/PasilloLargo.unity
+    guid: 4302a2e9d97a0384a87b953f656d9ea4
+  - enabled: 1
+    path: Assets/Scenes/Biblioteca.unity
+    guid: 7e7c2502b65384e4d90b8d0882b811fc
+  - enabled: 1
     path: Assets/Scenes/MeetingScene.unity
     guid: c7ab49a78ae2ee34b8f29dbab2326ccf
   - enabled: 1

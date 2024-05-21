@@ -5,9 +5,11 @@ using Photon.Pun;
 
 public class ChangeScene : MonoBehaviourPunCallbacks
 {
-    public GameObject[] objetos;
+    //public GameObject[] objetos;
     private bool activar;
     PhotonView view;
+    public GameObject prefabPreg;
+    public string sigEscena;
 
     void Start() {
         view = GetComponent<PhotonView>();
@@ -17,10 +19,18 @@ public class ChangeScene : MonoBehaviourPunCallbacks
     {
         if(Input.GetButtonDown("Jump") && activar)
         {
-            foreach (GameObject obj in objetos)
-            {
-                obj.SetActive(true);
-            }
+            PreguntaUI popup = Instantiate(prefabPreg).GetComponent<PreguntaUI>();
+            popup.MostrarPregunta("¿Cambiar escena?", () => {
+                if (PhotonNetwork.IsMasterClient) {
+                    cambiarEscena();
+                } else {
+                    view.RPC("cambiarEscena", RpcTarget.Others);
+                }
+                Destroy(popup.gameObject);
+            }, () => {
+                //nada
+                Destroy(popup.gameObject);
+            });
         }
     }
 
@@ -35,5 +45,10 @@ public class ChangeScene : MonoBehaviourPunCallbacks
     private void OnTriggerExit2D(Collider2D collision)
     {
         activar = false;
+    }
+
+    [PunRPC]
+    void cambiarEscena() {
+        PhotonNetwork.LoadLevel(sigEscena);
     }
 }

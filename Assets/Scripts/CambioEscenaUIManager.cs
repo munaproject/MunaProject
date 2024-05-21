@@ -8,6 +8,7 @@ public class CambioEscenaUIManager : MonoBehaviour
 {
     public string sigEscena;
     public GameObject[] objs;
+    
 
     
 

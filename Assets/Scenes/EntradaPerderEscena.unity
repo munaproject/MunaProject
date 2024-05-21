@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 595106112}
   background: {fileID: 8300000, guid: 0de18810d832f694b95b25ed4cdbbdb6, type: 3}
+  cambios: []
 --- !u!4 &40971541
 Transform:
   m_ObjectHideFlags: 0
@@ -56756,7 +56757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490cbd4a613e3de4a9c8bbe31ad94a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: PasilloScene
+  nextScene: PasilloLargo
 --- !u!61 &2122965187
 BoxCollider2D:
   m_ObjectHideFlags: 0
