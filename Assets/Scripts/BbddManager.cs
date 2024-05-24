@@ -41,6 +41,8 @@ public class BbddManager : MonoBehaviour
     //guardamos el nombre de la partida que se esta jugando
     private string partidaJugandose;
 
+    GameManager gameManager;
+
     private void Awake()
     {
 
@@ -64,6 +66,7 @@ public class BbddManager : MonoBehaviour
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         DontDestroyOnLoad(gameObject);        
     }
     private void InitializeFirebase()
@@ -137,6 +140,7 @@ public class BbddManager : MonoBehaviour
             //warningLoginText.text = ""; //limpiamos los errores previos
             //confirmLoginText.text = "Logged In";
             Debug.Log("exito en el inicio de sesion");
+            gameManager.IdUser = User.UserId;
             SceneManager.LoadScene("Menu");
 
         }
@@ -207,6 +211,7 @@ public class BbddManager : MonoBehaviour
                         //warningRegisterText.text = "";
                         Debug.Log("exito en el registro");
                         //si el usuario se ha registrado con exito, cargamos la escena del menu directamente
+                        gameManager.IdUser = User.UserId;
                         SceneManager.LoadScene("Menu");
                     }
                 }
@@ -259,10 +264,11 @@ public class BbddManager : MonoBehaviour
     }
 
     private IEnumerator guardarPosicion (string idPartida, string pjPos, Vector3 pos) {
-        var DBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).Child(pjPos).SetValueAsync(pos);
-        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        var xDBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).Child(pjPos).Child("x").SetValueAsync((int)pos.x);
+        var yDBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).Child(pjPos).Child("y").SetValueAsync((int)pos.y);
+        yield return new WaitUntil(predicate: () => xDBTask.IsCompleted && yDBTask.IsCompleted);
 
-        if (DBTask.Exception != null) {
+        if (xDBTask.Exception != null || yDBTask.Exception != null) {
             Debug.LogWarning("error al guardar la posicion del personaje");
         } else {
             Debug.Log("guardado con exito");

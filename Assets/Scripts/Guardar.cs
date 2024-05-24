@@ -18,7 +18,6 @@ public class Guardar : MonoBehaviour
         bbddManager = FindObjectOfType<BbddManager>();
         gameManager = FindObjectOfType<GameManager>();
 
-        personajes = FindObjectsOfType<CharacterController>();
     }
 
     void Update()
@@ -28,10 +27,10 @@ public class Guardar : MonoBehaviour
             PreguntaUI popup = Instantiate(prefabPreg).GetComponent<PreguntaUI>();
             popup.MostrarPregunta("¿Guardar partida?", () => {
                 //--
-
+                personajes = FindObjectsOfType<CharacterController>();
                 bbddManager.guardarDatos(
                     gameManager.IdPartida, 
-                    SceneManager.GetActiveScene().ToString(), 
+                    SceneManager.GetActiveScene().name, 
                     personajes[0].transform.position,
                     personajes[1].transform.position);
 

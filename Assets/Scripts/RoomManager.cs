@@ -38,6 +38,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     private bool esNuevaPartida;
 
+    GameManager gameManager;
+
     void Start() {
         btnJugar = objJugar.GetComponent<Button>();
 
@@ -45,6 +47,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
         //hay que buscarlo por tipo
         bbdd = FindObjectOfType<BbddManager>();
         esNuevaPartida = false;
+
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     void Update() {
@@ -152,6 +156,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+        gameManager.IdPartida = idPartida;
+
         Debug.Log("se unio a la room");
         verVentanaEspera();
         PlayerPrefs.SetInt("esMaster", true ? 1 : 0); 
