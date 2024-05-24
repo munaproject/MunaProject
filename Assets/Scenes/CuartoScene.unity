@@ -10963,8 +10963,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 489739218}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: sigEscena
+      value: CasaScene
+      objectReference: {fileID: 0}
     - target: {fileID: 2388321230454101501, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: sceneViewId
       value: 1
@@ -10991,15 +10995,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8757529832512537100, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.33
+      value: -7.983881
       objectReference: {fileID: 0}
     - target: {fileID: 8757529832512537100, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.98
+      value: 20.41596
       objectReference: {fileID: 0}
     - target: {fileID: 8757529832512537100, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.7031896
       objectReference: {fileID: 0}
     - target: {fileID: 8757529832512537100, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11034,11 +11038,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
---- !u!4 &147420327 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8757529832512537100, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
-  m_PrefabInstance: {fileID: 147420326}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &218945431
 GameObject:
   m_ObjectHideFlags: 0
@@ -12263,7 +12262,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 147420327}
   - {fileID: 1824385027}
   - {fileID: 2013008856}
   - {fileID: 493837186}
@@ -21665,7 +21663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modoDeActivacion: 0
+  modoDeActivacion: 1
   dialogoCanvas: {fileID: 1404703726}
   personajeTexto: {fileID: 1404703729}
   dialogoTexto: {fileID: 1404703728}
@@ -21689,6 +21687,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1811128163}
   - {fileID: 1318551979}
+  - {fileID: 147420326}
   - {fileID: 1876168906}
   - {fileID: 1404703725}
   - {fileID: 52094335}
