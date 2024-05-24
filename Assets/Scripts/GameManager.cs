@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     private GameObject gameManager;
 
     //--
-    private string IdUser;
-    private string IdPartida;
+    private string idUser;
+    private string idPartida;
     private bool puedeUsarLinterna;
     private int nroBaterias;
     
@@ -22,5 +22,12 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameManager);
         SceneManager.LoadScene("LoginScene");
     }
+
+    public string IdUser { get; set; }
+    public string IdPartida { get; set; }
+    public bool PuedeUsarLinterna { get; set; }
+    public int NroBaterias { get; set; }
+
+
 
 }
