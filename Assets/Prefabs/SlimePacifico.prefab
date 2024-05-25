@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4389584514254890967}
   - component: {fileID: 7431473706112238595}
   - component: {fileID: 2379711090039958536}
-  - component: {fileID: 2703828934416957304}
-  - component: {fileID: 3727122992797982478}
   - component: {fileID: 7608180874505662919}
+  - component: {fileID: 3727122992797982478}
+  - component: {fileID: 5274699891786806944}
   m_Layer: 0
   m_Name: SlimePacifico
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8267326840488578492}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.55, y: 2.27, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -122,32 +122,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &2703828934416957304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267326840488578492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 505676b39175bb3479608be7c6e7a94d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 10
-  posicionFin: {x: -19.45, y: -3.15, z: 0}
---- !u!114 &3727122992797982478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267326840488578492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d4f91db6d2b55e42940fa6bed0499b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &7608180874505662919
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -183,3 +157,29 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0099925995, y: -0.109918594}
   m_Size: {x: 0.76016617, y: 0.76016617}
   m_Direction: 0
+--- !u!114 &3727122992797982478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267326840488578492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4f91db6d2b55e42940fa6bed0499b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5274699891786806944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267326840488578492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505676b39175bb3479608be7c6e7a94d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 0
+  posicionFin: {x: 0, y: 0, z: 0}

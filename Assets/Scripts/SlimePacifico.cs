@@ -29,7 +29,7 @@ public class SlimePacifico : MonoBehaviour
 
     private void MoverEnemigo()
     {
-        Vector3 posicionDestino = (moviendoAFin) ? posicionFin : posicionInicio;
+        Vector3 posicionDestino = moviendoAFin ? posicionFin : posicionInicio;
         transform.position = Vector3.MoveTowards(transform.position, posicionDestino, velocidad * Time.deltaTime);
 
         if (transform.position == posicionDestino) moviendoAFin = false;
