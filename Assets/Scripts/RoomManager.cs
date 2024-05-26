@@ -154,6 +154,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         else {
             //cargamos los datos antes de empezar
             await bbdd.cargarDatos(idPartida);
+            escena = gameManager.Escena;
         }
         PhotonNetwork.LoadLevel(escena);
     }

@@ -367,6 +367,20 @@ public class BbddManager : MonoBehaviour
     public async Task cargarDatos(string idPartida) {
         DataSnapshot partidasSnapshot = await BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).GetValueAsync();
         
+        if (partidasSnapshot.Exists)
+        {
+            gameManager.Escena = partidasSnapshot.Child("escena").Value.ToString();
+            gameManager.PosLille_X = int.Parse(partidasSnapshot.Child("posLille").Child("x").Value.ToString());
+            gameManager.PosLille_y = int.Parse(partidasSnapshot.Child("posLille").Child("y").Value.ToString());
+            gameManager.PosLiv_x = int.Parse(partidasSnapshot.Child("posLiv").Child("x").Value.ToString());
+            gameManager.PosLiv_y = int.Parse(partidasSnapshot.Child("posLiv").Child("y").Value.ToString());
+
+        }
+        else
+        {
+            Debug.LogWarning("No hay datos previos guardados");
+            //poner datos por defecto
+        }
     }
 
 }
