@@ -143,7 +143,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         unirseField.text = "";
     }
 
-    public void jugar() {
+    public async void jugar() {
         Debug.Log("clic jugar");
         //Empezamos el juego
         esMaster=false;
@@ -151,6 +151,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
         //antes de cambiar la escena, guardamos la partida en la bbdd
         //solo si la partida no existia antes
         if (esNuevaPartida) bbdd.guardarPartidaEnBBDD(idPartida, nombrePartida);
+        else {
+            //cargamos los datos antes de empezar
+            await bbdd.cargarDatos(idPartida);
+        }
         PhotonNetwork.LoadLevel(escena);
     }
 

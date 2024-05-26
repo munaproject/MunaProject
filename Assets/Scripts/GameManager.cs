@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     private string idPartida;
     private bool puedeUsarLinterna;
     private int nroBaterias;
+    private string escena;
+    private int posLille;
+    private int posLiv;
     
 
     void Start()
@@ -27,6 +30,9 @@ public class GameManager : MonoBehaviour
     public string IdPartida { get; set; }
     public bool PuedeUsarLinterna { get; set; }
     public int NroBaterias { get; set; }
+    public string Escena { get; set; }
+    public int PosLille { get; set; }
+    public int PosLiv { get; set; }
 
 
 

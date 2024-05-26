@@ -364,4 +364,9 @@ public class BbddManager : MonoBehaviour
         return new_code.ToString("X");
     }
 
+    public async Task cargarDatos(string idPartida) {
+        DataSnapshot partidasSnapshot = await BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).GetValueAsync();
+        
+    }
+
 }
