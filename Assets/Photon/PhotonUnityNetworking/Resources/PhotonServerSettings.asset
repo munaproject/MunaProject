@@ -54,6 +54,13 @@ MonoBehaviour:
   - ActualizarEscondite
   - seguirCaminoPredefinido
   - seguirJugador
+  - ActualizarLuz
+  - ActivarEvento
+  - DesactivarEvento
+  - ReiniciarEvento
+  - CambiarVelocidad
+  - PararEvento
+  - Perder
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

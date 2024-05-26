@@ -3,49 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Slime : MonoBehaviourPun, IPunObservable
+public class Slime : MonoBehaviour
 {
-    public float velocidad;     // Velocidad de movimiento
-    private List<GameObject> jugadores; // Lista de jugadores
-    private bool moviendoAPlayer; // Para saber si estamos moviéndonos hacia el jugador
-    private Camera[] camarasJugadores; // Arreglo de cámaras de los jugadores
+    public float velocidad;         // Velocidad de movimiento
+    private float velocidadCorriendo;
+    private float velocidadAux;
     public Vector3 posicionFin;     // Posición a la que queremos que se desplace
-    private Vector3 posicionInicio;  // Posición actual
+    private Vector3 posicionInicio; // Posición actual
     private bool moviendoAFin;      // Para saber si vamos en dirección a la posición final o ya estamos de vuelta
-    private int aux;
+    private GameObject[] jugadores;
     private bool escondido;
-    private Vector3 networkPosition;
+
     PhotonView view;
 
     // Start is called before the first frame update
     void Start()
     {
-        view = GetComponent<PhotonView>();
-        jugadores = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player")); // Buscar todos los jugadores por etiqueta
-        camarasJugadores = new Camera[jugadores.Count]; // Inicializar el arreglo de cámaras
-
-        for (int i = 0; i < jugadores.Count; i++)
-        {
-            camarasJugadores[i] = jugadores[i].GetComponentInChildren<Camera>(); // Asignar cada cámara de jugador
-        }
-
-        moviendoAPlayer = true;
-        posicionInicio = transform.position;    // Nos da la posición en la que estamos
+        posicionInicio = transform.position; // Nos da la posición en la que estamos
         moviendoAFin = true;
-        aux = 0;
+        jugadores = GameObject.FindGameObjectsWithTag("Player");
+        velocidadAux = velocidad;
+        velocidadCorriendo = velocidad + 5;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (view.IsMine)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, networkPosition, Time.deltaTime * velocidad);
-            return;
-        }
-
         escondido = false;
-        foreach (var jugador in jugadores)
+        foreach (GameObject jugador in jugadores)
         {
             if (jugador.GetComponent<CharacterController>().getEsconder())
             {
@@ -54,92 +39,71 @@ public class Slime : MonoBehaviourPun, IPunObservable
             }
         }
 
-        if (escondido || !EstaEnPantalla())
+        if (escondido || !EstaDentroDeCamara())
         {
-            seguirCaminoPredefinido();
+            MoverEnemigo();
         }
         else
         {
-            seguirJugador();
+            SeguirJugador();
         }
     }
 
-    [PunRPC]
-    private void seguirCaminoPredefinido()
+    private void MoverEnemigo()
     {
-        if (aux == 1)
-        {
-            velocidad = velocidad - 5;
-            aux--;
-        }
-
-        Vector3 posicionDestino = (moviendoAFin) ? posicionFin : posicionInicio;
+        velocidad = velocidadAux;
+        Vector3 posicionDestino = moviendoAFin ? posicionFin : posicionInicio;
         transform.position = Vector3.MoveTowards(transform.position, posicionDestino, velocidad * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, posicionDestino) < 0.01f)
+        if (Vector3.Distance(transform.position, posicionDestino) < 0.001f)
         {
             moviendoAFin = !moviendoAFin;
         }
     }
 
-    [PunRPC]
-    private void seguirJugador()
+    private void SeguirJugador()
     {
-        if (EstaEnPantalla())
+        GameObject jugadorMasCercano = ObtenerJugadorMasCercano();
+        if (jugadorMasCercano != null)
         {
-            if (aux == 0)
-            {
-                velocidad = velocidad + 5;
-                aux++;
-            }
-
-            GameObject jugadorObjetivo = null;
-            float distanciaMinima = Mathf.Infinity;
-
-            foreach (var jugador in jugadores)
-            {
-                float distancia = Vector3.Distance(transform.position, jugador.transform.position);
-                if (distancia < distanciaMinima)
-                {
-                    distanciaMinima = distancia;
-                    jugadorObjetivo = jugador;
-                }
-            }
-
-            if (jugadorObjetivo != null)
-            {
-                MoverEnemigo(jugadorObjetivo.transform.position);
-            }
+            velocidad = velocidadCorriendo;
+            Vector3 posicionDestino = jugadorMasCercano.transform.position;
+            transform.position = Vector3.MoveTowards(transform.position, posicionDestino, velocidad * Time.deltaTime);
         }
     }
 
-    private void MoverEnemigo(Vector3 destino)
+    private GameObject ObtenerJugadorMasCercano()
     {
-        transform.position = Vector3.MoveTowards(transform.position, destino, velocidad * Time.deltaTime);
+        GameObject jugadorMasCercano = null;
+        float distanciaMasCorta = float.MaxValue;
+
+        foreach (GameObject jugador in jugadores)
+        {
+            float distancia = Vector3.Distance(transform.position, jugador.transform.position);
+            if (distancia < distanciaMasCorta)
+            {
+                distanciaMasCorta = distancia;
+                jugadorMasCercano = jugador;
+            }
+        }
+
+        return jugadorMasCercano;
     }
 
-    private bool EstaEnPantalla()
+    private bool EstaDentroDeCamara()
     {
-        foreach (var camara in camarasJugadores)
+        foreach (GameObject jugador in jugadores)
         {
-            Vector3 screenPos = camara.WorldToScreenPoint(transform.position);
-            if (screenPos.x > 0 && screenPos.x < Screen.width && screenPos.y > 0 && screenPos.y < Screen.height)
+            Camera camara = jugador.GetComponentInChildren<Camera>();
+            if (camara != null)
             {
-                return true;
+                Vector3 puntoEnVista = camara.WorldToViewportPoint(transform.position);
+                if (puntoEnVista.x >= 0 && puntoEnVista.x <= 1 && puntoEnVista.y >= 0 && puntoEnVista.y <= 1 && puntoEnVista.z > 0)
+                {
+                    return true;
+                }
             }
         }
         return false;
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(transform.position);
-        }
-        else
-        {
-            networkPosition = (Vector3)stream.ReceiveNext();
-        }
     }
 }

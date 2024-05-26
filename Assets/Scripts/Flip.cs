@@ -15,9 +15,14 @@ public class Flip : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        sprite.flipX = posicionXAnterior < transform.position.x;    //Si va de derecha a izquierda es <, si es de izquierda a derecha es >
-        posicionXAnterior = transform.position.x;
+        if (transform.position.x != posicionXAnterior)
+        {
+            // Si se mueve hacia la derecha (posición actual mayor que la anterior), no voltear.
+            // Si se mueve hacia la izquierda (posición actual menor que la anterior), voltear.
+            sprite.flipX = transform.position.x < posicionXAnterior;
+            posicionXAnterior = transform.position.x;
+        }
     }
 }
