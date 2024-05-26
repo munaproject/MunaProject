@@ -42,6 +42,7 @@ public class DialogosCompartido : MonoBehaviour
 
     PhotonView view;
     private bool autodestruir;
+    public GameObject next;
     
 
     void Start()
@@ -91,6 +92,10 @@ public class DialogosCompartido : MonoBehaviour
             personajes[0].cambiarVelocidad(5);
             personajes[1].cambiarVelocidad(5);
             if (autodestruir) Destroy(gameObject); //cuando el dialogo termina se autodestruye
+            if(next!=null)
+            {
+                next.SetActive(true);
+            }
         }
         else
         {

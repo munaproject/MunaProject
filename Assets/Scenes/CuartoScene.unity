@@ -11052,6 +11052,7 @@ GameObject:
   - component: {fileID: 218945435}
   - component: {fileID: 218945437}
   - component: {fileID: 218945438}
+  - component: {fileID: 218945439}
   m_Layer: 0
   m_Name: SueloDeco
   m_TagString: Untagged
@@ -11592,10 +11593,27 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 218945439}
   sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &218945439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218945431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &489195788
 GameObject:
   m_ObjectHideFlags: 0
@@ -12678,6 +12696,7 @@ GameObject:
   - component: {fileID: 856207474}
   - component: {fileID: 856207473}
   - component: {fileID: 856207477}
+  - component: {fileID: 856207478}
   m_Layer: 0
   m_Name: Dialogo
   m_TagString: Untagged
@@ -12987,7 +13006,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856207470}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
   m_Name: 
@@ -13022,6 +13041,47 @@ MonoBehaviour:
   sonidoEntrada: {fileID: 0}
   next: {fileID: 2025759894}
   repetir: 0
+--- !u!114 &856207478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856207470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8adf7cacd11223a40bbebdb29c0b95cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modoDeActivacion: 1
+  dialogoCanvas: {fileID: 1404703726}
+  personajeTexto: {fileID: 1404703729}
+  dialogoTexto: {fileID: 1404703728}
+  retratoImagen: {fileID: 1404703727}
+  personaje:
+  - Liv
+  - Liv
+  - Lille
+  - Liv
+  - Lille
+  - Liv
+  dialogo:
+  - Bueno, eso estuvo cerca...
+  - "\xBFEst\xE1s bien, Lille?"
+  - ...
+  - "\xBFEst\xE1s llorando? \nNo te preocupes, todo est\xE1 bien."
+  - Vale...
+  - "Vamos a dormir, \xBFquieres?"
+  retrato:
+  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
+  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
+  - {fileID: 1192673221, guid: f7e0588a4985e8649914535a8f4d0722, type: 3}
+  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
+  - {fileID: 1036705353, guid: f7e0588a4985e8649914535a8f4d0722, type: 3}
+  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
+  audioSource: {fileID: 0}
+  sonidoEntrada: {fileID: 0}
+  next: {fileID: 2025759894}
 --- !u!1 &1038360599
 GameObject:
   m_ObjectHideFlags: 0
