@@ -11570,8 +11570,6 @@ MonoBehaviour:
   oscuro: {fileID: 52094334}
   trigger: 11
   tiempoMax: 30
-  master: {fileID: 53328860779223754, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
-  player: {fileID: 2718953098306020838, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
   scene: {fileID: 2013008855}
   intensidad: 0.3
   next: {fileID: 856207470}
@@ -12614,6 +12612,245 @@ Transform:
   m_Children: []
   m_Father: {fileID: 489739218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &608585215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608585216}
+  - component: {fileID: 608585220}
+  - component: {fileID: 608585219}
+  - component: {fileID: 608585218}
+  - component: {fileID: 608585217}
+  m_Layer: 0
+  m_Name: Diario
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &608585216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608585215}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1876168906}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &608585217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608585215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d16aa0107ef0bc4b8fa3216dae4742a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabLibro: {fileID: 2302850236039970291, guid: 20838578137f97f4584aeacfc5dde77b, type: 3}
+  texto:
+  - "Querido diario,\r\nHoy mam\xE1 me regal\xF3 este diario para que pueda escribir
+    mis pensamientos. Ella nunca est\xE1 en casa, as\xED que no tengo a nadie a quien
+    contarle lo que me pasa. Por suerte, tengo a Liv, mi peluche. Liv siempre me
+    escucha cuando estoy solo."
+  - "Querido diario, \nHoy en el recreo, un compa\xF1ero me empuj\xF3 y todos se
+    rieron. Me ca\xED y me lastim\xE9 la rodilla. No hab\xEDa nadie para ayudarme.
+    Al llegar a casa, le cont\xE9 a Liv y me abraz\xF3. Liv siempre sabe c\xF3mo
+    hacerme sentir un poquito mejor."
+  - "Querido diario,\r\nHoy, un compa\xF1ero me llam\xF3 \"tonto\" frente a todos.
+    No s\xE9 por qu\xE9 me odia tanto. Mam\xE1 no estaba en casa para consolarme,
+    as\xED que le cont\xE9 a Liv. Liv me dijo que eso no era cierto, pero es dif\xEDcil
+    no creerlo."
+  - "Querido diario,\r\nHoy fue un buen d\xEDa. La maestra nos dej\xF3 dibujar y
+    a m\xED me encanta dibujar. Hoy nadie me molest\xF3."
+  - "Querido diario,\r\nHoy durante el almuerzo, me quitaron mi bocadillo y lo tiraron
+    al suelo. Me qued\xE9 sin comer y pas\xE9 el resto del d\xEDa con hambre. Me
+    sent\xED invisible porque nadie hizo nada para ayudarme."
+  - "Querido diario,\r\nHoy en clase de arte, la maestra dijo que mi dibujo era hermoso.
+    Fue un momento feliz en un d\xEDa triste. Cuando llegu\xE9 a casa, le mostr\xE9
+    el dibujo a Liv. Liv me dijo que siempre debo seguir dibujando porque eso me
+    hace feliz."
+  - "Querido diario,\r\nHoy mam\xE1 no volvi\xF3 a casa hasta muy tarde. Me siento
+    tan solo cuando no est\xE1. Le dije a Liv que desear\xEDa que mam\xE1 pudiera
+    estar m\xE1s tiempo conmigo. Liv me abraz\xF3 y me dijo que siempre estar\xE1
+    aqu\xED para m\xED."
+  - "Querido diario,\r\nHoy fue el peor d\xEDa de todos. El ni\xF1o que me molesta
+    rompi\xF3 mi cuaderno de dibujos frente a toda la clase. Me sent\xED tan triste
+    y enojado. Liv me dijo que podemos hacer dibujos nuevos juntos. Intento creerle,
+    pero duele mucho."
+  - "Querido diario,\r\nLiv me dijo que soy fuerte y valiente, aunque no me siento
+    as\xED. Hoy, me empujaron de nuevo y todos se rieron. Quiero contarle a mam\xE1,
+    pero nunca est\xE1 aqu\xED. Liv me dijo que no importa lo que digan los dem\xE1s,
+    siempre ser\xE9 especial."
+  - "Querido diario,\r\nHoy no llor\xE9 cuando me molestaron. Fue dif\xEDcil, pero
+    Liv me dijo que cada peque\xF1o momento de valent\xEDa cuenta. Espero que alg\xFAn
+    d\xEDa pueda ser realmente valiente y no solo fingir."
+  - "Querido diario,\r\nA veces me pregunto si hay algo mal en m\xED. Mam\xE1 nunca
+    est\xE1 en casa y en la escuela todos me odian. Liv me dice que soy perfecto
+    tal como soy, pero es dif\xEDcil de creer cuando me siento tan mal."
+  - "Querido diario,\r\nHoy la maestra elogi\xF3 mi trabajo de arte. Fue una peque\xF1a
+    victoria en un mar de derrotas. Liv me dijo que debo celebrar estos momentos,
+    por peque\xF1os que sean."
+  - "Querido diario,\r\nHoy me encerraron en el ba\xF1o a oscuras. Solo pude escuchar
+    como se re\xEDan de mi. Lo siento Liv, esta vez no pude aguantar las l\xE1grimas."
+  - "Querido diario,\r\nMam\xE1 nunca est\xE1 aqu\xED..."
+  - "Querido diario,\r\nMe gustar\xEDa ser m\xE1s valiente, aunque Liv dice que siempre
+    lo soy se que solo lo dice para animarme."
+  - "Querido diario,\r\nNo me gusta la oscuridad. A veces sue\xF1o que me encierran
+    otra vez y todos se r\xEDen en las sombras."
+  - "Querido diario,\r\nLiv me regal\xF3 una linterna. No se de donde la ha sacado,
+    le pregunt\xE9 y no quiso responderme, solo espero que no la haya robado."
+  - "Querido diario,\r\nSiempre tengo mi linterna con bater\xEDa. A\xFAn tengo miedo
+    de caminar por la noche, pero con la linterna s\xE9 que no hay nadie escondido
+    en las sombras."
+  - "Querido diario,\r\nAl fin lleg\xF3 el verano. Ya no tengo que ver a mis compa\xF1eros.
+    Hoy Liv me dijo que podemos dibujar toda la tarde ya que tampoco tengo que estudiar."
+  - (Se ven muchos dibujos de Lille y Liv)
+  - "Querido diario.\nEl verano est\xE1 terminando. No quiero que empiecen las clases."
+--- !u!61 &608585218
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608585215}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.006527066, y: 1.0751253}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5273683, y: 1.4606344}
+  m_EdgeRadius: 0
+--- !u!483693784 &608585219
+TilemapRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608585215}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_ChunkSize: {x: 32, y: 32, z: 32}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_MaxChunkCount: 16
+  m_MaxFrameAge: 16
+  m_SortOrder: 0
+  m_Mode: 0
+  m_DetectChunkCullingBounds: 0
+  m_MaskInteraction: 0
+--- !u!1839735485 &608585220
+Tilemap:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608585215}
+  m_Enabled: 1
+  m_Tiles: {}
+  m_AnimatedTiles: {}
+  m_TileAssetArray: []
+  m_TileSpriteArray: []
+  m_TileMatrixArray: []
+  m_TileColorArray: []
+  m_TileObjectToInstantiateArray: []
+  m_AnimationFrameRate: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Origin: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0, y: 0, z: 1}
+  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileOrientation: 0
+  m_TileOrientationMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
 --- !u!1 &642789006
 GameObject:
   m_ObjectHideFlags: 0
@@ -20831,6 +21068,7 @@ Transform:
   - {fileID: 1476954128}
   - {fileID: 1313129762}
   - {fileID: 114131688}
+  - {fileID: 608585216}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1959001135

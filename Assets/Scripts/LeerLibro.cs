@@ -7,6 +7,7 @@ using System.Linq;
 public class LeerLibro : MonoBehaviour
 {
     public GameObject prefabLibro;
+    [TextArea(3,10)]
     public string[] texto;
     private GameObject player;
     private GameObject nota;
