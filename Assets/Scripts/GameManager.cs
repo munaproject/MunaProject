@@ -15,15 +15,17 @@ public class GameManager : MonoBehaviour
     private bool puedeUsarLinterna;
     private int nroBaterias;
     private string escena;
-    private int posLille_x;
-    private int posLille_y;
-    private int posLiv_x;
-    private int posLiv_y;
+    private float posLille_x;
+    private float posLille_y;
+    private float posLiv_x;
+    private float posLiv_y;
+    private bool posCargadas;
     
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
+        posCargadas = false;
         DontDestroyOnLoad(gameManager);
         SceneManager.LoadScene("LoginScene");
     }
@@ -33,11 +35,11 @@ public class GameManager : MonoBehaviour
     public bool PuedeUsarLinterna { get; set; }
     public int NroBaterias { get; set; }
     public string Escena { get; set; }
-    public int PosLille_X { get; set; }
-    public int PosLille_y { get; set; }
-    public int PosLiv_x { get; set; }
-    public int PosLiv_y { get; set; }
-
+    public float PosLille_X { get; set; }
+    public float PosLille_y { get; set; }
+    public float PosLiv_x { get; set; }
+    public float PosLiv_y { get; set; }
+    public bool PosCargadas { get; set; }
 
 
 }

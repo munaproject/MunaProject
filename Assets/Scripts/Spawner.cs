@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject jugadorMaster;
     public GameObject jugador;
+    private GameManager gameManager;
 
     public float[] valueX;
     public float[] valueY;
@@ -15,6 +16,17 @@ public class Spawner : MonoBehaviour
     
     void Start() 
     {
+        gameManager = FindObjectOfType<GameManager>();
+
+        if (!gameManager.PosCargadas) {
+            valueX[0] = gameManager.PosLille_X;
+            valueY[0] = gameManager.PosLille_y;
+            valueX[1] = gameManager.PosLiv_x;
+            valueY[1] = gameManager.PosLiv_y;
+            
+            gameManager.PosCargadas = true;
+        }
+
         //Colocamos al jugador
         Vector2 posMaster = new Vector2(valueX[0], valueY[0]);
         Vector2 posJugador = new Vector2(valueX[1], valueY[1]);

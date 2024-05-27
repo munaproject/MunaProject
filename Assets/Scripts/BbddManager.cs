@@ -364,23 +364,35 @@ public class BbddManager : MonoBehaviour
         return new_code.ToString("X");
     }
 
-    public async Task cargarDatos(string idPartida) {
-        DataSnapshot partidasSnapshot = await BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).GetValueAsync();
-        
-        if (partidasSnapshot.Exists)
-        {
-            gameManager.Escena = partidasSnapshot.Child("escena").Value.ToString();
-            gameManager.PosLille_X = int.Parse(partidasSnapshot.Child("posLille").Child("x").Value.ToString());
-            gameManager.PosLille_y = int.Parse(partidasSnapshot.Child("posLille").Child("y").Value.ToString());
-            gameManager.PosLiv_x = int.Parse(partidasSnapshot.Child("posLiv").Child("x").Value.ToString());
-            gameManager.PosLiv_y = int.Parse(partidasSnapshot.Child("posLiv").Child("y").Value.ToString());
+    public async Task cargarDatos(string idPartida, string userId) {
+        Debug.Log("cargando datos");
+        DataSnapshot partidasSnapshot = await BBDDref.Child("users").Child(userId).Child("partidas").Child(idPartida).GetValueAsync();
 
+        try {
+            if (partidasSnapshot.Exists)
+            {
+                gameManager.Escena = partidasSnapshot.Child("escena").Value.ToString();
+                gameManager.PosLille_X = int.Parse(partidasSnapshot.Child("posLille").Child("x").Value.ToString());
+                gameManager.PosLille_y = int.Parse(partidasSnapshot.Child("posLille").Child("y").Value.ToString());
+                gameManager.PosLiv_x = int.Parse(partidasSnapshot.Child("posLiv").Child("x").Value.ToString());
+                gameManager.PosLiv_y = int.Parse(partidasSnapshot.Child("posLiv").Child("y").Value.ToString());
+
+                Debug.Log("cambios puestos en el manager");
+
+            }
         }
-        else
+        catch (NullReferenceException ex)
         {
-            Debug.LogWarning("No hay datos previos guardados");
-            //poner datos por defecto
+            gameManager.Escena = "MadreCinematica";
+            gameManager.PosLille_X = 0;
+            gameManager.PosLille_y = 0;
+            gameManager.PosLiv_x = 1.57f;
+            gameManager.PosLiv_y = -2.05f;
+
+            Debug.Log("cambios puestos en el manager." +ex);
         }
+
+
     }
 
 }

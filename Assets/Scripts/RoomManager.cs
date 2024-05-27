@@ -39,6 +39,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     private bool esNuevaPartida;
 
     GameManager gameManager;
+    PhotonView view;
 
     void Start() {
         btnJugar = objJugar.GetComponent<Button>();
@@ -47,7 +48,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         //hay que buscarlo por tipo
         bbdd = FindObjectOfType<BbddManager>();
         esNuevaPartida = false;
-
+        view = GetComponent<PhotonView>();
         gameManager = FindObjectOfType<GameManager>();
     }
 
@@ -150,13 +151,20 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         //antes de cambiar la escena, guardamos la partida en la bbdd
         //solo si la partida no existia antes
-        if (esNuevaPartida) bbdd.guardarPartidaEnBBDD(idPartida, nombrePartida);
-        else {
-            //cargamos los datos antes de empezar
-            await bbdd.cargarDatos(idPartida);
-            escena = gameManager.Escena;
+        if (esNuevaPartida) {
+            bbdd.guardarPartidaEnBBDD(idPartida, nombrePartida);
         }
-        PhotonNetwork.LoadLevel(escena);
+        else {
+            await bbdd.cargarDatos(idPartida, gameManager.IdUser);
+            view.RPC("cargarDatosAsync", RpcTarget.Others, idPartida, gameManager.IdUser);
+        }
+        PhotonNetwork.LoadLevel(gameManager.Escena);
+    }
+
+    [PunRPC]
+    public async Task cargarDatosAsync(string idPartidaMain, string idUser) {
+        Debug.Log("llamando con photon");
+        await bbdd.cargarDatos(idPartidaMain, idUser);
     }
 
     public override void OnJoinedRoom()
