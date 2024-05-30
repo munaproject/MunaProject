@@ -20,12 +20,15 @@ public class GameManager : MonoBehaviour
     private float posLiv_x;
     private float posLiv_y;
     private bool posCargadas;
+    private int indiceMusica;
+    private bool musicaCargada;
     
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
         posCargadas = false;
+        musicaCargada = false;
         DontDestroyOnLoad(gameManager);
         SceneManager.LoadScene("LoginScene");
     }
@@ -40,6 +43,8 @@ public class GameManager : MonoBehaviour
     public float PosLiv_x { get; set; }
     public float PosLiv_y { get; set; }
     public bool PosCargadas { get; set; }
+    public int IndiceMusica { get; set; }
+    public bool MusicaCargada { get; set; }
 
 
 }

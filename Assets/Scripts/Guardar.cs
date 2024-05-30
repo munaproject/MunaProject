@@ -31,6 +31,7 @@ public class Guardar : MonoBehaviour
                 bbddManager.guardarDatos(
                     gameManager.IdPartida, 
                     SceneManager.GetActiveScene().name, 
+                    gameManager.IndiceMusica,
                     personajes[0].transform.position,
                     personajes[1].transform.position);
 

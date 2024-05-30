@@ -252,9 +252,11 @@ public class BbddManager : MonoBehaviour
         }
     }
 
-    private IEnumerator guardarEscena (string idPartida, string escena) {
+    private IEnumerator guardarEscena (string idPartida, string escena, int indiceMusica) {
         var DBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).Child("escena").SetValueAsync(escena);
-        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        var DBTaskMusica = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).Child("idMusica").SetValueAsync(indiceMusica);
+        
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted && DBTaskMusica.IsCompleted);
 
         if (DBTask.Exception != null) {
             Debug.LogWarning("error al guardar la escena");
@@ -281,8 +283,8 @@ public class BbddManager : MonoBehaviour
         StartCoroutine(guardarNombrePartida(idPartida, nombre));
     }
 
-    public void guardarDatos(string idPartida, string escena, Vector3 posLille, Vector3 posLiv) {
-        StartCoroutine(guardarEscena(idPartida, escena));
+    public void guardarDatos(string idPartida, string escena, int indiceMusica, Vector3 posLille, Vector3 posLiv) {
+        StartCoroutine(guardarEscena(idPartida, escena, indiceMusica));
         StartCoroutine(guardarPosicion(idPartida, "posLille", posLille));
         StartCoroutine(guardarPosicion(idPartida, "posLiv", posLiv));
     }
@@ -372,6 +374,7 @@ public class BbddManager : MonoBehaviour
             if (partidasSnapshot.Exists)
             {
                 gameManager.Escena = partidasSnapshot.Child("escena").Value.ToString();
+                gameManager.IndiceMusica = int.Parse(partidasSnapshot.Child("idMusica").Value.ToString());
                 gameManager.PosLille_X = int.Parse(partidasSnapshot.Child("posLille").Child("x").Value.ToString());
                 gameManager.PosLille_y = int.Parse(partidasSnapshot.Child("posLille").Child("y").Value.ToString());
                 gameManager.PosLiv_x = int.Parse(partidasSnapshot.Child("posLiv").Child("x").Value.ToString());
@@ -388,6 +391,7 @@ public class BbddManager : MonoBehaviour
             gameManager.PosLille_y = 0;
             gameManager.PosLiv_x = 1.57f;
             gameManager.PosLiv_y = -2.05f;
+            gameManager.IndiceMusica = 0;
 
             Debug.Log("cambios puestos en el manager." +ex);
         }
