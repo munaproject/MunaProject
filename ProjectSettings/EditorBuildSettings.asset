@@ -51,6 +51,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PasilloLargo.unity
     guid: 4302a2e9d97a0384a87b953f656d9ea4
   - enabled: 1
+    path: Assets/Scenes/CapituloDos.unity
+    guid: 2cba9fa94ecdfb143b228ab006286175
+  - enabled: 1
     path: Assets/Scenes/Biblioteca.unity
     guid: 7e7c2502b65384e4d90b8d0882b811fc
   - enabled: 1
