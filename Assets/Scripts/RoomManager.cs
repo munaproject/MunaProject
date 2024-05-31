@@ -153,12 +153,20 @@ public class RoomManager : MonoBehaviourPunCallbacks
         //solo si la partida no existia antes
         if (esNuevaPartida) {
             bbdd.guardarPartidaEnBBDD(idPartida, nombrePartida);
+            PhotonNetwork.LoadLevel(gameManager.Escena);
         }
         else {
+            bbdd.OnDataLoaded += HandleDataLoaded;
             await bbdd.cargarDatos(idPartida, gameManager.IdUser);
             view.RPC("cargarDatosAsync", RpcTarget.Others, idPartida, gameManager.IdUser);
         }
-        PhotonNetwork.LoadLevel(gameManager.Escena);
+        
+    }
+
+    private void HandleDataLoaded() {
+        bbdd.OnDataLoaded -= HandleDataLoaded;
+        Debug.Log("Data loaded, now loading the scene: " + gameManager.Escena);
+        if (PhotonNetwork.IsMasterClient) PhotonNetwork.LoadLevel(gameManager.Escena);
     }
 
     [PunRPC]
