@@ -43,6 +43,9 @@ public class BbddManager : MonoBehaviour
 
     GameManager gameManager;
 
+    public delegate void DataLoadedEventHandler();
+    public event DataLoadedEventHandler OnDataLoaded;
+
     private void Awake()
     {
 
@@ -396,6 +399,8 @@ public class BbddManager : MonoBehaviour
             Debug.Log("cambios puestos en el manager." +ex);
         }
 
+        OnDataLoaded?.Invoke();
+        Debug.Log("OnDataLoaded event invoked.");
 
     }
 
