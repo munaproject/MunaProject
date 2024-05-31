@@ -156,23 +156,39 @@ public class RoomManager : MonoBehaviourPunCallbacks
             PhotonNetwork.LoadLevel(gameManager.Escena);
         }
         else {
+            view.RPC("cargarDatos", RpcTarget.Others, idPartida, gameManager.IdUser);
             bbdd.OnDataLoaded += HandleDataLoaded;
             await bbdd.cargarDatos(idPartida, gameManager.IdUser);
-            view.RPC("cargarDatosAsync", RpcTarget.Others, idPartida, gameManager.IdUser);
         }
         
     }
 
     private void HandleDataLoaded() {
-        bbdd.OnDataLoaded -= HandleDataLoaded;
-        Debug.Log("Data loaded, now loading the scene: " + gameManager.Escena);
-        if (PhotonNetwork.IsMasterClient) PhotonNetwork.LoadLevel(gameManager.Escena);
+        
+        if (PhotonNetwork.IsMasterClient) {
+            bbdd.OnDataLoaded -= HandleDataLoaded;
+            PhotonNetwork.LoadLevel(gameManager.Escena);
+        }
+        
     }
 
     [PunRPC]
-    public async Task cargarDatosAsync(string idPartidaMain, string idUser) {
+    public void cargarDatos(string idPartidaMain, string idUser) {
         Debug.Log("llamando con photon");
-        await bbdd.cargarDatos(idPartidaMain, idUser);
+        StartCoroutine(CargarDatosCoroutine(idPartidaMain, idUser));
+    }
+
+    private IEnumerator CargarDatosCoroutine(string idPartidaMain, string idUser) {
+        var task = bbdd.cargarDatos(idPartidaMain, idUser);
+        while (!task.IsCompleted) {
+            yield return null;
+        }
+
+        if (task.Exception != null) {
+            Debug.LogError("Error cargando datos: " + task.Exception);
+        } else {
+            Debug.Log("no se han podido cargar los datos");
+        }
     }
 
     public override void OnJoinedRoom()
