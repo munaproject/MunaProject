@@ -7634,11 +7634,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9122680216128828446, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.92999935
+      value: -1.2300024
       objectReference: {fileID: 0}
     - target: {fileID: 9122680216128828446, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.128611
+      value: -2.64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10047,8 +10047,6 @@ PlayableDirector:
     value: {fileID: 2042781447}
   - key: {fileID: 6288226466133216488, guid: 4f0c4c01dcb661c408b0674d0ba66aa4, type: 2}
     value: {fileID: 2136372590}
-  - key: {fileID: 5012289320557808886, guid: 4f0c4c01dcb661c408b0674d0ba66aa4, type: 2}
-    value: {fileID: 2042781447}
   m_ExposedReferences:
     m_References:
     - daa1d238b243ef54aa4c125050a251fa: {fileID: 0}
@@ -55899,11 +55897,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6247508292308858357, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.010002136
+      value: -0.29000092
       objectReference: {fileID: 0}
     - target: {fileID: 6247508292308858357, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38
+      value: -0.8913889
       objectReference: {fileID: 0}
     - target: {fileID: 8422519042864618005, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
       propertyPath: sceneViewId
