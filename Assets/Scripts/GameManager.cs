@@ -22,6 +22,12 @@ public class GameManager : MonoBehaviour
     private bool posCargadas;
     private int indiceMusica;
     private bool musicaCargada;
+    private Vector2 posVolverLille;
+    private Vector2 posVolverLiv;
+    private Vector2 posVolverLilleAntes;
+    private Vector2 posVolverLivAntes;
+    private string escenaAnterior;
+    private string escenaAnteriorAntes;
     
 
     void Start()
@@ -32,6 +38,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameManager);
         SceneManager.LoadScene("LoginScene");
     }
+
 
     public string IdUser { get; set; }
     public string IdPartida { get; set; }
@@ -45,6 +52,16 @@ public class GameManager : MonoBehaviour
     public bool PosCargadas { get; set; }
     public int IndiceMusica { get; set; }
     public bool MusicaCargada { get; set; }
+    public Vector2 PosVolverLille { get; set; }
+    public Vector2 PosVolverLiv { get; set; }
+    public Vector2 PosVolverLilleAntes { get; set; }
+    public Vector2 PosVolverLivAntes { get; set; }
+    public string EscenaAnterior { get; set; }
+    public string EscenaAnteriorAntes { get; set; }
 
+    public void guardarPosicionesAntes() {
+        PosVolverLilleAntes = PosVolverLille;
+        PosVolverLivAntes = PosVolverLiv;
+    }
 
 }

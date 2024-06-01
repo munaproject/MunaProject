@@ -1241,6 +1241,22 @@ PrefabInstance:
       propertyPath: sigEscena
       value: PasilloLargo
       objectReference: {fileID: 0}
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLiv.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLiv.y
+      value: -21.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLille.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLille.y
+      value: -20.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2388321230454101501, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: sceneViewId
       value: 2
@@ -45239,6 +45255,7 @@ MonoBehaviour:
   - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
   audioSource: {fileID: 0}
   sonidoEntrada: {fileID: 0}
+  next: {fileID: 0}
 --- !u!1 &1313139234
 GameObject:
   m_ObjectHideFlags: 0

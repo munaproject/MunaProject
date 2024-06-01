@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Photon.Pun;
 
 public class ChangeScene : MonoBehaviourPunCallbacks
@@ -10,9 +11,13 @@ public class ChangeScene : MonoBehaviourPunCallbacks
     PhotonView view;
     public GameObject prefabPreg;
     public string sigEscena;
+    public Vector2 posVolverLille;
+    public Vector2 posVolverLiv;
+    private GameManager gameManager;
 
     void Start() {
         view = GetComponent<PhotonView>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -21,6 +26,16 @@ public class ChangeScene : MonoBehaviourPunCallbacks
         {
             PreguntaUI popup = Instantiate(prefabPreg).GetComponent<PreguntaUI>();
             popup.MostrarPregunta("¿Cambiar escena?", () => {
+
+                gameManager.EscenaAnteriorAntes = gameManager.EscenaAnterior;
+                gameManager.EscenaAnterior = SceneManager.GetActiveScene().name;
+                gameManager.guardarPosicionesAntes();
+                gameManager.PosVolverLille = posVolverLille;
+                gameManager.PosVolverLiv = posVolverLiv;
+
+                view.RPC("actualizarDatosPos", RpcTarget.Others, SceneManager.GetActiveScene().name, posVolverLille, posVolverLiv);
+
+                Debug.Log("Escena anterior: " +gameManager.EscenaAnterior);
                 if (PhotonNetwork.IsMasterClient) {
                     cambiarEscena();
                 } else {
@@ -32,6 +47,15 @@ public class ChangeScene : MonoBehaviourPunCallbacks
                 Destroy(popup.gameObject);
             });
         }
+    }
+
+    [PunRPC]
+    void actualizarDatosPos(string esActu, Vector2 posVLille, Vector2 posVLiv) {
+        gameManager.EscenaAnteriorAntes = gameManager.EscenaAnterior;
+        gameManager.EscenaAnterior = esActu;
+        gameManager.guardarPosicionesAntes();
+        gameManager.PosVolverLille = posVLille;
+        gameManager.PosVolverLiv = posVLiv;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

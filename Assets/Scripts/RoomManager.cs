@@ -187,7 +187,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         if (task.Exception != null) {
             Debug.LogError("Error cargando datos: " + task.Exception);
         } else {
-            Debug.Log("no se han podido cargar los datos");
+            Debug.Log("task cargar datos null");
         }
     }
 

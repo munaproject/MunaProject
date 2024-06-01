@@ -63,6 +63,7 @@ MonoBehaviour:
   - Perder
   - cargarDatosAsync
   - cargarDatos
+  - actualizarDatosPos
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

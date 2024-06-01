@@ -34117,6 +34117,22 @@ PrefabInstance:
       propertyPath: sigEscena
       value: PasilloLargo
       objectReference: {fileID: 0}
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLiv.x
+      value: -1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLiv.y
+      value: -9.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLille.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLille.y
+      value: -9.87
+      objectReference: {fileID: 0}
     - target: {fileID: 2388321230454101501, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: sceneViewId
       value: 2

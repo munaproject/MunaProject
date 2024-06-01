@@ -26733,6 +26733,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1837019980}
     m_Modifications:
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLiv.x
+      value: -9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLiv.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLille.x
+      value: -10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
+      propertyPath: posVolverLille.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2388321230454101501, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: sceneViewId
       value: 1
@@ -26743,19 +26759,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7102396397177659878, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: m_Size.x
-      value: 1.6419077
+      value: 3.0190039
       objectReference: {fileID: 0}
     - target: {fileID: 7102396397177659878, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: m_Size.y
-      value: 0.6927986
+      value: 1.1935616
       objectReference: {fileID: 0}
     - target: {fileID: 7102396397177659878, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: m_Offset.x
-      value: -0.12674856
+      value: -0.11780691
       objectReference: {fileID: 0}
     - target: {fileID: 7102396397177659878, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: m_Offset.y
-      value: -19.152891
+      value: -18.90251
       objectReference: {fileID: 0}
     - target: {fileID: 8757529832512537100, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27634,7 +27650,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.588001, y: 3.0941067, z: -9.064363}
+  m_LocalPosition: {x: -9.34, y: 2.898611, z: -9.064363}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33039,11 +33055,11 @@ MonoBehaviour:
   jugadorMaster: {fileID: 53328860779223754, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
   jugador: {fileID: 2718953098306020838, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
   valueX:
-  - -8.839259
-  - -10.648
+  - -10.8
+  - -9.4
   valueY:
-  - 3.798409
-  - 3.195496
+  - 3
+  - 3
 --- !u!4 &1705807107
 Transform:
   m_ObjectHideFlags: 0
@@ -37443,6 +37459,10 @@ PrefabInstance:
     - target: {fileID: 7969773978431520351, guid: 8658c33037deab5418c8dc4fd8333f9c, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969773978431520351, guid: 8658c33037deab5418c8dc4fd8333f9c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

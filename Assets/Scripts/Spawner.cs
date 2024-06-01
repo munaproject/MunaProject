@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Photon.Pun;
 
 public class Spawner : MonoBehaviour
@@ -13,6 +14,7 @@ public class Spawner : MonoBehaviour
     public float[] valueY;
 
     private bool esMaster;
+
     
     void Start() 
     {
@@ -26,6 +28,20 @@ public class Spawner : MonoBehaviour
             
             gameManager.PosCargadas = true;
         }
+
+        if (SceneManager.GetActiveScene().name == gameManager.EscenaAnteriorAntes) { //se esta volviendo a la escena anterior
+            Debug.Log("volviendo");
+            Debug.Log(gameManager.PosVolverLilleAntes.x +", "+gameManager.PosVolverLilleAntes.y);
+            Debug.Log(gameManager.PosVolverLivAntes.x +", "+gameManager.PosVolverLivAntes.y);
+            
+            valueX[0] = gameManager.PosVolverLilleAntes.x;
+            valueY[0] = gameManager.PosVolverLilleAntes.y;
+            valueX[1] = gameManager.PosVolverLivAntes.x;
+            valueY[1] = gameManager.PosVolverLivAntes.y;
+
+        }
+
+        Debug.Log(gameManager.EscenaAnteriorAntes +" ? "+ SceneManager.GetActiveScene().name);
 
         //Colocamos al jugador
         Vector2 posMaster = new Vector2(valueX[0], valueY[0]);
