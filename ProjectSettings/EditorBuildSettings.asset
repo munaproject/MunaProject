@@ -54,6 +54,12 @@ EditorBuildSettings:
     path: Assets/Scenes/CapituloDos.unity
     guid: 2cba9fa94ecdfb143b228ab006286175
   - enabled: 1
+    path: Assets/Scenes/Caminos.unity
+    guid: 9b59a48fdd32e2340a7c8605fbf79307
+  - enabled: 1
+    path: Assets/Scenes/PasilloFinalMalo.unity
+    guid: 29c45852b2b77304191a3446ea5e507b
+  - enabled: 1
     path: Assets/Scenes/Biblioteca.unity
     guid: 7e7c2502b65384e4d90b8d0882b811fc
   - enabled: 1
