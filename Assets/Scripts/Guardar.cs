@@ -33,7 +33,8 @@ public class Guardar : MonoBehaviour
                     SceneManager.GetActiveScene().name, 
                     gameManager.IndiceMusica,
                     personajes[0].transform.position,
-                    personajes[1].transform.position);
+                    personajes[1].transform.position,
+                    true);
 
                 //--
                 Destroy(popup.gameObject);

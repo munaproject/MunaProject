@@ -40,7 +40,8 @@ public class AudioManager : MonoBehaviour
         if (scene.name != "Menu" &&
             scene.name != "Lobby"&&
             scene.name != "LoadingScene" &&
-            !gameManager.MusicaCargada) {
+            !gameManager.MusicaCargada && 
+            gameManager.CargarTodo) {
 
                 gameManager.MusicaCargada = true;
                 background=cambios[gameManager.IndiceMusica];
