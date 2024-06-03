@@ -34,36 +34,30 @@ MonoBehaviour:
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
+  - actualizarDatosPos
+  - ActualizarEscondite
+  - ActualizarLinternaEnTodosLosClientes
+  - ActualizarLuz
+  - ActualizarLuzCuerpoEnTodosLosClientes
+  - cambiarEscena
+  - CambiarVelocidad
+  - cargarDatos
   - ClickRpc
+  - ColocarPosicionLinterna
   - DestroyRpc
   - DestroySpaceship
   - Fire
-  - RespawnSpaceship
-  - RecibirListo
-  - siguienteDialogo
-  - cambiarEscena
-  - SyncAnimation
-  - RequestSceneChange
-  - ActualizarLinternaEnTodosLosClientes
-  - ActualizarLuzCuerpoEnTodosLosClientes
-  - ColocarPosicionLinterna
-  - evento
-  - mostrarCanvasDialogo
   - mostrarCanvas
-  - siguienteObj
-  - ActualizarEscondite
-  - seguirCaminoPredefinido
-  - seguirJugador
-  - ActualizarLuz
-  - ActivarEvento
-  - DesactivarEvento
-  - ReiniciarEvento
-  - CambiarVelocidad
+  - mostrarCanvasDialogo
   - PararEvento
   - Perder
-  - cargarDatosAsync
-  - cargarDatos
-  - actualizarDatosPos
+  - RecibirListo
+  - ReiniciarEvento
+  - RequestSceneChange
+  - RespawnSpaceship
+  - siguienteDialogo
+  - siguienteObj
+  - SyncAnimation
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

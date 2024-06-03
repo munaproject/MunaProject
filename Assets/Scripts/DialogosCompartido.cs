@@ -50,7 +50,6 @@ public class DialogosCompartido : MonoBehaviour
         view = GetComponent<PhotonView>();
         autodestruir = false;
 
-        personajes = FindObjectsOfType<CharacterController>();
     }
 
     void Update()
@@ -125,6 +124,7 @@ public class DialogosCompartido : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        personajes = FindObjectsOfType<CharacterController>();
         if(collision.gameObject.tag == "Player")
         {
             activar = true;
