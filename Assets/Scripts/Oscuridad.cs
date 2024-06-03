@@ -108,7 +108,7 @@ public class Oscuridad : MonoBehaviourPunCallbacks
         {
             dialogoCanvas.SetActive(false);
             sonidoReproducido = false;
-            view.RPC("CambiarVelocidad", RpcTarget.All, 5); 
+            view.RPC("CambiarVelocidad", RpcTarget.All, 4); 
             activarEvento = true;
             tiempoEmpleado = 0f; // Resetear el tiempo cuando se activa el evento
         }
