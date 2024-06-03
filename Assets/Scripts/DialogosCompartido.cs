@@ -50,7 +50,6 @@ public class DialogosCompartido : MonoBehaviour
         view = GetComponent<PhotonView>();
         autodestruir = false;
 
-        personajes = FindObjectsOfType<CharacterController>();
     }
 
     void Update()
@@ -59,13 +58,8 @@ public class DialogosCompartido : MonoBehaviour
             case opcion.interactuando: //al interactuar con espacio
                 if (Input.GetButtonDown("Jump") && activar)
                 {
-                    if (PhotonNetwork.IsMasterClient) 
-                    {
-                        siguienteDialogo();
-                        view.RPC("siguienteDialogo", RpcTarget.Others);
-                    } else {
-                        view.RPC("siguienteDialogo", RpcTarget.Others);
-                    }
+                    siguienteDialogo();
+                    view.RPC("siguienteDialogo", RpcTarget.Others);
                 }
             break;
             case opcion.colisionando://al tocar, se activa automaticamente
@@ -85,12 +79,14 @@ public class DialogosCompartido : MonoBehaviour
     void siguienteDialogo() {
         if(aux >= personaje.Length)
         {
+            personajes = FindObjectsOfType<CharacterController>();
             dialogoCanvas.SetActive(false);
             sonidoReproducido = false;
             //master.GetComponent<CharacterController>().cambiarVelocidad(5);
             //player.GetComponent<CharacterController>().cambiarVelocidad(5);
             personajes[0].cambiarVelocidad(5);
             personajes[1].cambiarVelocidad(5);
+            Debug.Log("vel restaurada");
             if (autodestruir) Destroy(gameObject); //cuando el dialogo termina se autodestruye
             if(next!=null)
             {
@@ -125,6 +121,7 @@ public class DialogosCompartido : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        personajes = FindObjectsOfType<CharacterController>();
         if(collision.gameObject.tag == "Player")
         {
             activar = true;

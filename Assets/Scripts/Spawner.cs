@@ -21,10 +21,10 @@ public class Spawner : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
 
         if (!gameManager.PosCargadas) {
-            valueX[0] = gameManager.PosLille_X;
-            valueY[0] = gameManager.PosLille_y;
-            valueX[1] = gameManager.PosLiv_x;
-            valueY[1] = gameManager.PosLiv_y;
+            valueX[1] = gameManager.PosLille_X;
+            valueY[1] = gameManager.PosLille_y;
+            valueX[0] = gameManager.PosLiv_x;
+            valueY[0] = gameManager.PosLiv_y;
             
             gameManager.PosCargadas = true;
         }

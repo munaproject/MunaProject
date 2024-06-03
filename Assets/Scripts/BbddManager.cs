@@ -279,6 +279,16 @@ public class BbddManager : MonoBehaviour
             Debug.Log("guardado con exito");
         }
     }
+    private IEnumerator guardarCargarTodo (string idPartida, bool cargarTodo) {
+        var DBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).Child("cargarTodo").SetValueAsync(cargarTodo);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null) {
+            Debug.LogWarning("error al guardar la posicion del personaje");
+        } else {
+            Debug.Log("guardado con exito");
+        }
+    }
 
 
     public void guardarPartidaEnBBDD(string idPartida, string nombre) {
@@ -286,10 +296,11 @@ public class BbddManager : MonoBehaviour
         StartCoroutine(guardarNombrePartida(idPartida, nombre));
     }
 
-    public void guardarDatos(string idPartida, string escena, int indiceMusica, Vector3 posLille, Vector3 posLiv) {
+    public void guardarDatos(string idPartida, string escena, int indiceMusica, Vector3 posLille, Vector3 posLiv, bool cargarTodo) {
         StartCoroutine(guardarEscena(idPartida, escena, indiceMusica));
         StartCoroutine(guardarPosicion(idPartida, "posLille", posLille));
         StartCoroutine(guardarPosicion(idPartida, "posLiv", posLiv));
+        StartCoroutine(guardarCargarTodo(idPartida, cargarTodo));
     }
 
     public async Task<List<(string,string)>> cargarTodasPartidas() {
@@ -382,6 +393,7 @@ public class BbddManager : MonoBehaviour
                 gameManager.PosLille_y = int.Parse(partidasSnapshot.Child("posLille").Child("y").Value.ToString());
                 gameManager.PosLiv_x = int.Parse(partidasSnapshot.Child("posLiv").Child("x").Value.ToString());
                 gameManager.PosLiv_y = int.Parse(partidasSnapshot.Child("posLiv").Child("y").Value.ToString());
+                gameManager.CargarTodo = bool.Parse(partidasSnapshot.Child("cargarTodo").Value.ToString());
 
                 Debug.Log("cambios puestos en el manager");
 
@@ -395,6 +407,7 @@ public class BbddManager : MonoBehaviour
             gameManager.PosLiv_x = 1.57f;
             gameManager.PosLiv_y = -2.05f;
             gameManager.IndiceMusica = 0;
+            gameManager.CargarTodo = false;
 
             Debug.Log("cambios puestos en el manager." +ex);
         }

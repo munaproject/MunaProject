@@ -8,8 +8,13 @@ public class FinCapUIManager : MonoBehaviour
 {
     public string sigEscena;
     public GameObject[] objsParaMaster;
+    BbddManager bbddManager;
+    GameManager gameManager;
+    private CharacterController[] personajes;
 
     void Start() {
+        bbddManager = FindObjectOfType<BbddManager>();
+        gameManager = FindObjectOfType<GameManager>();
         if (PhotonNetwork.IsMasterClient) {
             foreach (GameObject obj in objsParaMaster) {
                 obj.SetActive(true);
@@ -19,7 +24,15 @@ public class FinCapUIManager : MonoBehaviour
 
     public void GuardarPartida() {
         if (PhotonNetwork.IsMasterClient) {
-            //añadimos codigo para guardar
+            personajes = FindObjectsOfType<CharacterController>();
+            bbddManager.guardarDatos(
+                gameManager.IdPartida, 
+                sigEscena, 
+                gameManager.IndiceMusica,
+                personajes[0].transform.position,
+                personajes[1].transform.position,
+                false);
+            
             PhotonNetwork.LoadLevel(sigEscena);
         }
     }
