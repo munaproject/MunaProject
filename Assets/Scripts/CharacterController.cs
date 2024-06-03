@@ -34,6 +34,8 @@ public class CharacterController : MonoBehaviourPunCallbacks
     Vector3 posicionLinterna;
     Vector2 offset; //para que la luz se situe segun el jugador y no el mapa
 
+    bool tieneParamCanUse;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -54,6 +56,8 @@ public class CharacterController : MonoBehaviourPunCallbacks
         puedeLuz = false;
         escondido=false;
 
+        tieneParamCanUse = AnimTieneParam.TieneParam(anim, "canUse", AnimatorControllerParameterType.Bool);
+
         EnviarListo();
     }
 
@@ -67,7 +71,8 @@ public class CharacterController : MonoBehaviourPunCallbacks
             {
                 Linterna();
             }
-            anim.SetBool("canUse", puedeLuz);
+            if (tieneParamCanUse) anim.SetBool("canUse", puedeLuz);
+            view.RPC("ActualizarCanUse", RpcTarget.All, puedeLuz);
 
             camera.Priority = 1;
         }
@@ -162,7 +167,7 @@ public class CharacterController : MonoBehaviourPunCallbacks
                 tieneLuz=usandoLinterna;
                 anim.SetBool("usingLantern", usandoLinterna);
                 view.RPC("ActualizarLinternaEnTodosLosClientes", RpcTarget.All, usandoLinterna);
-
+                Debug.Log("lille enciende linterna");
                 //mientras se esta usando, se restaran los segundos conforme pasen en la vida real
 
 
@@ -177,9 +182,10 @@ public class CharacterController : MonoBehaviourPunCallbacks
     [PunRPC]
     void ActualizarLinternaEnTodosLosClientes(bool nuevoEstadoLinterna)
     {
-        usandoLinterna = nuevoEstadoLinterna;
-        anim.SetBool("usingLantern", usandoLinterna);
-        luzJugador.enabled = usandoLinterna;
+        //usandoLinterna = nuevoEstadoLinterna;
+        Debug.Log("actualizamos anim lille linterna");
+        anim.SetBool("usingLantern", nuevoEstadoLinterna);
+        luzJugador.enabled = nuevoEstadoLinterna;
     }
 
     [PunRPC]
@@ -207,6 +213,13 @@ public class CharacterController : MonoBehaviourPunCallbacks
     {
         escondido = estadoEscondido;
         anim.SetBool("isHiding", escondido);
+    }
+
+    [PunRPC]
+    void ActualizarCanUse(bool estadoCanUse) {
+        Debug.Log("can use");
+        puedeLuz = estadoCanUse;
+        if (tieneParamCanUse) anim.SetBool("canUse", puedeLuz);
     }
 
     public bool getEsconder()
@@ -284,4 +297,6 @@ public class CharacterController : MonoBehaviourPunCallbacks
     public void setListo(bool estado) {
         this.compiListo = false;
     }
+
+   
 }

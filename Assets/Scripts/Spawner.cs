@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
 
-        if (!gameManager.PosCargadas) {
+        if (!gameManager.PosCargadas && gameManager.CargarTodo) {
             valueX[1] = gameManager.PosLille_X;
             valueY[1] = gameManager.PosLille_y;
             valueX[0] = gameManager.PosLiv_x;
