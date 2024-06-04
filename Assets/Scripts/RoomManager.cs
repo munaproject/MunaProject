@@ -153,6 +153,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         //solo si la partida no existia antes
         if (esNuevaPartida) {
             bbdd.guardarPartidaEnBBDD(idPartida, nombrePartida);
+            gameManager.Escena = escena;
             PhotonNetwork.LoadLevel(gameManager.Escena);
         }
         else {
