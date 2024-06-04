@@ -34,6 +34,7 @@ MonoBehaviour:
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
+  - ActualizarCanUse
   - actualizarDatosPos
   - ActualizarEscondite
   - ActualizarLinternaEnTodosLosClientes
@@ -58,7 +59,8 @@ MonoBehaviour:
   - siguienteDialogo
   - siguienteObj
   - SyncAnimation
-  - ActualizarCanUse
+  - SalirPartidaTodos
+  - activarOpJuegos
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

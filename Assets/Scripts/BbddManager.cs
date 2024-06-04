@@ -268,6 +268,18 @@ public class BbddManager : MonoBehaviour
         }
     }
 
+    private IEnumerator guardarId (string id) {
+        var DBTask = BBDDref.Child("ids").SetValueAsync(id);
+        
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null) {
+            Debug.LogWarning("error al guardar el id");
+        } else {
+            Debug.Log("guardado con exito");
+        }
+    }
+
     private IEnumerator guardarPosicion (string idPartida, string pjPos, Vector3 pos) {
         var xDBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).Child(pjPos).Child("x").SetValueAsync((int)pos.x);
         var yDBTask = BBDDref.Child("users").Child(User.UserId).Child("partidas").Child(idPartida).Child(pjPos).Child("y").SetValueAsync((int)pos.y);
@@ -346,38 +358,19 @@ public class BbddManager : MonoBehaviour
     //contaremos las partidas creadas para generar un id unico
     public async Task<string> GenerarCode()
     {
-        // tomamos una referencia de todos los usuarios
-        DataSnapshot usersSnapshot = await BBDDref.Child("users").GetValueAsync();
-        DataSnapshot partidasSnapshot;
-        int totalPartidas = 0;
-        int new_code = 4096; //convertiremos el numero a hexadecimal al retornarlo
-
-        if (!usersSnapshot.Exists)
+        DataSnapshot idsSnapshot = await BBDDref.Child("ids").GetValueAsync();
+        if (!idsSnapshot.Exists)
         {
             Debug.Log("no hay usuarios.");
-            return new_code.ToString("X");
+            string idDeafult = "1000";
+            StartCoroutine(guardarId(idDeafult));
+            return idDeafult;
+        } else {
+            int idAux = int.Parse(idsSnapshot.Value.ToString());
+            idAux++;
+            StartCoroutine(guardarId(idAux.ToString()));
+            return idAux.ToString();
         }
-
-        // por cada usuario, contamos las partidas
-        foreach (DataSnapshot userSnapshot in usersSnapshot.Children)
-        {
-            // obtenemos sus partidas
-            partidasSnapshot = userSnapshot.Child("partidas");
-
-            if (!partidasSnapshot.Exists) //0 partidas
-            {
-                Debug.Log($"no hay partidas guardadas para este usuario: {userSnapshot.Key}");
-                continue;
-            }
-
-            // contamos
-            totalPartidas += (int)partidasSnapshot.ChildrenCount;
-        }
-
-        Debug.Log("nro partidas:" + totalPartidas);
-        new_code += totalPartidas;
-        Debug.Log("cod con hexadecimal: " + new_code.ToString("X"));
-        return new_code.ToString("X");
     }
 
     public async Task cargarDatos(string idPartida, string userId) {

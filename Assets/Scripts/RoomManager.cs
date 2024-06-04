@@ -25,6 +25,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject panelUnirse;
     public GameObject panelEspera;
     public GameObject panelCargarPartida;
+    public GameObject opJuego;
 
     [Header("Sig Escena")]
     public string escena;
@@ -153,6 +154,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
         //solo si la partida no existia antes
         if (esNuevaPartida) {
             bbdd.guardarPartidaEnBBDD(idPartida, nombrePartida);
+            gameManager.Escena = escena;
+            view.RPC("activarOpJuegos", RpcTarget.All);
             PhotonNetwork.LoadLevel(gameManager.Escena);
         }
         else {
@@ -164,7 +167,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
 
     private void HandleDataLoaded() {
-        
+        view.RPC("activarOpJuegos", RpcTarget.All);
         if (PhotonNetwork.IsMasterClient) {
             bbdd.OnDataLoaded -= HandleDataLoaded;
             PhotonNetwork.LoadLevel(gameManager.Escena);
@@ -176,6 +179,11 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void cargarDatos(string idPartidaMain, string idUser) {
         Debug.Log("llamando con photon");
         StartCoroutine(CargarDatosCoroutine(idPartidaMain, idUser));
+    }
+
+    [PunRPC]
+    void activarOpJuegos() {
+        opJuego.SetActive(true);
     }
 
     private IEnumerator CargarDatosCoroutine(string idPartidaMain, string idUser) {
