@@ -168,7 +168,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1036598133865373885, guid: 4962b7abd4c38d54ebf397deae1ecea6, type: 3}
       propertyPath: m_text
-      value: 7 Minutos en el Cielo
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1036598133865373885, guid: 4962b7abd4c38d54ebf397deae1ecea6, type: 3}
       propertyPath: m_fontSize
@@ -224,7 +224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4553633093014031327, guid: 4962b7abd4c38d54ebf397deae1ecea6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5014316093917229633, guid: 4962b7abd4c38d54ebf397deae1ecea6, type: 3}
       propertyPath: nombre
@@ -236,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6203715944889183071, guid: 4962b7abd4c38d54ebf397deae1ecea6, type: 3}
       propertyPath: m_text
-      value: Final 1 de Algunos
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6203715944889183071, guid: 4962b7abd4c38d54ebf397deae1ecea6, type: 3}
       propertyPath: m_fontSize

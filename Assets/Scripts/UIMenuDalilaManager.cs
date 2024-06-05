@@ -16,7 +16,7 @@ public class UIMenuDalilaManager : MonoBehaviour
 
     public void btnSiguiente() {
         //siguiente escena (falta crear la escena)
-        PhotonNetwork.LoadLevel("CuartoScene");
+        PhotonNetwork.LoadLevel("CapituloDos");
     }
 
 }

@@ -10,13 +10,13 @@ public class FinalUIManager : MonoBehaviour
     public string sigEscena;
 
     [SerializeField] private TMP_Text nombreTexto;
-    [SerializeField] private TMP_Text dialogoTexto;
+    [SerializeField] private TMP_Text finalTexto;
     [SerializeField] [TextArea] private string nombre;
-    [SerializeField] [TextArea] private string dialogo;
+    [SerializeField] [TextArea] private string final;
 
     void Start() {
         nombreTexto.text = nombre;
-        dialogoTexto.text = dialogo;
+        finalTexto.text = final;
     }
 
     public void volverMenu() {

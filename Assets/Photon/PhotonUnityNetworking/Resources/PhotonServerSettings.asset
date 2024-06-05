@@ -61,6 +61,8 @@ MonoBehaviour:
   - SyncAnimation
   - SalirPartidaTodos
   - activarOpJuegos
+  - ActivarPrimeraOpcion
+  - ActivarSegundaOpcion
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
