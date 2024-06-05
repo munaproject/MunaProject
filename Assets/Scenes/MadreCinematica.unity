@@ -27449,7 +27449,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -0.38, z: -9.064363}
+  m_LocalPosition: {x: 1.8399999, y: -2.151389, z: -9.064363}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33523,11 +33523,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9122680216128828446, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.85
+      value: -1.23
       objectReference: {fileID: 0}
     - target: {fileID: 9122680216128828446, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8686112
+      value: -2.64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33716,6 +33716,10 @@ PlayableDirector:
     value: {fileID: 14894999}
   - key: {fileID: -4756746560619662844, guid: 13972afe18d156e4181e29217cf4735b, type: 2}
     value: {fileID: 1818504702}
+  - key: {fileID: -530296520289810570, guid: 13972afe18d156e4181e29217cf4735b, type: 2}
+    value: {fileID: 1818504702}
+  - key: {fileID: -5059525114794800608, guid: 13972afe18d156e4181e29217cf4735b, type: 2}
+    value: {fileID: 1124129075}
   m_ExposedReferences:
     m_References:
     - daa1d238b243ef54aa4c125050a251fa: {fileID: 930448109}
@@ -33941,11 +33945,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6247508292308858357, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: 1.8399999
       objectReference: {fileID: 0}
     - target: {fileID: 6247508292308858357, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38
+      value: -2.151389
       objectReference: {fileID: 0}
     - target: {fileID: 8422519042864618005, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
       propertyPath: sceneViewId

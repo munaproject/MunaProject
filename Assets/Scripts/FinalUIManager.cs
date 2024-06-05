@@ -20,6 +20,16 @@ public class FinalUIManager : MonoBehaviour
     }
 
     public void volverMenu() {
-        PhotonNetwork.LoadLevel(sigEscena);
+        StartCoroutine(VolverMenuRoutine());
+    }
+
+    private IEnumerator VolverMenuRoutine() {
+        if (PhotonNetwork.IsConnected) {
+            PhotonNetwork.Disconnect();
+            while (PhotonNetwork.IsConnected) {
+                yield return null;
+            }
+        }
+        SceneManager.LoadScene(sigEscena);
     }
 }
