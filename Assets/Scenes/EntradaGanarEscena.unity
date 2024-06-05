@@ -1382,6 +1382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elegir
       objectReference: {fileID: 0}
+    - target: {fileID: 5202007173971153704, guid: a186f24fdb55bd64eafb73226dec1b9c, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5968638123043848259, guid: a186f24fdb55bd64eafb73226dec1b9c, type: 3}
       propertyPath: m_Pivot.x
       value: 0

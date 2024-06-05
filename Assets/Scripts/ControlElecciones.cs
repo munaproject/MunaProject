@@ -8,7 +8,7 @@ public class ControlElecciones : MonoBehaviour
     public GameObject opcUno;
     public GameObject opcDos;
 
-    private GameObject siguienteNombre;
+    private int op;
     PhotonView view;
 
     void Start()
@@ -23,21 +23,22 @@ public class ControlElecciones : MonoBehaviour
 
     public void OnPrimeraOpcion()
     {
-        siguienteNombre = opcUno;
-        view.RPC("siguienteObj", RpcTarget.All, siguienteNombre);
+        op = 1;
+        view.RPC("siguienteObj", RpcTarget.All, op);
         Destroy(gameObject);
     }
 
     public void OnSegundaOpcion()
     {
-        siguienteNombre = opcDos;
-        view.RPC("siguienteObj", RpcTarget.All, siguienteNombre);
+        op = 2;
+        view.RPC("siguienteObj", RpcTarget.All, op);
         Destroy(gameObject);
     }
 
     [PunRPC]
-    void siguienteObj(GameObject nombreObjeto)
+    void siguienteObj(int op)
     {
-        nombreObjeto.SetActive(true);
+        if (op == 1) opcUno.SetActive(true);
+        else opcDos.SetActive(true);
     }
 }
