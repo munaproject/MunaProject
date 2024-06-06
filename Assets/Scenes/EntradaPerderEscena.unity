@@ -693,6 +693,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5014316093917229633, guid: 4962b7abd4c38d54ebf397deae1ecea6, type: 3}
+      propertyPath: final
+      value: Final 1 de 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014316093917229633, guid: 4962b7abd4c38d54ebf397deae1ecea6, type: 3}
       propertyPath: nombre
       value: 7 Minutos en el Cielo
       objectReference: {fileID: 0}
@@ -1282,6 +1286,10 @@ PrefabInstance:
     - target: {fileID: 4413508388200216595, guid: a186f24fdb55bd64eafb73226dec1b9c, type: 3}
       propertyPath: m_Name
       value: Elegir
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202007173971153704, guid: a186f24fdb55bd64eafb73226dec1b9c, type: 3}
+      propertyPath: sceneViewId
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5968638123043848259, guid: a186f24fdb55bd64eafb73226dec1b9c, type: 3}
       propertyPath: m_Pivot.x
