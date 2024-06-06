@@ -16,6 +16,8 @@ public class Slime : MonoBehaviour
 
     PhotonView view;
 
+    GameObject jugadorMasCercano;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,29 +26,36 @@ public class Slime : MonoBehaviour
         jugadores = GameObject.FindGameObjectsWithTag("Player");
         velocidadAux = velocidad;
         velocidadCorriendo = velocidad + 5;
+        view = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        escondido = false;
-        foreach (GameObject jugador in jugadores)
-        {
-            if (jugador.GetComponent<CharacterController>().getEsconder())
+        if (jugadores.Length != 2) jugadores = GameObject.FindGameObjectsWithTag("Player");
+
+        if (view.IsMine) { //solo el master controla el enemigo (para sincronizar)
+            jugadorMasCercano = ObtenerJugadorMasCercano();
+            escondido = false;
+            foreach (GameObject jugador in jugadores)
             {
-                escondido = true;
-                break;
+                if (jugador.GetComponent<CharacterController>().getEsconder())
+                {
+                    escondido = true;
+                    break;
+                }
+            }
+
+            if (escondido || !EstaDentroDeCamara())
+            {
+                MoverEnemigo();
+            }
+            else
+            {
+                SeguirJugador();
             }
         }
-
-        if (escondido || !EstaDentroDeCamara())
-        {
-            MoverEnemigo();
-        }
-        else
-        {
-            SeguirJugador();
-        }
+        
     }
 
     private void MoverEnemigo()
@@ -63,7 +72,7 @@ public class Slime : MonoBehaviour
 
     private void SeguirJugador()
     {
-        GameObject jugadorMasCercano = ObtenerJugadorMasCercano();
+        
         if (jugadorMasCercano != null)
         {
             velocidad = velocidadCorriendo;
