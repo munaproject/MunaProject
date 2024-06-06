@@ -57,6 +57,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Caminos.unity
     guid: 9b59a48fdd32e2340a7c8605fbf79307
   - enabled: 1
+    path: Assets/Scenes/IgnorarDalila.unity
+    guid: cdfe8882c87d245438465b853baa222f
+  - enabled: 1
+    path: Assets/Scenes/Nieve.unity
+    guid: 8366bfa7013197541b68880f148eed58
+  - enabled: 1
     path: Assets/Scenes/PasilloFinalMalo.unity
     guid: 29c45852b2b77304191a3446ea5e507b
   - enabled: 1

@@ -1,0 +1,648 @@
+fileFormatVersion: 2
+guid: 8c4fd32f23817e944bc21e7e28f3c289
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: decorative_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 448
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54adb4f0d2a7a2942b03ea18f60dad87
+      internalID: -1724420263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decorative_3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 449
+        width: 32
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26e06063a906e146a65644d72e88cf5
+      internalID: -1677300276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decorative_22
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 460
+        width: 30
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96e9fb7fe9f305428f6205bce44632d
+      internalID: 519215514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decorative_41
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 400
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea0ddafc51b5a84bb00a2f3017db1b7
+      internalID: 960663530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decorative_44
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 400
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7782763aec55d124da36694daae05721
+      internalID: -70315242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decorative_46
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 410
+        width: 30
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d64ff471549e546938a75ddfd2f694
+      internalID: 664446765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decorative_84
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 352
+        width: 17
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 16}
+        - {x: -8.5, y: -16}
+        - {x: 8.5, y: -16}
+        - {x: 8.5, y: 16}
+      physicsShape:
+      - - {x: 3.5, y: -3}
+        - {x: -3.5, y: -3}
+        - {x: -8.5, y: -6}
+        - {x: -8.5, y: -16}
+        - {x: 8.5, y: -16}
+        - {x: 8.5, y: -7}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d49a11de5f9e84d857b08a9f230dfc
+      internalID: 1086298623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1481bac9ef8ce6941a7691d40f206f4c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      decorative_0: -1724420263
+      decorative_1: 129293603
+      decorative_10: 1639005809
+      decorative_100: 1857855191
+      decorative_101: -864433971
+      decorative_102: 507102088
+      decorative_103: 1221318849
+      decorative_104: 650219382
+      decorative_105: -376128868
+      decorative_106: -663088668
+      decorative_107: -2265447
+      decorative_108: 1546322357
+      decorative_109: -1973988582
+      decorative_11: -87612135
+      decorative_110: 212866140
+      decorative_111: -759699747
+      decorative_112: 1716620998
+      decorative_113: 919082374
+      decorative_114: -1729437717
+      decorative_115: 569779235
+      decorative_116: 1197132887
+      decorative_117: 58400537
+      decorative_118: -919898443
+      decorative_119: -1592327033
+      decorative_12: 1621725352
+      decorative_120: -628438375
+      decorative_121: 692948152
+      decorative_122: -1932442870
+      decorative_123: -2066247453
+      decorative_124: -612612743
+      decorative_125: 1718211502
+      decorative_126: -1274399484
+      decorative_127: 774150935
+      decorative_128: 1932507539
+      decorative_129: 505065395
+      decorative_13: 1311336487
+      decorative_130: 2093300950
+      decorative_131: -26634994
+      decorative_132: 109223448
+      decorative_133: 1919398889
+      decorative_134: -363937746
+      decorative_135: 1031206309
+      decorative_136: 1625961479
+      decorative_137: 67694893
+      decorative_138: 272389645
+      decorative_139: 2096514192
+      decorative_14: -890261324
+      decorative_140: 1748057135
+      decorative_141: 1933544533
+      decorative_142: -885912355
+      decorative_143: -1169001981
+      decorative_144: 1164234608
+      decorative_145: -787592452
+      decorative_146: -2008580273
+      decorative_147: 545528026
+      decorative_148: 487790131
+      decorative_149: 1352309047
+      decorative_15: -1578696276
+      decorative_150: 464609598
+      decorative_151: 620698729
+      decorative_152: -390635473
+      decorative_153: 89458886
+      decorative_154: 322646807
+      decorative_155: -1191108338
+      decorative_156: 1407136095
+      decorative_157: 1391830998
+      decorative_158: 223048803
+      decorative_159: 681988833
+      decorative_16: 1972109734
+      decorative_160: -597329322
+      decorative_161: -1169875545
+      decorative_162: -555483450
+      decorative_163: -1447809470
+      decorative_164: 854353760
+      decorative_165: 1803709687
+      decorative_166: 598344042
+      decorative_167: 411471880
+      decorative_168: 295608447
+      decorative_169: 1706331182
+      decorative_17: 2092206094
+      decorative_170: -474027215
+      decorative_171: 1765365122
+      decorative_172: 139151319
+      decorative_173: -56498283
+      decorative_174: 1922357032
+      decorative_175: -1231426974
+      decorative_176: -1364218852
+      decorative_177: 1006654315
+      decorative_178: -311942600
+      decorative_179: 883005020
+      decorative_18: -533245040
+      decorative_180: 824906457
+      decorative_181: -1552540624
+      decorative_182: -1558682857
+      decorative_183: 736213144
+      decorative_184: -1458289512
+      decorative_185: -965868272
+      decorative_186: 50790210
+      decorative_187: -1781624055
+      decorative_188: -343978461
+      decorative_189: 1544682679
+      decorative_19: -1652364235
+      decorative_190: -553431102
+      decorative_191: 579314426
+      decorative_192: 1528405512
+      decorative_193: -1884918404
+      decorative_194: 1315804718
+      decorative_195: 1823003722
+      decorative_196: -1495617520
+      decorative_197: 1919911712
+      decorative_198: 2122344801
+      decorative_199: -1770834349
+      decorative_2: -980967721
+      decorative_20: 1112205157
+      decorative_200: -1210440504
+      decorative_201: 882506306
+      decorative_202: 283729348
+      decorative_203: 130384713
+      decorative_204: 127662579
+      decorative_205: 526542650
+      decorative_206: -1884756186
+      decorative_207: -1241696606
+      decorative_208: 223411377
+      decorative_209: 243043053
+      decorative_21: 386429968
+      decorative_210: -1882273407
+      decorative_211: -354067782
+      decorative_212: -508336758
+      decorative_213: 571821144
+      decorative_214: -1749811678
+      decorative_215: -2063554444
+      decorative_216: -1931614754
+      decorative_217: 1856044105
+      decorative_218: 1252718501
+      decorative_219: -810285481
+      decorative_22: 519215514
+      decorative_220: -1396249659
+      decorative_221: 151230025
+      decorative_222: 388455188
+      decorative_223: 983506366
+      decorative_224: 1492096981
+      decorative_225: -1138002968
+      decorative_226: 191891801
+      decorative_227: 1096228584
+      decorative_228: 2091133609
+      decorative_229: -847491485
+      decorative_23: -1410455928
+      decorative_230: -1657844300
+      decorative_231: -108082872
+      decorative_232: 1629309685
+      decorative_233: -1158782239
+      decorative_234: -44245506
+      decorative_235: -458206511
+      decorative_236: 1004109324
+      decorative_237: 214388143
+      decorative_238: -248835849
+      decorative_239: 1937178766
+      decorative_24: -1981533579
+      decorative_240: -1247053501
+      decorative_241: 1452008641
+      decorative_242: -1410528977
+      decorative_243: 1057796228
+      decorative_244: -429022702
+      decorative_245: 782412172
+      decorative_246: 1928762316
+      decorative_247: 1754842103
+      decorative_248: -416280589
+      decorative_249: 2115671429
+      decorative_25: -461097526
+      decorative_250: -782860131
+      decorative_251: -2142452498
+      decorative_252: -1213942777
+      decorative_253: 2096467561
+      decorative_254: 415573853
+      decorative_255: -1979252985
+      decorative_256: -1886074488
+      decorative_257: 2060467367
+      decorative_258: -864220563
+      decorative_259: -917109764
+      decorative_26: 1231706272
+      decorative_260: 1204659443
+      decorative_261: 1487163836
+      decorative_262: 1046877704
+      decorative_263: 1133111250
+      decorative_264: 750755029
+      decorative_265: 476713017
+      decorative_266: -1976784794
+      decorative_267: -193208772
+      decorative_268: -843743982
+      decorative_269: -1370057484
+      decorative_27: -473067707
+      decorative_270: -1350978915
+      decorative_271: -1005933660
+      decorative_272: -2077371703
+      decorative_273: 1777070568
+      decorative_274: 627598154
+      decorative_275: 1811236386
+      decorative_276: 1244489064
+      decorative_277: 15100175
+      decorative_278: -2060806956
+      decorative_279: 1848167869
+      decorative_28: 662120167
+      decorative_280: -191404953
+      decorative_281: 1164637758
+      decorative_282: -1853025484
+      decorative_283: 171916818
+      decorative_284: -339732533
+      decorative_285: 1326938292
+      decorative_286: -1840107786
+      decorative_287: 1558062088
+      decorative_288: -1757427804
+      decorative_289: 126392421
+      decorative_29: 1121045549
+      decorative_290: 1345311221
+      decorative_291: 36666982
+      decorative_292: -1276860338
+      decorative_293: 1102120159
+      decorative_294: -1914316925
+      decorative_295: 1285146899
+      decorative_296: -239810377
+      decorative_297: -1109756376
+      decorative_298: 777656938
+      decorative_299: -1509415470
+      decorative_3: -1677300276
+      decorative_30: -704595012
+      decorative_300: -640510246
+      decorative_301: -1590324905
+      decorative_302: -1414586794
+      decorative_303: -309881844
+      decorative_304: 2047991913
+      decorative_305: 1579854046
+      decorative_306: -258153146
+      decorative_307: -2083445962
+      decorative_308: -402158879
+      decorative_309: 1535022434
+      decorative_31: -2616841
+      decorative_310: -1157687585
+      decorative_311: -625205154
+      decorative_312: 605480741
+      decorative_313: -610226888
+      decorative_314: 702437531
+      decorative_315: 695847793
+      decorative_316: -1826363001
+      decorative_317: -927216875
+      decorative_318: -1918164701
+      decorative_319: -518236983
+      decorative_32: 1452609148
+      decorative_320: -1795089827
+      decorative_321: -344472326
+      decorative_322: 482670550
+      decorative_323: -1732230628
+      decorative_33: -741595983
+      decorative_34: 1370543631
+      decorative_35: -1025354449
+      decorative_36: 618687731
+      decorative_37: 1790063100
+      decorative_38: -1377271243
+      decorative_39: 1784097341
+      decorative_4: 1184797129
+      decorative_40: 1096116276
+      decorative_41: 960663530
+      decorative_42: 218783936
+      decorative_43: -858657398
+      decorative_44: -70315242
+      decorative_45: -2041065285
+      decorative_46: 664446765
+      decorative_47: -1120635471
+      decorative_48: -1790029994
+      decorative_49: 48233079
+      decorative_5: 384308973
+      decorative_50: 1781783522
+      decorative_51: 425088301
+      decorative_52: 1179270940
+      decorative_53: 1008873455
+      decorative_54: -1072432976
+      decorative_55: -206074832
+      decorative_56: -814210792
+      decorative_57: -1910225253
+      decorative_58: -909431251
+      decorative_59: -1295434383
+      decorative_6: 1775262113
+      decorative_60: 634817251
+      decorative_61: -1315186408
+      decorative_62: -592984110
+      decorative_63: 280460
+      decorative_64: -2138820741
+      decorative_65: -1476486980
+      decorative_66: -1443873308
+      decorative_67: 283646439
+      decorative_68: 491700317
+      decorative_69: -885361130
+      decorative_7: -1712605675
+      decorative_70: 1163601139
+      decorative_71: 1769784605
+      decorative_72: -1161414335
+      decorative_73: -684279073
+      decorative_74: -1882309409
+      decorative_75: -933800301
+      decorative_76: -800266216
+      decorative_77: -667157525
+      decorative_78: -793698989
+      decorative_79: 1696436322
+      decorative_8: 1207112056
+      decorative_80: 1419660537
+      decorative_81: 1440308783
+      decorative_82: 1796947926
+      decorative_83: -2046008859
+      decorative_84: 1086298623
+      decorative_85: -1192463382
+      decorative_86: -315177945
+      decorative_87: -908464661
+      decorative_88: 1194392246
+      decorative_89: 1476829564
+      decorative_9: 1494825884
+      decorative_90: -352753904
+      decorative_91: 692119400
+      decorative_92: -1148226969
+      decorative_93: 46399028
+      decorative_94: -1411731307
+      decorative_95: 1651674813
+      decorative_96: -468392528
+      decorative_97: 768826535
+      decorative_98: -309371276
+      decorative_99: -1262905533
+      escondites_0: -517410878
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

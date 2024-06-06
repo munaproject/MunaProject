@@ -1384,9 +1384,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
-        m_MethodName: volverMenu
+      - m_Target: {fileID: 732927964}
+        m_TargetAssemblyTypeName: ControlMenu, Assembly-CSharp
+        m_MethodName: OnBotonMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
