@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private string escenaAnterior;
     private string escenaAnteriorAntes;
     private bool cargarTodo;
+    private bool tieneLlave;
     
 
     void Start()
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
     public string EscenaAnterior { get; set; }
     public string EscenaAnteriorAntes { get; set; }
     public bool CargarTodo { get; set; }
+    public bool TieneLlave { get; set; }
 
     public void guardarPosicionesAntes() {
         PosVolverLilleAntes = PosVolverLille;

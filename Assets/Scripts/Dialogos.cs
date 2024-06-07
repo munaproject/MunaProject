@@ -37,6 +37,11 @@ public class Dialogos : MonoBehaviour
     private int aux;    //para comprobar por donde va el dialogo
     private bool sonidoReproducido = false; // Variable para verificar si el sonido ya se ha reproducido
     private GameObject player;
+    private bool terminado;
+
+    void Start() {
+        terminado = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -88,6 +93,7 @@ public class Dialogos : MonoBehaviour
                         if(repetir)
                         {
                             aux=0;  //Solo añadir esta linea si quiero que la conversacion se repita
+                            terminado=true;
                         }
                         if(next!=null)
                         {
@@ -133,4 +139,6 @@ public class Dialogos : MonoBehaviour
     {
         if (modoDeActivacion == opcion.interactuando) activar = false;
     }
+
+    public bool Terminado { get; set; }
 }
