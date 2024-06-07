@@ -143,17 +143,17 @@ public class Oscuridad : MonoBehaviourPunCallbacks
         // Cambiar la opacidad basado en el tiempo transcurrido
         if (tiempoEmpleado >= primerTiempo && tiempoEmpleado < segundoTiempo)
         {
-            oscuro.GetComponentInChildren<Light2D>().intensity = 0.2f;
+            oscuro.GetComponentInChildren<Light2D>().intensity = intensidad / 3 * 2;
             view.RPC("CambiarVelocidad", RpcTarget.All, 2);
         }
         else if (tiempoEmpleado >= segundoTiempo && tiempoEmpleado < tiempoMax)
         {
-            oscuro.GetComponentInChildren<Light2D>().intensity = 0.1f;
+            oscuro.GetComponentInChildren<Light2D>().intensity = intensidad / 3;
             view.RPC("CambiarVelocidad", RpcTarget.All, 1);
         }
         else if (tiempoEmpleado >= tiempoMax)
         {
-            oscuro.GetComponentInChildren<Light2D>().intensity = 0.05f;
+            oscuro.GetComponentInChildren<Light2D>().intensity = intensidad / 3 / 3;
             view.RPC("CambiarVelocidad", RpcTarget.All, 0);
             view.RPC("Perder", RpcTarget.All);
             Invoke("cambiarEscena", 4f);
@@ -166,7 +166,7 @@ public class Oscuridad : MonoBehaviourPunCallbacks
         tiempoEmpleado = 0f;
         activarEvento = false;
         // Restablecer cualquier otra variable o estado necesario aquí
-        oscuro.GetComponentInChildren<Light2D>().intensity = 0.3f; // Volver a la intensidad inicial del evento
+        oscuro.GetComponentInChildren<Light2D>().intensity = intensidad / 3 * 2;; // Volver a la intensidad inicial del evento
         view.RPC("CambiarVelocidad", RpcTarget.All, 3);
         activarEvento = true; // Reactivar el evento inmediatamente después de reiniciarlo
     }
