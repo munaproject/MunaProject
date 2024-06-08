@@ -93,6 +93,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PhenMeeting.unity
     guid: 51c79e963de13564a90fd9696b3d7b70
   - enabled: 1
+    path: Assets/Scenes/Pelea.unity
+    guid: e6f3bf2cd0041904a84328a60b91f241
+  - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 6da265f448e787f4baf09dc9a6911c94
   - enabled: 1

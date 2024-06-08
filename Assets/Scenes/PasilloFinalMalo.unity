@@ -10039,7 +10039,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetosActivar:
   - {fileID: 922212365}
-  objetosDesactivar: []
+  objetosDesactivar:
+  - {fileID: 1550709608}
   canvas: {fileID: 2042781444}
   director: {fileID: 1242014798}
   tiemposDeDetencion:
@@ -15828,6 +15829,11 @@ PrefabInstance:
 --- !u!95 &1550709607 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8176521675625815873, guid: 1e80b56938f3a874b9dc7b4ce778fa97, type: 3}
+  m_PrefabInstance: {fileID: 1550709606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1550709608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7758155577577797663, guid: 1e80b56938f3a874b9dc7b4ce778fa97, type: 3}
   m_PrefabInstance: {fileID: 1550709606}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1847059966
