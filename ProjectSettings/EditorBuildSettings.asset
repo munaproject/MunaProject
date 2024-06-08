@@ -72,6 +72,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Te.unity
     guid: 520fad155bff44d43bc3f4f67161dbed
   - enabled: 1
+    path: Assets/Scenes/Laberinto.unity
+    guid: 2d5bed6dba5bdcc4397188fa4ddb7126
+  - enabled: 1
     path: Assets/Scenes/Cementerio.unity
     guid: 34f1e8f223a58d64e9259d55003c6f20
   - enabled: 1

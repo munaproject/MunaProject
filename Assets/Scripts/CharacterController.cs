@@ -195,17 +195,9 @@ public class CharacterController : MonoBehaviourPunCallbacks
 
     public void Esconder()
     {
-        if (PhotonNetwork.IsMasterClient) {
-            escondido = !escondido;
-            anim.SetBool("isHiding", escondido);
-            view.RPC("ActualizarEscondite", RpcTarget.All, escondido);
-
-        }
-        else 
-        {
-            view.RPC("ActualizarEscondite", RpcTarget.All, escondido);
-
-        }
+        escondido = !escondido;
+        anim.SetBool("isHiding", escondido);
+        view.RPC("ActualizarEscondite", RpcTarget.All, escondido);
     }
 
     [PunRPC]

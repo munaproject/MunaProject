@@ -5,6 +5,7 @@ using UnityEngine;
 public class DesactivarObjeto : MonoBehaviour
 {
     public GameObject[] objetos;
+    public GameObject next;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,6 +14,10 @@ public class DesactivarObjeto : MonoBehaviour
             foreach (GameObject obj in objetos)
             {
                 obj.SetActive(false);
+                if(next!=null)
+                {
+                    next.SetActive(true);
+                }
             }
         }
     }
