@@ -35,6 +35,7 @@ public class CharacterController : MonoBehaviourPunCallbacks
     Vector2 offset; //para que la luz se situe segun el jugador y no el mapa
 
     bool tieneParamCanUse;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     private void Start()
@@ -47,13 +48,13 @@ public class CharacterController : MonoBehaviourPunCallbacks
         velocidadManual=false;
         usandoLinterna=false;
         cuerpoLuzActivada=false;
-
+        gameManager = FindObjectOfType<GameManager>();
         view = GetComponent<PhotonView>();
         luzJugador = GetComponentInChildren<Light2D>();//obtenemos la luz del jugador
         luzJugador.enabled = false;
         offset = Vector2.zero;
         tieneLuz = false;
-        puedeLuz = false;
+        puedeLuz = gameManager.puedeUsarLinternaAqui();
         escondido=false;
 
         tieneParamCanUse = AnimTieneParam.TieneParam(anim, "canUse", AnimatorControllerParameterType.Bool);
