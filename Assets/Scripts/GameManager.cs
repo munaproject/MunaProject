@@ -68,4 +68,13 @@ public class GameManager : MonoBehaviour
         PosVolverLivAntes = PosVolverLiv;
     }
 
+    public bool puedeUsarLinternaAqui() {
+
+        if (SceneManager.GetActiveScene().name == "MadreCinematica" ||
+            SceneManager.GetActiveScene().name == "CuartoScene") {
+                return false;
+            }
+
+        return true;
+    }
 }
