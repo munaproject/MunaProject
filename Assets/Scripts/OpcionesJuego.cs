@@ -11,12 +11,13 @@ public class OpcionesJuego : MonoBehaviourPunCallbacks
     public GameObject ventana;
     private bool mostrar;
     private PhotonView view;
+    private string escenaDisc;
 
     void Start()
     {
         mostrar = false;
         view = GetComponent<PhotonView>();
-
+        escenaDisc = "Menu";
         DontDestroyOnLoad(gameObject);
     }
 
@@ -55,7 +56,8 @@ public class OpcionesJuego : MonoBehaviourPunCallbacks
 
     void OnDestroy()
     {
-        SceneManager.LoadScene("Menu");
+        Debug.Log("op juego"+escenaDisc);
+        SceneManager.LoadScene(escenaDisc);
     }
 
     void HandleDisconnection()
@@ -87,5 +89,9 @@ public class OpcionesJuego : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         HandleDisconnection();
+    }
+
+    public void cambiarACreditos() {
+        escenaDisc = "Creditos";
     }
 }

@@ -14,9 +14,14 @@ public class FinalUIManager : MonoBehaviour
     [SerializeField] [TextArea] private string nombre;
     [SerializeField] [TextArea] private string final;
 
+    OpcionesJuego opJuego;
+
     void Start() {
         nombreTexto.text = nombre;
         finalTexto.text = final;
+        opJuego = FindObjectOfType<OpcionesJuego>();
+        opJuego.cambiarACreditos();
+        
     }
 
     public void volverMenu() {
