@@ -56420,6 +56420,124 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1849810773
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4561751440905362081, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.990555
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561751440905362081, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.6098948
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561751440905362081, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561751440905362081, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561751440905362081, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561751440905362081, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561751440905362081, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561751440905362081, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561751440905362081, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561751440905362081, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399694079167196669, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+      propertyPath: m_Name
+      value: EstrellaGuardado
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ac59dfc6f7e30b4a9aef5b80dcbe59b, type: 3}
+--- !u!1001 &1903409414
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1733369955268665219, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: texto
+      value: Tu aventura inicia.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.468124
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.132325
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269924097258252525, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_Name
+      value: Fortuna
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
 --- !u!1 &1907066649
 GameObject:
   m_ObjectHideFlags: 0
@@ -58923,3 +59041,5 @@ SceneRoots:
   - {fileID: 1112682507}
   - {fileID: 350989375}
   - {fileID: 92896634}
+  - {fileID: 1849810773}
+  - {fileID: 1903409414}
