@@ -201,6 +201,13 @@ public class CharacterController : MonoBehaviourPunCallbacks
         view.RPC("ActualizarEscondite", RpcTarget.All, escondido);
     }
 
+    public void DejarEsconder()
+    {
+        escondido = false;
+        anim.SetBool("isHiding", escondido);
+        view.RPC("ActualizarEscondite", RpcTarget.All, escondido);
+    }
+
     [PunRPC]
     void ActualizarEscondite(bool estadoEscondido)
     {

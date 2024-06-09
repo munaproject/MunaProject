@@ -26,6 +26,6 @@ public class Esconder : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         activar = false;
-        collision.GetComponent<CharacterController>().Esconder();
+        collision.GetComponent<CharacterController>().DejarEsconder();
     }
 }
