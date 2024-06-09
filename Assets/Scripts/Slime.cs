@@ -17,6 +17,7 @@ public class Slime : MonoBehaviour
     PhotonView view;
 
     GameObject jugadorMasCercano;
+    float distanciaMasCorta;
 
     // Start is called before the first frame update
     void Start()
@@ -46,13 +47,14 @@ public class Slime : MonoBehaviour
                 }
             }
 
-            if (escondido || !EstaDentroDeCamara())
+            if (escondido || distanciaMasCorta>9)
             {
                 MoverEnemigo();
             }
             else
             {
                 SeguirJugador();
+                Debug.Log(distanciaMasCorta);
             }
         }
         
@@ -84,7 +86,7 @@ public class Slime : MonoBehaviour
     private GameObject ObtenerJugadorMasCercano()
     {
         GameObject jugadorMasCercano = null;
-        float distanciaMasCorta = float.MaxValue;
+        distanciaMasCorta = float.MaxValue;
 
         foreach (GameObject jugador in jugadores)
         {
