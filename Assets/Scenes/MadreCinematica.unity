@@ -27588,8 +27588,9 @@ MonoBehaviour:
   personaje:
   - Lille
   dialogo:
-  - "Tenemos comida para unos d\xEDas. No te preocupes, liv."
-  retrato: []
+  - "Tenemos comida para unos d\xEDas. No te preocupes, Liv."
+  retrato:
+  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
   audioSource: {fileID: 0}
   sonidoEntrada: {fileID: 0}
   next: {fileID: 0}
@@ -28020,7 +28021,8 @@ MonoBehaviour:
   - Lille
   dialogo:
   - Mejor no toquemos nada.
-  retrato: []
+  retrato:
+  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
   audioSource: {fileID: 0}
   sonidoEntrada: {fileID: 0}
   next: {fileID: 0}
@@ -30631,7 +30633,8 @@ MonoBehaviour:
   - Lille
   dialogo:
   - "Recuerdo cuando me quem\xE9."
-  retrato: []
+  retrato:
+  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
   audioSource: {fileID: 0}
   sonidoEntrada: {fileID: 0}
   next: {fileID: 0}
