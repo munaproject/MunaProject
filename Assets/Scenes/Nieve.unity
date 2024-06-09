@@ -65007,6 +65007,67 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1503174323
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1733369955268665219, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: texto
+      value: "La calma siempre precede a la tormenta m\xE1s feroz."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.057473
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.318523
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366109923863101173, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269924097258252525, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
+      propertyPath: m_Name
+      value: Fortuna
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bf143e2298b451459be7c9176d49794, type: 3}
 --- !u!1 &1548656161
 GameObject:
   m_ObjectHideFlags: 0
@@ -78379,3 +78440,4 @@ SceneRoots:
   - {fileID: 1569849323}
   - {fileID: 1592185476}
   - {fileID: 379865999}
+  - {fileID: 1503174323}

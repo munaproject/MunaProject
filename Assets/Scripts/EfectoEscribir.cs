@@ -66,7 +66,7 @@ public class EfectoEscribir : MonoBehaviour
     }
 
     public void btnSiguiente() {
-        //siguiente escena (falta crear la escena)
+        
         PhotonNetwork.LoadLevel(gameManager.EscenaAnterior);
     }
 }

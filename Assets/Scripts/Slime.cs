@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class Slime : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Slime : MonoBehaviour
     GameObject jugadorMasCercano;
     float distanciaMasCorta;
     private Animator anim;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +32,7 @@ public class Slime : MonoBehaviour
         velocidadCorriendo = velocidad + 5;
         view = GetComponent<PhotonView>();
         anim = GetComponentInChildren<Animator>();
-
+        gameManager = FindObjectOfType<GameManager>();
         if (velocidad == 0) anim.SetBool("isSleeping", true);
     }
 
@@ -120,5 +122,23 @@ public class Slime : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            gameManager.EscenaAnterior = SceneManager.GetActiveScene().name;
+            if (PhotonNetwork.IsMasterClient) {
+                cambiarEscena();
+            } else {
+                view.RPC("cambiarEscena", RpcTarget.Others);
+            }
+        }
+    }
+
+    [PunRPC]
+    void cambiarEscena() {
+        PhotonNetwork.LoadLevel("GameOver");
     }
 }
