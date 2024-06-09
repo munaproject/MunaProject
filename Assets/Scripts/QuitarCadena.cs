@@ -9,6 +9,7 @@ public class QuitarCadena : MonoBehaviour
     private bool activar;
     private GameManager gameManager;
     private PhotonView view;
+    public GameObject next;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class QuitarCadena : MonoBehaviour
     void Update()
     {
         if(Input.GetButtonDown("Jump") && activar && gameManager.TieneLlave) {
+            next.SetActive(true);
             view.RPC("autodestruir", RpcTarget.All);
 
         }

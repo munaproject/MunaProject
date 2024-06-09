@@ -16,6 +16,7 @@ public class DirectorController : MonoBehaviour
 
     void Start()
     {
+        director.Play();
         director.stopped += OnTimelineFinished;
         view = GetComponent<PhotonView>();
     }

@@ -78,6 +78,14 @@ public class AudioManager : MonoBehaviour
                 audioSource.volume = volumes[indice]; // Set volume based on index
                 audioSource.Play();
             }
+            if (scene.name == "MeetingFinal")
+            {
+                indice = 3;
+                background = cambios[indice];
+                audioSource.clip = background;
+                audioSource.volume = volumes[indice]; // Set volume based on index
+                audioSource.Play();
+            }
         }
     }
 

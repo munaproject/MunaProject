@@ -1386,6 +1386,10 @@ PrefabInstance:
       propertyPath: opcUno
       value: 
       objectReference: {fileID: 187172545}
+    - target: {fileID: 8561921042329968992, guid: a186f24fdb55bd64eafb73226dec1b9c, type: 3}
+      propertyPath: desactivar
+      value: 
+      objectReference: {fileID: 1862443554}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

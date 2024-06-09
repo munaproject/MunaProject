@@ -1080,19 +1080,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: posVolverLiv.x
-      value: -4
+      value: 6.14
       objectReference: {fileID: 0}
     - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: posVolverLiv.y
-      value: 6
+      value: -6.032207
       objectReference: {fileID: 0}
     - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: posVolverLille.x
-      value: -6
+      value: 3.922998
       objectReference: {fileID: 0}
     - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: posVolverLille.y
-      value: 6
+      value: -6.032207
       objectReference: {fileID: 0}
     - target: {fileID: 2388321230454101501, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: sceneViewId
@@ -1100,7 +1100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3034867468570702450, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: m_Name
-      value: CambiarEscenaCollider (1)
+      value: CambiarEscenaColliderHabitacion
       objectReference: {fileID: 0}
     - target: {fileID: 7102396397177659878, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: m_Size.y
@@ -7706,7 +7706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2269393275122390512, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: posVolverLille.y
-      value: 8
+      value: 7.49
       objectReference: {fileID: 0}
     - target: {fileID: 2388321230454101501, guid: e4db647e2d3f16d479a0822a7ef4aa5a, type: 3}
       propertyPath: sceneViewId

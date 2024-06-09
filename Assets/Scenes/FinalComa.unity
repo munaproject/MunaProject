@@ -10969,9 +10969,6 @@ GameObject:
   - component: {fileID: 218945434}
   - component: {fileID: 218945433}
   - component: {fileID: 218945435}
-  - component: {fileID: 218945437}
-  - component: {fileID: 218945438}
-  - component: {fileID: 218945439}
   m_Layer: 0
   m_Name: SueloDeco
   m_TagString: Untagged
@@ -11426,111 +11423,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.6936183, y: 4.6575346}
   m_EdgeRadius: 0
---- !u!114 &218945437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218945431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d819c8b2398a05343afbeb5b4e097c56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogoCanvas: {fileID: 1404703726}
-  personajeTexto: {fileID: 1404703729}
-  dialogoTexto: {fileID: 1404703728}
-  retratoImagen: {fileID: 1404703727}
-  personaje:
-  - Liv
-  - Lille
-  - Liv
-  - Lille
-  - Liv
-  - Lille
-  - Liv
-  - Lille
-  - Liv
-  - Lille
-  - Liv
-  - Lille
-  - Liv
-  dialogo:
-  - "\xBFTe apetece dibujar algo?"
-  - "Aqu\xED est\xE1 mam\xE1..."
-  - "\xBFY qui\xE9n m\xE1s?"
-  - "No hay nadie m\xE1s. Solo mam\xE1 y yo.\r\n"
-  - "\xBFSeguro? Creo que falta alguien importante en tu vida."
-  - "\xBFQui\xE9n?"
-  - "\xBFQu\xE9 tal si a\xF1ades a tu blandito compa\xF1ero de aventuras en el dibujo?"
-  - "S\xED, t\xFA tambi\xE9n eres parte de mi familia."
-  - "\xA1Exactamente! Ahora vamos, s\xE1came a relucir en ese dibujo."
-  - "Termin\xE9. \xBFQu\xE9 opinas?"
-  - "\xA1Es incre\xEDble! Has capturado perfectamente mi esencia."
-  - "\xA1Oh no, se fue la luz! No me gusta la oscuridad..."
-  - "Tranquilo, Lille. Busquemos t\xFA linterna, \xBFrecuerdas d\xF3nde la dejaste?"
-  retrato:
-  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
-  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
-  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
-  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
-  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
-  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  - {fileID: 21300000, guid: 0c1b7c006a077014a94de61cc28ab5f6, type: 3}
-  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  audioSource: {fileID: 0}
-  sonidoEntrada: {fileID: 0}
-  oscuro: {fileID: 52094334}
-  trigger: 11
-  tiempoMax: 30
-  scene: {fileID: 0}
-  intensidad: 0.3
-  next: {fileID: 856207470}
---- !u!114 &218945438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218945431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 218945439}
-  sceneViewId: 2
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &218945439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218945431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &489195788
 GameObject:
   m_ObjectHideFlags: 0
@@ -11544,8 +11436,6 @@ GameObject:
   - component: {fileID: 489195792}
   - component: {fileID: 489195791}
   - component: {fileID: 489195790}
-  - component: {fileID: 489195794}
-  - component: {fileID: 489195795}
   m_Layer: 0
   m_Name: ConseguirLinterna
   m_TagString: Untagged
@@ -12124,50 +12014,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &489195794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489195788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bbe579015f704943837f6f0ccd06657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  master: {fileID: 53328860779223754, guid: bc172b5323ae7f64688d376e30ef5e82, type: 3}
-  player: {fileID: 2718953098306020838, guid: c183ca928ac4f614d9bf7afeba0fe214, type: 3}
---- !u!114 &489195795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489195788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09677bea83c531641a0cf1422274a2ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modoDeActivacion: 0
-  dialogoCanvas: {fileID: 1404703726}
-  personajeTexto: {fileID: 1404703729}
-  dialogoTexto: {fileID: 1404703728}
-  retratoImagen: {fileID: 1404703727}
-  personaje:
-  - Liv
-  - Liv
-  dialogo:
-  - "\xA1Tu linterna!"
-  - "Deber\xEDas agarrarla."
-  retrato:
-  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
-  audioSource: {fileID: 0}
-  sonidoEntrada: {fileID: 0}
-  next: {fileID: 0}
-  repetir: 0
 --- !u!1 &489739217
 GameObject:
   m_ObjectHideFlags: 0
@@ -12543,7 +12389,6 @@ GameObject:
   - component: {fileID: 608585220}
   - component: {fileID: 608585219}
   - component: {fileID: 608585218}
-  - component: {fileID: 608585217}
   m_Layer: 0
   m_Name: Diario
   m_TagString: Untagged
@@ -12566,78 +12411,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1876168906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &608585217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 608585215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d16aa0107ef0bc4b8fa3216dae4742a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabLibro: {fileID: 2302850236039970291, guid: 20838578137f97f4584aeacfc5dde77b, type: 3}
-  texto:
-  - "Querido diario,\r\nHoy mam\xE1 me regal\xF3 este diario para que pueda escribir
-    mis pensamientos. Ella nunca est\xE1 en casa, as\xED que no tengo a nadie a quien
-    contarle lo que me pasa. Por suerte, tengo a Liv, mi peluche. Liv siempre me
-    escucha cuando estoy solo."
-  - "Querido diario, \nHoy en el recreo, un compa\xF1ero me empuj\xF3 y todos se
-    rieron. Me ca\xED y me lastim\xE9 la rodilla. No hab\xEDa nadie para ayudarme.
-    Al llegar a casa, le cont\xE9 a Liv y me abraz\xF3. Liv siempre sabe c\xF3mo
-    hacerme sentir un poquito mejor."
-  - "Querido diario,\r\nHoy, un compa\xF1ero me llam\xF3 \"tonto\" frente a todos.
-    No s\xE9 por qu\xE9 me odia tanto. Mam\xE1 no estaba en casa para consolarme,
-    as\xED que le cont\xE9 a Liv. Liv me dijo que eso no era cierto, pero es dif\xEDcil
-    no creerlo."
-  - "Querido diario,\r\nHoy fue un buen d\xEDa. La maestra nos dej\xF3 dibujar y
-    a m\xED me encanta dibujar. Hoy nadie me molest\xF3."
-  - "Querido diario,\r\nHoy durante el almuerzo, me quitaron mi bocadillo y lo tiraron
-    al suelo. Me qued\xE9 sin comer y pas\xE9 el resto del d\xEDa con hambre. Me
-    sent\xED invisible porque nadie hizo nada para ayudarme."
-  - "Querido diario,\r\nHoy en clase de arte, la maestra dijo que mi dibujo era hermoso.
-    Fue un momento feliz en un d\xEDa triste. Cuando llegu\xE9 a casa, le mostr\xE9
-    el dibujo a Liv. Liv me dijo que siempre debo seguir dibujando porque eso me
-    hace feliz."
-  - "Querido diario,\r\nHoy mam\xE1 no volvi\xF3 a casa hasta muy tarde. Me siento
-    tan solo cuando no est\xE1. Le dije a Liv que desear\xEDa que mam\xE1 pudiera
-    estar m\xE1s tiempo conmigo. Liv me abraz\xF3 y me dijo que siempre estar\xE1
-    aqu\xED para m\xED."
-  - "Querido diario,\r\nHoy fue el peor d\xEDa de todos. El ni\xF1o que me molesta
-    rompi\xF3 mi cuaderno de dibujos frente a toda la clase. Me sent\xED tan triste
-    y enojado. Liv me dijo que podemos hacer dibujos nuevos juntos. Intento creerle,
-    pero duele mucho."
-  - "Querido diario,\r\nLiv me dijo que soy fuerte y valiente, aunque no me siento
-    as\xED. Hoy, me empujaron de nuevo y todos se rieron. Quiero contarle a mam\xE1,
-    pero nunca est\xE1 aqu\xED. Liv me dijo que no importa lo que digan los dem\xE1s,
-    siempre ser\xE9 especial."
-  - "Querido diario,\r\nHoy no llor\xE9 cuando me molestaron. Fue dif\xEDcil, pero
-    Liv me dijo que cada peque\xF1o momento de valent\xEDa cuenta. Espero que alg\xFAn
-    d\xEDa pueda ser realmente valiente y no solo fingir."
-  - "Querido diario,\r\nA veces me pregunto si hay algo mal en m\xED. Mam\xE1 nunca
-    est\xE1 en casa y en la escuela todos me odian. Liv me dice que soy perfecto
-    tal como soy, pero es dif\xEDcil de creer cuando me siento tan mal."
-  - "Querido diario,\r\nHoy la maestra elogi\xF3 mi trabajo de arte. Fue una peque\xF1a
-    victoria en un mar de derrotas. Liv me dijo que debo celebrar estos momentos,
-    por peque\xF1os que sean."
-  - "Querido diario,\r\nHoy me encerraron en el ba\xF1o a oscuras. Solo pude escuchar
-    como se re\xEDan de mi. Lo siento Liv, esta vez no pude aguantar las l\xE1grimas."
-  - "Querido diario,\r\nMam\xE1 nunca est\xE1 aqu\xED..."
-  - "Querido diario,\r\nMe gustar\xEDa ser m\xE1s valiente, aunque Liv dice que siempre
-    lo soy se que solo lo dice para animarme."
-  - "Querido diario,\r\nNo me gusta la oscuridad. A veces sue\xF1o que me encierran
-    otra vez y todos se r\xEDen en las sombras."
-  - "Querido diario,\r\nLiv me regal\xF3 una linterna. No se de donde la ha sacado,
-    le pregunt\xE9 y no quiso responderme, solo espero que no la haya robado."
-  - "Querido diario,\r\nSiempre tengo mi linterna con bater\xEDa. A\xFAn tengo miedo
-    de caminar por la noche, pero con la linterna s\xE9 que no hay nadie escondido
-    en las sombras."
-  - "Querido diario,\r\nAl fin lleg\xF3 el verano. Ya no tengo que ver a mis compa\xF1eros.
-    Hoy Liv me dijo que podemos dibujar toda la tarde ya que tampoco tengo que estudiar."
-  - (Se ven muchos dibujos de Lille y Liv)
-  - "Querido diario.\nEl verano est\xE1 terminando. No quiero que empiecen las clases."
 --- !u!61 &608585218
 BoxCollider2D:
   m_ObjectHideFlags: 0
