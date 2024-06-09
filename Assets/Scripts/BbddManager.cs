@@ -45,6 +45,7 @@ public class BbddManager : MonoBehaviour
 
     public delegate void DataLoadedEventHandler();
     public event DataLoadedEventHandler OnDataLoaded;
+    public GameObject prefabMensaje;
 
     private void Awake()
     {
@@ -131,6 +132,9 @@ public class BbddManager : MonoBehaviour
             }
 
             Debug.Log(message);
+            GameObject p = (GameObject)Instantiate(prefabMensaje);
+            TextMeshProUGUI textMeshPro = p.GetComponentInChildren<TextMeshProUGUI>();
+            textMeshPro.text = message;
             //warningLoginText.text = message;
         }
         else
@@ -155,6 +159,9 @@ public class BbddManager : MonoBehaviour
         {
             //warningRegisterText.text = "la contra no coincide";
             Debug.Log("Las contraseñas no coinciden");
+            GameObject p = (GameObject)Instantiate(prefabMensaje);
+            TextMeshProUGUI textMeshPro = p.GetComponentInChildren<TextMeshProUGUI>();
+            textMeshPro.text = "Las contraseñas no coinciden";
         }
         else
         {
@@ -187,6 +194,9 @@ public class BbddManager : MonoBehaviour
                 }
                 //warningRegisterText.text = message;
                 Debug.Log(message);
+                GameObject p = (GameObject)Instantiate(prefabMensaje);
+                TextMeshProUGUI textMeshPro = p.GetComponentInChildren<TextMeshProUGUI>();
+                textMeshPro.text = message;
             }
             else
             {

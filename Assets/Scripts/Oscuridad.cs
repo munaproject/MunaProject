@@ -39,10 +39,12 @@ public class Oscuridad : MonoBehaviourPunCallbacks
     private bool sonidoReproducido = false; // Variable para verificar si el sonido ya se ha reproducido
 
     PhotonView view;
+    GameManager gameManager;
 
     void Start()
     {
         view = GetComponent<PhotonView>();
+        gameManager.EnDialogCompartido = true;
         tieneLuz = false;
     }
 
@@ -144,12 +146,12 @@ public class Oscuridad : MonoBehaviourPunCallbacks
         if (tiempoEmpleado >= primerTiempo && tiempoEmpleado < segundoTiempo)
         {
             oscuro.GetComponentInChildren<Light2D>().intensity = intensidad / 3 * 2;
-            view.RPC("CambiarVelocidad", RpcTarget.All, 2);
+            if  (!gameManager.EnDialogCompartido) view.RPC("CambiarVelocidad", RpcTarget.All, 2);
         }
         else if (tiempoEmpleado >= segundoTiempo && tiempoEmpleado < tiempoMax)
         {
             oscuro.GetComponentInChildren<Light2D>().intensity = intensidad / 3;
-            view.RPC("CambiarVelocidad", RpcTarget.All, 1);
+            if  (!gameManager.EnDialogCompartido) view.RPC("CambiarVelocidad", RpcTarget.All, 1);
         }
         else if (tiempoEmpleado >= tiempoMax)
         {

@@ -43,11 +43,13 @@ public class DialogosCompartido : MonoBehaviour
     PhotonView view;
     private bool autodestruir;
     public GameObject next;
+    GameManager gameManager;
     
 
     void Start()
     {
         view = GetComponent<PhotonView>();
+        gameManager = FindObjectOfType<GameManager>();
         autodestruir = false;
 
     }
@@ -86,6 +88,7 @@ public class DialogosCompartido : MonoBehaviour
             //player.GetComponent<CharacterController>().cambiarVelocidad(5);
             personajes[0].cambiarVelocidad(5);
             personajes[1].cambiarVelocidad(5);
+            gameManager.EnDialogCompartido = false;
             Debug.Log("vel restaurada");
             if (autodestruir) Destroy(gameObject); //cuando el dialogo termina se autodestruye
             if(next!=null)
@@ -131,6 +134,8 @@ public class DialogosCompartido : MonoBehaviour
             if (modoDeActivacion == opcion.colisionando) {
                 //master.GetComponent<CharacterController>().cambiarVelocidad(0); 
                 //player.GetComponent<CharacterController>().cambiarVelocidad(0);
+                gameManager.EnDialogCompartido = true;
+                Debug.Log("en dialog compartido");
                 personajes[0].cambiarVelocidad(0);
                 personajes[1].cambiarVelocidad(0); 
             }

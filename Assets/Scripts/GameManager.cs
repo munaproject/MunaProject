@@ -30,13 +30,14 @@ public class GameManager : MonoBehaviour
     private string escenaAnteriorAntes;
     private bool cargarTodo;
     private bool tieneLlave;
-    
+    private bool enDialogCompartido;
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
         posCargadas = false;
         musicaCargada = false;
+        enDialogCompartido = false;
         DontDestroyOnLoad(gameManager);
         SceneManager.LoadScene("LoginScene");
     }
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
     public string EscenaAnteriorAntes { get; set; }
     public bool CargarTodo { get; set; }
     public bool TieneLlave { get; set; }
+    public bool EnDialogCompartido { get; set; }
 
     public void guardarPosicionesAntes() {
         PosVolverLilleAntes = PosVolverLille;

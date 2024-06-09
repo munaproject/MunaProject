@@ -3265,6 +3265,7 @@ MonoBehaviour:
   emailRegisterField: {fileID: 1326208035}
   passwordRegisterField: {fileID: 1462669682}
   passwordRegisterVerifyField: {fileID: 1604595952}
+  prefabMensaje: {fileID: 2194028169033019707, guid: 98f3d0aa99313af49b9cac6381f6a2e3, type: 3}
 --- !u!4 &1392234116
 Transform:
   m_ObjectHideFlags: 0
