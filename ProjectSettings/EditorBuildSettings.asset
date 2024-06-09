@@ -99,6 +99,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MeetingFinal.unity
     guid: 8e5d05d8b7af40f40a8b54e6db4ac1fa
   - enabled: 1
+    path: Assets/Scenes/FinalComa.unity
+    guid: 83a3bf66928819d43a9672d7c3e1bdbf
+  - enabled: 1
+    path: Assets/Scenes/FinalVerdadero.unity
+    guid: 1463819a7f025854dae44e816d7a7b18
+  - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 6da265f448e787f4baf09dc9a6911c94
   - enabled: 1
