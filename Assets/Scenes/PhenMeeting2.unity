@@ -13628,11 +13628,13 @@ MonoBehaviour:
   - Phen
   - Liv
   - Phen
+  - Phen
   - Lille
   - Phen
   - Phen
   - Phen
   - Liv
+  - Phen
   - Phen
   - Lille
   - Phen
@@ -13646,15 +13648,15 @@ MonoBehaviour:
   - "\xBFEst\xE1s mejor?"
   - "S\xED, gracias a ustedes. Soy Phen, llevo a\xF1os encerrada aqu\xED."
   - "\xBFPor qu\xE9 te ten\xEDan encadenada? \xBFQui\xE9n te hizo esto?"
-  - "Es una larga historia, pero ahora no es momento de hablar de ello. Deb\xE9is
-    iros de aqu\xED. Este lugar es peligroso."
+  - Es una larga historia, pero ahora no es momento de hablar de ello.
+  - "Deb\xE9is iros de aqu\xED. Este lugar es peligroso."
   - "\xBFPero a d\xF3nde iremos? \xBFC\xF3mo salimos? Y tenemos que avisar a Dalila."
   - No.
   - "Escuchadme, Dalila es... mala. No deb\xE9is confiar en ella. Ella ha estado
     enga\xF1\xE1ndoos.\r\n"
   - "\xBFQu\xE9 quieres decir?\r\n"
-  - "Dalila controla este lugar. Ella ha sido la responsable de muchos de los peligros
-    que hab\xE9is enfrentado. \r"
+  - "Dalila controla este lugar. \r"
+  - "Ella ha sido la responsable de muchos de los peligros que hab\xE9is enfrentado. "
   - Pero hay una forma de escapar.
   - "\xBFC\xF3mo?\r"
   - "Hay una estatua... Puede ayudaros. Ella os guiar\xE1 hacia la salida."
@@ -13670,15 +13672,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
   - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
   - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
-  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
-  - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
-  - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
-  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
   - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
   - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
   - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
   - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
   - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
+  - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
+  - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
+  - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
+  - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
+  - {fileID: 21300000, guid: 830c3a60878d4c845b94cf0ae66b1889, type: 3}
+  - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
   - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
   - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
   - {fileID: -1681898688, guid: 114a0acc0a1209a4db2e46974b0e9df6, type: 3}
@@ -13686,7 +13690,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a1b3c9f2a0ebeb4f956081892ce1442, type: 3}
   audioSource: {fileID: 0}
   sonidoEntrada: {fileID: 0}
-  next: {fileID: 1876704340}
+  next: {fileID: 1461633241}
 --- !u!114 &1081609475
 MonoBehaviour:
   m_ObjectHideFlags: 0
