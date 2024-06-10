@@ -35,6 +35,7 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = background;
         audioSource.volume = volumes[0]; // Set initial volume
         audioSource.Play();
+        indice=4;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -81,6 +82,14 @@ public class AudioManager : MonoBehaviour
             if (scene.name == "MeetingFinal")
             {
                 indice = 3;
+                background = cambios[indice];
+                audioSource.clip = background;
+                audioSource.volume = volumes[indice]; // Set volume based on index
+                audioSource.Play();
+            }
+            if (scene.name == "Menu" && indice!=4)
+            {
+                indice = 4;
                 background = cambios[indice];
                 audioSource.clip = background;
                 audioSource.volume = volumes[indice]; // Set volume based on index

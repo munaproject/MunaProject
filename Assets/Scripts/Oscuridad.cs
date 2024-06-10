@@ -44,6 +44,7 @@ public class Oscuridad : MonoBehaviourPunCallbacks
     void Start()
     {
         view = GetComponent<PhotonView>();
+        gameManager = FindObjectOfType<GameManager>();
         gameManager.EnDialogCompartido = true;
         tieneLuz = false;
     }
@@ -51,7 +52,7 @@ public class Oscuridad : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && activar)
+        if (activar)
         {
             siguienteDialogo();
             view.RPC("siguienteDialogo", RpcTarget.Others);
