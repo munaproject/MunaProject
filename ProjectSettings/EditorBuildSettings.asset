@@ -72,6 +72,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Te.unity
     guid: 520fad155bff44d43bc3f4f67161dbed
   - enabled: 1
+    path: Assets/Scenes/PhenMeeting2.unity
+    guid: 1b09d62df98b3c843bb78735b68aa6ee
+  - enabled: 1
     path: Assets/Scenes/Laberinto.unity
     guid: 2d5bed6dba5bdcc4397188fa4ddb7126
   - enabled: 1
